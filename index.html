@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Суші-меню | Японська кухня</title>
+    <meta name="description" content="Автентичні суші та японська кухня. Замовляйте найкращі суші з доставкою.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <h1>SUSHI</h1>
+                    </div>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="uk">UA</button>
+                        <button class="lang-btn" data-lang="ru">RU</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="pl">PL</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-key="hero-title">СУШІ-МЕНЮ</h1>
+                <p class="hero-subtitle" data-key="hero-subtitle">Автентичні японські смаки прямо до вашого столу</p>
+                <a href="tel:+48123456789" class="cta-button" data-key="cta-button">
+                    <i class="fas fa-phone"></i>
+                    Зателефонувати
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu">
+        <div class="container">
+            <h2 class="section-title" data-key="menu-title">Наше меню</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://pixabay.com/get/g34cfbcc1e8f06698a1728fe2dfb091bf5a145d76d663b3176c7b70d9b1d2d3cd13790ac9b26e483a833a2c8da552eff8974219f497624eabba3f48de9f96e082_1280.jpg" alt="Суші сет Філадельфія">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-key="menu-item-1-title">Філадельфія</h3>
+                        <p class="menu-item-description" data-key="menu-item-1-desc">Класичний ролл з лососем, огірком та вершковим сиром</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://pixabay.com/get/g8c4de445c54fef589d21eb6c13d892d19c06a1f4dadfcddbc95280c5e80402d751cf0c419e906e89b44bb6391bf76fa8c0f0409209e118efaf002b0600eb376c_1280.jpg" alt="Суші нігірі">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-key="menu-item-2-title">Нігірі сет</h3>
+                        <p class="menu-item-description" data-key="menu-item-2-desc">Асорті нігірі з тунцем, лососем та креветками</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://pixabay.com/get/gfc5e3793bb4f6f5b301583b79121d9ed8bd8fde05378438e1df454d9b86af1f5c5368228eed89fb9aa5497522b6fb5153f96eae5f7b3c1a664473e9bdd9d5c25_1280.jpg" alt="Каліфорнія ролл">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-key="menu-item-3-title">Каліфорнія</h3>
+                        <p class="menu-item-description" data-key="menu-item-3-desc">Ролл з крабовими паличками, авокадо та ікрою тобіко</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="https://pixabay.com/get/gf20ef4c812919ade74a7d7fff4bde66cc9a1a619f96e9f5f6376b5d3491dc3c464083f6b83a6fd5363e0b0b09e4eeea7457e86f30efeac3e365d706f15edabcc_1280.jpg" alt="Дракон ролл">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-key="menu-item-4-title">Дракон</h3>
+                        <p class="menu-item-description" data-key="menu-item-4-desc">Запечений ролл з вугрем, авокадо та спеціальним соусом</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discount Form Section -->
+    <section class="discount">
+        <div class="container">
+            <div class="discount-content">
+                <h2 class="discount-title" data-key="discount-title">Отримайте знижку 15%</h2>
+                <p class="discount-subtitle" data-key="discount-subtitle">Залиште свої контакти та отримайте персональну знижку на перше замовлення</p>
+                <form class="discount-form" id="discountForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Ваше ім'я" data-placeholder="name-placeholder" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Ваш email" data-placeholder="email-placeholder" required>
+                    </div>
+                    <button type="submit" class="discount-button" data-key="discount-button">
+                        <i class="fas fa-gift"></i>
+                        Отримати знижку 15%
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title" data-key="contact-title">Контакти</h3>
+                    <p class="footer-text">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+48123456789">+48 123 456 789</a>
+                    </p>
+                    <p class="footer-text">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@sushi-menu.com">info@sushi-menu.com</a>
+                    </p>
+                    <p class="footer-text">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-key="address">вул. Японська, 15, Київ</span>
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title" data-key="follow-title">Слідкуйте за нами</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright" data-key="copyright">© 2024 Суші-меню. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
