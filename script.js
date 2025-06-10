@@ -154,21 +154,49 @@ function handleFormSubmission(event) {
         return;
     }
     
-    // Simulate form submission
+    // Submit to Google Sheets
     const submitButton = discountForm.querySelector('.discount-button');
     const originalText = submitButton.innerHTML;
     
     submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
     submitButton.disabled = true;
     
-    // Simulate API call
-    setTimeout(() => {
-        showNotification('Thank you! Your 15% discount has been sent to your email.', 'success');
-        discountForm.reset();
-        
-        submitButton.innerHTML = originalText;
-        submitButton.disabled = false;
-    }, 2000);
+    // Submit data to Google Sheets
+    submitToGoogleSheets(name, email)
+        .then(() => {
+            showNotification('Thank you! Your 15% discount has been sent to your email.', 'success');
+            discountForm.reset();
+        })
+        .catch((error) => {
+            console.error('Error submitting to Google Sheets:', error);
+            showNotification('There was an error processing your request. Please try again.', 'error');
+        })
+        .finally(() => {
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
+        });
+}
+
+async function submitToGoogleSheets(name, email) {
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwYourScriptIdHere/exec';
+    const timestamp = new Date().toLocaleString();
+    
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('timestamp', timestamp);
+    formData.append('language', currentLanguage);
+    
+    const response = await fetch(scriptURL, {
+        method: 'POST',
+        body: formData
+    });
+    
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    return response.text();
 }
 
 function isValidEmail(email) {
