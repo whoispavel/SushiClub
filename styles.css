@@ -1,8 +1,16 @@
-/* Font Face Declaration */
+/* Font Face Declarations */
 @font-face {
     font-family: 'MexaRegular';
     src: url('./fonts/MexaRegular.ttf') format('truetype');
     font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TTFirsNeue-Light';
+    src: url('./fonts/TTFirsNeue-Light.ttf') format('truetype');
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
@@ -20,8 +28,8 @@
     --transition: all 0.3s ease;
     
     /* Typography */
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'MexaRegular', 'Inter', sans-serif;
+    --font-heading: 'MexaRegular', 'Playfair Display', serif;
+    --font-body: 'TTFirsNeue-Light', 'Inter', sans-serif;
 }
 
 /* Reset and Base Styles */
