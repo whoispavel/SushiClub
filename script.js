@@ -1,51 +1,5 @@
 // Language data object
 const languageData = {
-    uk: {
-        'hero-title': 'СУШІ-МЕНЮ',
-        'hero-subtitle': 'Автентичні японські смаки прямо до вашого столу',
-        'cta-button': 'Зателефонувати',
-        'menu-title': 'Наше меню',
-        'menu-item-1-title': 'Філадельфія',
-        'menu-item-1-desc': 'Класичний ролл з лососем, огірком та вершковим сиром',
-        'menu-item-2-title': 'Нігірі сет',
-        'menu-item-2-desc': 'Асорті нігірі з тунцем, лососем та креветками',
-        'menu-item-3-title': 'Каліфорнія',
-        'menu-item-3-desc': 'Ролл з крабовими паличками, авокадо та ікрою тобіко',
-        'menu-item-4-title': 'Дракон',
-        'menu-item-4-desc': 'Запечений ролл з вугрем, авокадо та спеціальним соусом',
-        'discount-title': 'Отримайте знижку 15%',
-        'discount-subtitle': 'Залиште свої контакти та отримайте персональну знижку на перше замовлення',
-        'discount-button': 'Отримати знижку 15%',
-        'contact-title': 'Контакти',
-        'follow-title': 'Слідкуйте за нами',
-        'address': 'Szczytnicka 54/1D, 50-382 Wrocław',
-        'copyright': '© 2024 Sushi Club. Всі права захищені.',
-        'name-placeholder': 'Ваше ім\'я',
-        'email-placeholder': 'Ваш email'
-    },
-    ru: {
-        'hero-title': 'СУШИ-МЕНЮ',
-        'hero-subtitle': 'Аутентичные японские вкусы прямо к вашему столу',
-        'cta-button': 'Позвонить',
-        'menu-title': 'Наше меню',
-        'menu-item-1-title': 'Филадельфия',
-        'menu-item-1-desc': 'Классический ролл с лососем, огурцом и сливочным сыром',
-        'menu-item-2-title': 'Нигири сет',
-        'menu-item-2-desc': 'Ассорти нигири с тунцом, лососем и креветками',
-        'menu-item-3-title': 'Калифорния',
-        'menu-item-3-desc': 'Ролл с крабовыми палочками, авокадо и икрой тобико',
-        'menu-item-4-title': 'Дракон',
-        'menu-item-4-desc': 'Запеченный ролл с угрем, авокадо и специальным соусом',
-        'discount-title': 'Получите скидку 15%',
-        'discount-subtitle': 'Оставьте свои контакты и получите персональную скидку на первый заказ',
-        'discount-button': 'Получить скидку 15%',
-        'contact-title': 'Контакты',
-        'follow-title': 'Следите за нами',
-        'address': 'Szczytnicka 54/1D, 50-382 Wrocław',
-        'copyright': '© 2024 Sushi Club. Все права защищены.',
-        'name-placeholder': 'Ваше имя',
-        'email-placeholder': 'Ваш email'
-    },
     en: {
         'hero-title': 'SUSHI MENU',
         'hero-subtitle': 'Authentic Japanese flavors delivered to your table',
@@ -95,7 +49,7 @@ const languageData = {
 };
 
 // Current language state
-let currentLanguage = 'uk';
+let currentLanguage = 'pl';
 
 // DOM elements
 const languageButtons = document.querySelectorAll('.lang-btn');
@@ -169,12 +123,10 @@ function updateActiveLanguageButton(activeButton) {
 
 function getLanguageCode(language) {
     const languageCodes = {
-        'uk': 'uk',
-        'ru': 'ru',
         'en': 'en',
         'pl': 'pl'
     };
-    return languageCodes[language] || 'uk';
+    return languageCodes[language] || 'pl';
 }
 
 // Form handling
@@ -329,6 +281,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (languageButton) {
             switchLanguage(savedLanguage);
             updateActiveLanguageButton(languageButton);
+        }
+    } else {
+        // Default to Polish if no saved preference
+        const polishButton = document.querySelector(`[data-lang="pl"]`);
+        if (polishButton) {
+            switchLanguage('pl');
+            updateActiveLanguageButton(polishButton);
         }
     }
 });
