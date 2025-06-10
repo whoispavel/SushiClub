@@ -83,7 +83,7 @@ body {
 
 .logo h1 {
     font-family: var(--font-body);
-    font-size: 1.8rem;
+    font-size: 0.36rem;
     font-weight: 300;
     color: var(--primary-color);
     letter-spacing: 2px;
@@ -412,7 +412,7 @@ body {
     }
     
     .logo h1 {
-        font-size: 1.5rem;
+        font-size: 0.3rem;
     }
     
     .hero {
