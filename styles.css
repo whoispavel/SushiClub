@@ -82,9 +82,9 @@ body {
 }
 
 .logo h1 {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 300;
     color: var(--primary-color);
     letter-spacing: 2px;
     margin: 0;
