@@ -18,8 +18,8 @@ const languageData = {
         'discount-button': 'Отримати знижку 15%',
         'contact-title': 'Контакти',
         'follow-title': 'Слідкуйте за нами',
-        'address': 'вул. Японська, 15, Київ',
-        'copyright': '© 2024 Суші-меню. Всі права захищені.',
+        'address': 'Szczytnicka 54/1D, 50-382 Wrocław',
+        'copyright': '© 2024 Sushi Club. Всі права захищені.',
         'name-placeholder': 'Ваше ім\'я',
         'email-placeholder': 'Ваш email'
     },
@@ -41,8 +41,8 @@ const languageData = {
         'discount-button': 'Получить скидку 15%',
         'contact-title': 'Контакты',
         'follow-title': 'Следите за нами',
-        'address': 'ул. Японская, 15, Киев',
-        'copyright': '© 2024 Суши-меню. Все права защищены.',
+        'address': 'Szczytnicka 54/1D, 50-382 Wrocław',
+        'copyright': '© 2024 Sushi Club. Все права защищены.',
         'name-placeholder': 'Ваше имя',
         'email-placeholder': 'Ваш email'
     },
@@ -64,8 +64,8 @@ const languageData = {
         'discount-button': 'Get 15% Discount',
         'contact-title': 'Contacts',
         'follow-title': 'Follow Us',
-        'address': 'Japanese St., 15, Kyiv',
-        'copyright': '© 2024 Sushi Menu. All rights reserved.',
+        'address': 'Szczytnicka 54/1D, 50-382 Wrocław',
+        'copyright': '© 2024 Sushi Club. All rights reserved.',
         'name-placeholder': 'Your name',
         'email-placeholder': 'Your email'
     },
@@ -87,8 +87,8 @@ const languageData = {
         'discount-button': 'Otrzymaj 15% zniżki',
         'contact-title': 'Kontakt',
         'follow-title': 'Śledź nas',
-        'address': 'ul. Japońska, 15, Kijów',
-        'copyright': '© 2024 Menu Sushi. Wszystkie prawa zastrzeżone.',
+        'address': 'Szczytnicka 54/1D, 50-382 Wrocław',
+        'copyright': '© 2024 Sushi Club. Wszystkie prawa zastrzeżone.',
         'name-placeholder': 'Twoje imię',
         'email-placeholder': 'Twój email'
     }
