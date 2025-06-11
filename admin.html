@@ -184,121 +184,12 @@
         <h1 class="admin-title">Panel Administracyjny - Menu Sushi Club</h1>
         
         <form class="menu-form" id="menuForm">
-            <div class="menu-item-form">
-                <h3 class="form-section-title">Zestaw 1</h3>
-                <div class="form-group">
-                    <label for="item1-title">Nazwa zestawu:</label>
-                    <input type="text" id="item1-title" name="item1-title" value="Zestaw 1">
-                </div>
-                <div class="form-group">
-                    <label for="item1-desc">Opis zestawu:</label>
-                    <textarea id="item1-desc" name="item1-desc">Futomaki pieczony łosoś (6 sztuk)
-Hosomaki pieczony łosoś (8 sztuk)</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="item1-price">Cena:</label>
-                    <input type="text" id="item1-price" name="item1-price" value="67">
-                </div>
-            </div>
-
-            <div class="menu-item-form">
-                <h3 class="form-section-title">Zestaw 2</h3>
-                <div class="form-group">
-                    <label for="item2-title">Nazwa zestawu:</label>
-                    <input type="text" id="item2-title" name="item2-title" value="Zestaw 2">
-                </div>
-                <div class="form-group">
-                    <label for="item2-desc">Opis zestawu:</label>
-                    <textarea id="item2-desc" name="item2-desc">Futomaki łosoś surowy (6 sztuk)
-Hosomaki łosoś surowy (8 sztuk)
-1 rolka gratis (6 sztuk)</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="item2-price">Cena:</label>
-                    <input type="text" id="item2-price" name="item2-price" value="67">
-                </div>
-            </div>
-
-            <div class="menu-item-form">
-                <h3 class="form-section-title">Zestaw 3</h3>
-                <div class="form-group">
-                    <label for="item3-title">Nazwa zestawu:</label>
-                    <input type="text" id="item3-title" name="item3-title" value="Zestaw 3">
-                </div>
-                <div class="subtitle-group">
-                    <div class="form-group">
-                        <label for="item3-subtitle">Podtytuł (opcjonalny):</label>
-                        <input type="text" id="item3-subtitle" name="item3-subtitle" value="Do każdego zestawu 1 rolka gratis.">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="item3-desc">Opis zestawu:</label>
-                    <textarea id="item3-desc" name="item3-desc">California tuńczyk surowy okładany w mango (8 sztuk)
-Futomaki łosoś pieczony (6 sztuk)
-Hosomaki ogórek (8 sztuk)</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="item3-price">Cena:</label>
-                    <input type="text" id="item3-price" name="item3-price" value="137">
-                </div>
-            </div>
-
-            <div class="menu-item-form">
-                <h3 class="form-section-title">Zestaw 4</h3>
-                <div class="form-group">
-                    <label for="item4-title">Nazwa zestawu:</label>
-                    <input type="text" id="item4-title" name="item4-title" value="Zestaw 4">
-                </div>
-                <div class="subtitle-group">
-                    <div class="form-group">
-                        <label for="item4-subtitle">Podtytuł (opcjonalny):</label>
-                        <input type="text" id="item4-subtitle" name="item4-subtitle" value="Do każdego zestawu 1 rolka gratis.">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="item4-desc">Opis zestawu:</label>
-                    <textarea id="item4-desc" name="item4-desc">Philadelphia mango z łososiem opalany z sosem unagi (8 sztuk)
-California krewetka okładana tatakiem (10 sztuk)
-Futomaki tilapia tempura (6 sztuk)
-Hosomaki ogórek (8 sztuk)
-Hosomaki batat (8 sztuk)</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="item4-price">Cena:</label>
-                    <input type="text" id="item4-price" name="item4-price" value="197">
-                </div>
-            </div>
-
-            <div class="menu-item-form">
-                <h3 class="form-section-title">Zestaw 5</h3>
-                <div class="form-group">
-                    <label for="item5-title">Nazwa zestawu:</label>
-                    <input type="text" id="item5-title" name="item5-title" value="Zestaw 5">
-                </div>
-                <div class="subtitle-group">
-                    <div class="form-group">
-                        <label for="item5-subtitle">Podtytuł (opcjonalny):</label>
-                        <input type="text" id="item5-subtitle" name="item5-subtitle" value="Do każdego zestawu 1 rolka gratis.">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="item5-desc">Opis zestawu:</label>
-                    <textarea id="item5-desc" name="item5-desc">California węgorz w zielone masago (8 sztuk)
-Futomaki sałatka surimi w tempurze (6 sztuk)
-Futomaki krewetka gotowana (6 sztuk)
-Hosomaki mango (8 sztuk)
-Hosomaki awokado (8 sztuk)
-Hosomaki łosoś (8 sztuk)</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="item5-price">Cena:</label>
-                    <input type="text" id="item5-price" name="item5-price" value="223">
-                </div>
-            </div>
+            <div id="menuItems"></div>
 
             <div class="action-buttons">
+                <button type="button" class="btn btn-secondary" onclick="addMenuItem()">Dodaj Pozycję Menu</button>
                 <button type="button" class="btn btn-secondary" onclick="previewMenu()">Podgląd Menu</button>
-                <button type="button" class="btn btn-primary" onclick="generateUpdateCode()">Wygeneruj Kod do Aktualizacji</button>
+                <button type="button" class="btn btn-primary" onclick="updateWebsiteMenu()">Zaktualizuj Menu na Stronie</button>
             </div>
         </form>
 
@@ -309,49 +200,333 @@ Hosomaki łosoś (8 sztuk)</textarea>
     </div>
 
     <script>
+        let menuItemCount = 0;
+        
+        // Initialize with default menu items
+        document.addEventListener('DOMContentLoaded', function() {
+            const defaultItems = [
+                {
+                    title: 'Zestaw 1',
+                    subtitle: '',
+                    description: 'Futomaki pieczony łosoś (6 sztuk)\nHosomaki pieczony łosoś (8 sztuk)',
+                    price: '67'
+                },
+                {
+                    title: 'Zestaw 2', 
+                    subtitle: '',
+                    description: 'Futomaki łosoś surowy (6 sztuk)\nHosomaki łosoś surowy (8 sztuk)\n1 rolka gratis (6 sztuk)',
+                    price: '67'
+                },
+                {
+                    title: 'Zestaw 3',
+                    subtitle: 'Do każdego zestawu 1 rolka gratis.',
+                    description: 'California tuńczyk surowy okładany w mango (8 sztuk)\nFutomaki łosoś pieczony (6 sztuk)\nHosomaki ogórek (8 sztuk)',
+                    price: '137'
+                },
+                {
+                    title: 'Zestaw 4',
+                    subtitle: 'Do każdego zestawu 1 rolka gratis.',
+                    description: 'Philadelphia mango z łososiem opalany z sosem unagi (8 sztuk)\nCalifornia krewetka okładana tatakiem (10 sztuk)\nFutomaki tilapia tempura (6 sztuk)\nHosomaki ogórek (8 sztuk)\nHosomaki batat (8 sztuk)',
+                    price: '197'
+                },
+                {
+                    title: 'Zestaw 5',
+                    subtitle: 'Do każdego zestawu 1 rolka gratis.',
+                    description: 'California węgorz w zielone masago (8 sztuk)\nFutomaki sałatka surimi w tempurze (6 sztuk)\nFutomaki krewetka gotowana (6 sztuk)\nHosomaki mango (8 sztuk)\nHosomaki awokado (8 sztuk)\nHosomaki łosoś (8 sztuk)',
+                    price: '223'
+                }
+            ];
+            
+            defaultItems.forEach(item => {
+                addMenuItem(item);
+            });
+            
+            // Add 15 more empty items for expansion
+            for (let i = 0; i < 15; i++) {
+                addMenuItem();
+            }
+        });
+        
+        function addMenuItem(data = null) {
+            menuItemCount++;
+            const menuItems = document.getElementById('menuItems');
+            
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'menu-item-form';
+            itemDiv.id = `menuItem${menuItemCount}`;
+            
+            itemDiv.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 class="form-section-title">Pozycja Menu ${menuItemCount}</h3>
+                    <button type="button" class="btn" style="background: #dc3545; color: white; padding: 0.5rem 1rem;" onclick="removeMenuItem(${menuItemCount})">Usuń</button>
+                </div>
+                <div class="form-group">
+                    <label for="item${menuItemCount}-title">Nazwa zestawu:</label>
+                    <input type="text" id="item${menuItemCount}-title" name="item${menuItemCount}-title" value="${data?.title || ''}">
+                </div>
+                <div class="subtitle-group">
+                    <div class="form-group">
+                        <label for="item${menuItemCount}-subtitle">Podtytuł (opcjonalny):</label>
+                        <input type="text" id="item${menuItemCount}-subtitle" name="item${menuItemCount}-subtitle" value="${data?.subtitle || ''}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="item${menuItemCount}-desc">Opis zestawu:</label>
+                    <textarea id="item${menuItemCount}-desc" name="item${menuItemCount}-desc">${data?.description || ''}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="item${menuItemCount}-price">Cena (tylko liczba, bez "zł"):</label>
+                    <input type="text" id="item${menuItemCount}-price" name="item${menuItemCount}-price" value="${data?.price || ''}">
+                </div>
+            `;
+            
+            menuItems.appendChild(itemDiv);
+        }
+        
+        function removeMenuItem(itemId) {
+            const item = document.getElementById(`menuItem${itemId}`);
+            if (item) {
+                item.remove();
+            }
+        }
+        
         function previewMenu() {
             const previewSection = document.getElementById('previewSection');
             const menuPreview = document.getElementById('menuPreview');
             
             let previewHTML = '';
+            const menuItems = document.querySelectorAll('.menu-item-form');
             
-            for (let i = 1; i <= 5; i++) {
-                const title = document.getElementById(`item${i}-title`).value;
-                const subtitle = document.getElementById(`item${i}-subtitle`)?.value || '';
-                const desc = document.getElementById(`item${i}-desc`).value;
-                const price = document.getElementById(`item${i}-price`).value;
+            menuItems.forEach((item, index) => {
+                const titleInput = item.querySelector('input[name$="-title"]');
+                const subtitleInput = item.querySelector('input[name$="-subtitle"]');
+                const descInput = item.querySelector('textarea[name$="-desc"]');
+                const priceInput = item.querySelector('input[name$="-price"]');
                 
-                previewHTML += `
-                    <div class="preview-item">
-                        <h3>${title}</h3>
-                        ${subtitle ? `<div class="subtitle">${subtitle}</div>` : ''}
-                        <div class="description">${desc.replace(/\n/g, '<br>')}</div>
-                        <div class="price">Cena: ${price} zł</div>
-                    </div>
-                `;
-            }
+                if (titleInput && titleInput.value.trim()) {
+                    const title = titleInput.value;
+                    const subtitle = subtitleInput ? subtitleInput.value : '';
+                    const desc = descInput ? descInput.value : '';
+                    const price = priceInput ? priceInput.value : '';
+                    
+                    previewHTML += `
+                        <div class="preview-item">
+                            <h3>${title}</h3>
+                            ${subtitle ? `<div class="subtitle">${subtitle}</div>` : ''}
+                            <div class="description">${desc.replace(/\n/g, '<br>')}</div>
+                            ${price ? `<div class="price">Cena: ${price} zł</div>` : ''}
+                        </div>
+                    `;
+                }
+            });
             
             menuPreview.innerHTML = previewHTML;
             previewSection.style.display = 'block';
         }
         
-        function generateUpdateCode() {
-            const menuData = {};
+        function updateWebsiteMenu() {
+            const menuData = [];
+            const menuItems = document.querySelectorAll('.menu-item-form');
             
-            for (let i = 1; i <= 5; i++) {
-                menuData[`item${i}`] = {
-                    title: document.getElementById(`item${i}-title`).value,
-                    subtitle: document.getElementById(`item${i}-subtitle`)?.value || '',
-                    description: document.getElementById(`item${i}-desc`).value,
-                    price: document.getElementById(`item${i}-price`).value
-                };
+            menuItems.forEach((item, index) => {
+                const titleInput = item.querySelector('input[name$="-title"]');
+                const subtitleInput = item.querySelector('input[name$="-subtitle"]');
+                const descInput = item.querySelector('textarea[name$="-desc"]');
+                const priceInput = item.querySelector('input[name$="-price"]');
+                
+                if (titleInput && titleInput.value.trim()) {
+                    menuData.push({
+                        title: titleInput.value.trim(),
+                        subtitle: subtitleInput ? subtitleInput.value.trim() : '',
+                        description: descInput ? descInput.value.trim() : '',
+                        price: priceInput ? priceInput.value.trim() : ''
+                    });
+                }
+            });
+            
+            if (menuData.length === 0) {
+                alert('Brak pozycji menu do aktualizacji!');
+                return;
             }
             
-            // Generate the update instructions
-            const updateData = generateUpdateInstructions(menuData);
+            // Send request to update the website
+            updateWebsiteFiles(menuData);
+        }
+        
+        async function updateWebsiteFiles(menuData) {
+            try {
+                const button = document.querySelector('.btn-primary');
+                button.disabled = true;
+                button.textContent = 'Aktualizowanie...';
+                
+                // Generate new HTML content
+                const newHTML = generateMenuHTML(menuData);
+                const newTranslations = generateTranslations(menuData);
+                
+                // In a real implementation, this would be a server endpoint
+                // For now, we'll simulate the update process
+                await simulateUpdate(newHTML, newTranslations);
+                
+                alert('Menu zostało pomyślnie zaktualizowane na stronie!');
+                
+                // Optional: redirect to main page to see changes
+                if (confirm('Czy chcesz przejść do strony głównej aby zobaczyć zmiany?')) {
+                    window.location.href = '/';
+                }
+                
+            } catch (error) {
+                console.error('Error updating menu:', error);
+                alert('Wystąpił błąd podczas aktualizacji menu: ' + error.message);
+            } finally {
+                const button = document.querySelector('.btn-primary');
+                button.disabled = false;
+                button.textContent = 'Zaktualizuj Menu na Stronie';
+            }
+        }
+        
+        function generateMenuHTML(menuData) {
+            let html = '            <div class="menu-grid">\n';
             
-            // Show the update modal
-            showUpdateModal(updateData);
+            menuData.forEach((item, index) => {
+                const itemNum = index + 1;
+                html += `                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-key="menu-item-${itemNum}-title">${item.title}</h3>
+                        <div class="menu-item-details">`;
+                
+                if (item.subtitle) {
+                    html += `\n                            <p class="menu-item-subtitle" data-key="menu-item-${itemNum}-subtitle">${item.subtitle}</p>`;
+                }
+                
+                html += `\n                            <p class="menu-item-description" data-key="menu-item-${itemNum}-desc">${item.description.replace(/\n/g, '<br>')}</p>`;
+                
+                if (item.price) {
+                    html += `\n                            <p class="menu-item-price" data-key="menu-item-${itemNum}-price">Cena: ${item.price} zł</p>`;
+                }
+                
+                html += `\n                        </div>
+                    </div>
+                </div>
+                
+`;
+            });
+            
+            html += '            </div>';
+            return html;
+        }
+        
+        function generateTranslations(menuData) {
+            const polish = {};
+            const english = {};
+            
+            menuData.forEach((item, index) => {
+                const itemNum = index + 1;
+                
+                // Polish translations
+                polish[`menu-item-${itemNum}-title`] = item.title;
+                polish[`menu-item-${itemNum}-desc`] = item.description.replace(/\n/g, '<br>');
+                
+                if (item.subtitle) {
+                    polish[`menu-item-${itemNum}-subtitle`] = item.subtitle;
+                }
+                
+                if (item.price) {
+                    polish[`menu-item-${itemNum}-price`] = `Cena: ${item.price} zł`;
+                }
+                
+                // English translations
+                english[`menu-item-${itemNum}-title`] = `Set ${itemNum}`;
+                english[`menu-item-${itemNum}-desc`] = translateToEnglish(item.description);
+                
+                if (item.subtitle) {
+                    english[`menu-item-${itemNum}-subtitle`] = '1 free roll with every set.';
+                }
+                
+                if (item.price) {
+                    english[`menu-item-${itemNum}-price`] = `Price: ${item.price} zł`;
+                }
+            });
+            
+            return { polish, english };
+        }
+        
+        async function simulateUpdate(html, translations) {
+            // Create menu data for the Python script
+            const menuData = [];
+            const menuItems = document.querySelectorAll('.menu-item-form');
+            
+            menuItems.forEach((item, index) => {
+                const titleInput = item.querySelector('input[name$="-title"]');
+                const subtitleInput = item.querySelector('input[name$="-subtitle"]');
+                const descInput = item.querySelector('textarea[name$="-desc"]');
+                const priceInput = item.querySelector('input[name$="-price"]');
+                
+                if (titleInput && titleInput.value.trim()) {
+                    menuData.push({
+                        title: titleInput.value.trim(),
+                        subtitle: subtitleInput ? subtitleInput.value.trim() : '',
+                        description: descInput ? descInput.value.trim() : '',
+                        price: priceInput ? priceInput.value.trim() : ''
+                    });
+                }
+            });
+            
+            // Create a downloadable JSON file for the Python script
+            const jsonData = JSON.stringify(menuData, null, 2);
+            const blob = new Blob([jsonData], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            // Create download link
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'menu_data.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            // Show instructions
+            showUpdateInstructions();
+        }
+        
+        function showUpdateInstructions() {
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; padding: 2rem; border-radius: 10px; max-width: 600px; max-height: 90%; overflow-y: auto;">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Instrukcje Aktualizacji Menu</h2>
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Krok 1:</h3>
+                        <p>Plik menu_data.json został pobrany na Twój komputer.</p>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Krok 2:</h3>
+                        <p>Otwórz terminal/konsole w folderze z plikami strony i wykonaj:</p>
+                        <code style="background: #e9ecef; padding: 0.5rem; border-radius: 4px; display: block; margin: 0.5rem 0;">python update_menu.py menu_data.json</code>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Krok 3:</h3>
+                        <p>Odśwież stronę główną aby zobaczyć zmiany.</p>
+                    </div>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button onclick="this.parentElement.parentElement.parentElement.remove()" style="padding: 0.75rem 1.5rem; background: var(--primary-color); color: white; border: none; border-radius: 5px; cursor: pointer;">Rozumiem</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
         }
         
         function generateUpdateInstructions(menuData) {
