@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Sushi Club Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .admin-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .admin-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .menu-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .menu-item-form {
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            background: #f8f9fa;
+        }
+        
+        .form-section-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .subtitle-group {
+            background: #f0f0f0;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle-group label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--hover-color);
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+        
+        .preview-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .preview-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .menu-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        
+        .preview-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .preview-item h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .preview-item .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .preview-item .description {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .preview-item .price {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h1 class="admin-title">Panel Administracyjny - Menu Sushi Club</h1>
+        
+        <form class="menu-form" id="menuForm">
+            <div class="menu-item-form">
+                <h3 class="form-section-title">Zestaw 1</h3>
+                <div class="form-group">
+                    <label for="item1-title">Nazwa zestawu:</label>
+                    <input type="text" id="item1-title" name="item1-title" value="Zestaw 1">
+                </div>
+                <div class="form-group">
+                    <label for="item1-desc">Opis zestawu:</label>
+                    <textarea id="item1-desc" name="item1-desc">Futomaki pieczony łosoś (6 sztuk)
+Hosomaki pieczony łosoś (8 sztuk)</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="item1-price">Cena:</label>
+                    <input type="text" id="item1-price" name="item1-price" value="67">
+                </div>
+            </div>
+
+            <div class="menu-item-form">
+                <h3 class="form-section-title">Zestaw 2</h3>
+                <div class="form-group">
+                    <label for="item2-title">Nazwa zestawu:</label>
+                    <input type="text" id="item2-title" name="item2-title" value="Zestaw 2">
+                </div>
+                <div class="form-group">
+                    <label for="item2-desc">Opis zestawu:</label>
+                    <textarea id="item2-desc" name="item2-desc">Futomaki łosoś surowy (6 sztuk)
+Hosomaki łosoś surowy (8 sztuk)
+1 rolka gratis (6 sztuk)</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="item2-price">Cena:</label>
+                    <input type="text" id="item2-price" name="item2-price" value="67">
+                </div>
+            </div>
+
+            <div class="menu-item-form">
+                <h3 class="form-section-title">Zestaw 3</h3>
+                <div class="form-group">
+                    <label for="item3-title">Nazwa zestawu:</label>
+                    <input type="text" id="item3-title" name="item3-title" value="Zestaw 3">
+                </div>
+                <div class="subtitle-group">
+                    <div class="form-group">
+                        <label for="item3-subtitle">Podtytuł (opcjonalny):</label>
+                        <input type="text" id="item3-subtitle" name="item3-subtitle" value="Do każdego zestawu 1 rolka gratis.">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="item3-desc">Opis zestawu:</label>
+                    <textarea id="item3-desc" name="item3-desc">California tuńczyk surowy okładany w mango (8 sztuk)
+Futomaki łosoś pieczony (6 sztuk)
+Hosomaki ogórek (8 sztuk)</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="item3-price">Cena:</label>
+                    <input type="text" id="item3-price" name="item3-price" value="137">
+                </div>
+            </div>
+
+            <div class="menu-item-form">
+                <h3 class="form-section-title">Zestaw 4</h3>
+                <div class="form-group">
+                    <label for="item4-title">Nazwa zestawu:</label>
+                    <input type="text" id="item4-title" name="item4-title" value="Zestaw 4">
+                </div>
+                <div class="subtitle-group">
+                    <div class="form-group">
+                        <label for="item4-subtitle">Podtytuł (opcjonalny):</label>
+                        <input type="text" id="item4-subtitle" name="item4-subtitle" value="Do każdego zestawu 1 rolka gratis.">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="item4-desc">Opis zestawu:</label>
+                    <textarea id="item4-desc" name="item4-desc">Philadelphia mango z łososiem opalany z sosem unagi (8 sztuk)
+California krewetka okładana tatakiem (10 sztuk)
+Futomaki tilapia tempura (6 sztuk)
+Hosomaki ogórek (8 sztuk)
+Hosomaki batat (8 sztuk)</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="item4-price">Cena:</label>
+                    <input type="text" id="item4-price" name="item4-price" value="197">
+                </div>
+            </div>
+
+            <div class="menu-item-form">
+                <h3 class="form-section-title">Zestaw 5</h3>
+                <div class="form-group">
+                    <label for="item5-title">Nazwa zestawu:</label>
+                    <input type="text" id="item5-title" name="item5-title" value="Zestaw 5">
+                </div>
+                <div class="subtitle-group">
+                    <div class="form-group">
+                        <label for="item5-subtitle">Podtytuł (opcjonalny):</label>
+                        <input type="text" id="item5-subtitle" name="item5-subtitle" value="Do każdego zestawu 1 rolka gratis.">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="item5-desc">Opis zestawu:</label>
+                    <textarea id="item5-desc" name="item5-desc">California węgorz w zielone masago (8 sztuk)
+Futomaki sałatka surimi w tempurze (6 sztuk)
+Futomaki krewetka gotowana (6 sztuk)
+Hosomaki mango (8 sztuk)
+Hosomaki awokado (8 sztuk)
+Hosomaki łosoś (8 sztuk)</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="item5-price">Cena:</label>
+                    <input type="text" id="item5-price" name="item5-price" value="223">
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button type="button" class="btn btn-secondary" onclick="previewMenu()">Podgląd Menu</button>
+                <button type="button" class="btn btn-primary" onclick="generateUpdateCode()">Wygeneruj Kod do Aktualizacji</button>
+            </div>
+        </form>
+
+        <div class="preview-section" id="previewSection" style="display: none;">
+            <h2 class="preview-title">Podgląd Menu</h2>
+            <div class="menu-preview" id="menuPreview"></div>
+        </div>
+    </div>
+
+    <script>
+        function previewMenu() {
+            const previewSection = document.getElementById('previewSection');
+            const menuPreview = document.getElementById('menuPreview');
+            
+            let previewHTML = '';
+            
+            for (let i = 1; i <= 5; i++) {
+                const title = document.getElementById(`item${i}-title`).value;
+                const subtitle = document.getElementById(`item${i}-subtitle`)?.value || '';
+                const desc = document.getElementById(`item${i}-desc`).value;
+                const price = document.getElementById(`item${i}-price`).value;
+                
+                previewHTML += `
+                    <div class="preview-item">
+                        <h3>${title}</h3>
+                        ${subtitle ? `<div class="subtitle">${subtitle}</div>` : ''}
+                        <div class="description">${desc.replace(/\n/g, '<br>')}</div>
+                        <div class="price">Cena: ${price} zł</div>
+                    </div>
+                `;
+            }
+            
+            menuPreview.innerHTML = previewHTML;
+            previewSection.style.display = 'block';
+        }
+        
+        function generateUpdateCode() {
+            const menuData = {};
+            
+            for (let i = 1; i <= 5; i++) {
+                menuData[`item${i}`] = {
+                    title: document.getElementById(`item${i}-title`).value,
+                    subtitle: document.getElementById(`item${i}-subtitle`)?.value || '',
+                    description: document.getElementById(`item${i}-desc`).value,
+                    price: document.getElementById(`item${i}-price`).value
+                };
+            }
+            
+            // Generate the update instructions
+            const updateData = generateUpdateInstructions(menuData);
+            
+            // Show the update modal
+            showUpdateModal(updateData);
+        }
+        
+        function generateUpdateInstructions(menuData) {
+            // Generate HTML for index.html
+            let htmlContent = '';
+            for (let i = 1; i <= 5; i++) {
+                const item = menuData[`item${i}`];
+                htmlContent += `                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title" data-key="menu-item-${i}-title">${item.title}</h3>
+                        <div class="menu-item-details">`;
+                
+                if (item.subtitle) {
+                    htmlContent += `\n                            <p class="menu-item-subtitle" data-key="menu-item-${i}-subtitle">${item.subtitle}</p>`;
+                }
+                
+                htmlContent += `\n                            <p class="menu-item-description" data-key="menu-item-${i}-desc">${item.description.replace(/\n/g, '<br>')}</p>
+                            <p class="menu-item-price" data-key="menu-item-${i}-price">Cena: ${item.price} zł</p>
+                        </div>
+                    </div>
+                </div>
+                
+`;
+            }
+            
+            // Generate Polish translations for script.js
+            let polishTranslations = '';
+            for (let i = 1; i <= 5; i++) {
+                const item = menuData[`item${i}`];
+                polishTranslations += `        'menu-item-${i}-title': '${item.title}',\n`;
+                polishTranslations += `        'menu-item-${i}-desc': '${item.description.replace(/\n/g, '<br>')}',\n`;
+                polishTranslations += `        'menu-item-${i}-price': 'Cena: ${item.price} zł',\n`;
+                if (item.subtitle) {
+                    polishTranslations += `        'menu-item-${i}-subtitle': '${item.subtitle}',\n`;
+                }
+            }
+            
+            // Generate English translations
+            let englishTranslations = '';
+            for (let i = 1; i <= 5; i++) {
+                const item = menuData[`item${i}`];
+                englishTranslations += `        'menu-item-${i}-title': 'Set ${i}',\n`;
+                englishTranslations += `        'menu-item-${i}-desc': '${translateToEnglish(item.description)}',\n`;
+                englishTranslations += `        'menu-item-${i}-price': 'Price: ${item.price} zł',\n`;
+                if (item.subtitle) {
+                    englishTranslations += `        'menu-item-${i}-subtitle': '1 free roll with every set.',\n`;
+                }
+            }
+            
+            return {
+                html: htmlContent,
+                polish: polishTranslations,
+                english: englishTranslations
+            };
+        }
+        
+        function translateToEnglish(polishDescription) {
+            const translations = {
+                'Futomaki pieczony łosoś': 'Futomaki grilled salmon',
+                'Hosomaki pieczony łosoś': 'Hosomaki grilled salmon',
+                'Futomaki łosoś surowy': 'Futomaki raw salmon',
+                'Hosomaki łosoś surowy': 'Hosomaki raw salmon',
+                'California tuńczyk surowy okładany w mango': 'California raw tuna wrapped in mango',
+                'Futomaki łosoś pieczony': 'Futomaki grilled salmon',
+                'Hosomaki ogórek': 'Hosomaki cucumber',
+                'Philadelphia mango z łososiem opalany z sosem unagi': 'Philadelphia mango with salmon flambéed with unagi sauce',
+                'California krewetka okładana tatakiem': 'California shrimp wrapped with tataki',
+                'Futomaki tilapia tempura': 'Futomaki tilapia tempura',
+                'Hosomaki batat': 'Hosomaki sweet potato',
+                'California węgorz w zielone masago': 'California eel in green masago',
+                'Futomaki sałatka surimi w tempurze': 'Futomaki surimi salad in tempura',
+                'Futomaki krewetka gotowana': 'Futomaki cooked shrimp',
+                'Hosomaki mango': 'Hosomaki mango',
+                'Hosomaki awokado': 'Hosomaki avocado',
+                'Hosomaki łosoś': 'Hosomaki salmon',
+                'rolka gratis': 'free roll',
+                '(6 sztuk)': '(6 pieces)',
+                '(8 sztuk)': '(8 pieces)',
+                '(10 sztuk)': '(10 pieces)'
+            };
+            
+            let englishText = polishDescription;
+            for (const [polish, english] of Object.entries(translations)) {
+                englishText = englishText.replace(new RegExp(polish, 'gi'), english);
+            }
+            
+            return englishText.replace(/\n/g, '<br>');
+        }
+        
+        function showUpdateModal(updateData) {
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; padding: 2rem; border-radius: 10px; max-width: 90%; max-height: 90%; overflow-y: auto;">
+                    <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Instrukcje Aktualizacji Menu</h2>
+                    <p style="margin-bottom: 1.5rem; color: #666;">Skopiuj poniższe kody i zastąp odpowiednie sekcje w plikach:</p>
+                    
+                    <h3 style="color: var(--primary-color); margin: 1.5rem 0 0.5rem 0;">1. Zaktualizuj index.html (sekcja menu-grid):</h3>
+                    <textarea readonly style="width: 100%; height: 200px; font-family: monospace; font-size: 12px; padding: 0.5rem; border: 1px solid #ccc;">${updateData.html}</textarea>
+                    
+                    <h3 style="color: var(--primary-color); margin: 1.5rem 0 0.5rem 0;">2. Zaktualizuj script.js (sekcja polska pl:):</h3>
+                    <textarea readonly style="width: 100%; height: 150px; font-family: monospace; font-size: 12px; padding: 0.5rem; border: 1px solid #ccc;">${updateData.polish}</textarea>
+                    
+                    <h3 style="color: var(--primary-color); margin: 1.5rem 0 0.5rem 0;">3. Zaktualizuj script.js (sekcja angielska en:):</h3>
+                    <textarea readonly style="width: 100%; height: 150px; font-family: monospace; font-size: 12px; padding: 0.5rem; border: 1px solid #ccc;">${updateData.english}</textarea>
+                    
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button onclick="this.parentElement.parentElement.parentElement.remove()" style="padding: 0.75rem 1.5rem; background: var(--primary-color); color: white; border: none; border-radius: 5px; cursor: pointer;">Zamknij</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+        }
+    </script>
+</body>
+</html>
