@@ -197,31 +197,59 @@ def translate_to_english(polish_text):
 def main():
     """Main function to update menu from JSON data"""
     if len(sys.argv) != 2:
-        print("Usage: python update_menu.py <menu_data.json>")
+        print("Використання: python update_menu.py <menu_data.json>")
         sys.exit(1)
     
     json_file = sys.argv[1]
     
     try:
         with open(json_file, 'r', encoding='utf-8') as file:
-            menu_data = json.load(file)
+            data = json.load(file)
         
-        print(f"Updating menu with {len(menu_data)} items...")
+        # Extract menu data from the form data structure
+        menu_data = data.get('menuData', data) if isinstance(data, dict) else data
+        
+        print(f"Оновлюю меню з {len(menu_data)} позиціями...")
+        print("=" * 50)
+        
+        # Display menu items being processed
+        for i, item in enumerate(menu_data, 1):
+            print(f"{i}. {item.get('title', 'Без назви')}")
+            if item.get('price'):
+                print(f"   Ціна: {item['price']} грн")
+        
+        print("=" * 50)
         
         # Update both files
         html_success = update_index_html(menu_data)
         js_success = update_script_js(menu_data)
         
         if html_success and js_success:
-            print("\n✅ Menu updated successfully!")
+            print("\n✅ Меню успішно оновлено!")
+            print("✓ index.html - оновлено")
+            print("✓ script.js - оновлено з перекладами")
+            print("\n🌐 Оновіть сторінку браузера щоб побачити зміни")
+            
             # Clean up the JSON file
-            os.remove(json_file)
+            try:
+                os.remove(json_file)
+                print(f"✓ Тимчасовий файл {json_file} видалено")
+            except:
+                pass
         else:
-            print("\n❌ Some updates failed")
+            print("\n❌ Деякі оновлення не вдалися")
             sys.exit(1)
             
+    except FileNotFoundError:
+        print(f"❌ Файл {json_file} не знайдено!")
+        print("Переконайтеся, що файл знаходиться в тій же папці")
+        sys.exit(1)
+    except json.JSONDecodeError:
+        print(f"❌ Помилка читання JSON файлу {json_file}")
+        print("Файл може бути пошкоджений")
+        sys.exit(1)
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"❌ Помилка: {e}")
         sys.exit(1)
 
 if __name__ == '__main__':
