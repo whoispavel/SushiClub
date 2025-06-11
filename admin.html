@@ -529,6 +529,39 @@
             document.body.appendChild(modal);
         }
         
+        function translateToEnglish(polishDescription) {
+            const translations = {
+                'Futomaki pieczony łosoś': 'Futomaki grilled salmon',
+                'Hosomaki pieczony łosoś': 'Hosomaki grilled salmon', 
+                'Futomaki łosoś surowy': 'Futomaki raw salmon',
+                'Hosomaki łosoś surowy': 'Hosomaki raw salmon',
+                'California tuńczyk surowy okładany w mango': 'California raw tuna wrapped in mango',
+                'Futomaki łosoś pieczony': 'Futomaki grilled salmon',
+                'Hosomaki ogórek': 'Hosomaki cucumber',
+                'Philadelphia mango z łososiem opalany z sosem unagi': 'Philadelphia mango with salmon flambéed with unagi sauce',
+                'California krewetka okładana tatakiem': 'California shrimp wrapped with tataki',
+                'Futomaki tilapia tempura': 'Futomaki tilapia tempura',
+                'Hosomaki batat': 'Hosomaki sweet potato',
+                'California węgorz w zielone masago': 'California eel in green masago',
+                'Futomaki sałatka surimi w tempurze': 'Futomaki surimi salad in tempura',
+                'Futomaki krewetka gotowana': 'Futomaki cooked shrimp',
+                'Hosomaki mango': 'Hosomaki mango',
+                'Hosomaki awokado': 'Hosomaki avocado',
+                'Hosomaki łosoś': 'Hosomaki salmon',
+                'rolka gratis': 'free roll',
+                '(6 sztuk)': '(6 pieces)',
+                '(8 sztuk)': '(8 pieces)',
+                '(10 sztuk)': '(10 pieces)'
+            };
+            
+            let englishText = polishDescription;
+            for (const [polish, english] of Object.entries(translations)) {
+                englishText = englishText.replace(new RegExp(polish, 'g'), english);
+            }
+            
+            return englishText.replace(/\n/g, '<br>');
+        }
+        
         function generateUpdateInstructions(menuData) {
             // Generate HTML for index.html
             let htmlContent = '';
