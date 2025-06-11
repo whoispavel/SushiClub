@@ -222,6 +222,13 @@ body {
     gap: 1.5rem;
 }
 
+.menu-item-subtitle {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
 .menu-item-description {
     color: var(--text-color);
     line-height: 1.8;
