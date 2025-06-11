@@ -191,13 +191,14 @@ body {
 .menu-item {
     background-color: var(--background-color);
     border-radius: 15px;
-    padding: 2rem 1.5rem;
+    padding: 0;
     text-align: left;
     box-shadow: var(--shadow-light);
     transition: var(--transition);
     border: 1px solid var(--border-color);
     height: auto;
-    min-height: 200px;
+    min-height: 300px;
+    overflow: hidden;
 }
 
 .menu-item:hover {
@@ -205,8 +206,19 @@ body {
     box-shadow: var(--shadow-medium);
 }
 
+.menu-item-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f8f9fa;
+    border-radius: 15px 15px 0 0;
+}
+
 .menu-item-content {
     width: 100%;
+    padding: 1.5rem;
 }
 
 .menu-item-title {

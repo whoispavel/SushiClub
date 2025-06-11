@@ -22,6 +22,7 @@ def update_index_html(menu_data):
                 continue
                 
             html_content += f'                <div class="menu-item">\n'
+            html_content += f'                    <div class="menu-item-image" style="background-image: url(\'images/menu-{i}.jpg\')"></div>\n'
             html_content += f'                    <div class="menu-item-content">\n'
             html_content += f'                        <h3 class="menu-item-title" data-key="menu-item-{i}-title">{item["title"]}</h3>\n'
             html_content += f'                        <div class="menu-item-details">\n'
