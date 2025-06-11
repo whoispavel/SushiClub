@@ -214,6 +214,22 @@ body {
     background-repeat: no-repeat;
     background-color: #f8f9fa;
     border-radius: 15px 15px 0 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-item-image::before {
+    content: "📷";
+    font-size: 3rem;
+    color: #ccc;
+    position: absolute;
+    z-index: 1;
+}
+
+.menu-item-image[style*="background-image"]::before {
+    display: none;
 }
 
 .menu-item-content {
