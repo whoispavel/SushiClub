@@ -1,93 +1,93 @@
 // Language data object
 const languageData = {
     en: {
-        'hero-title': 'SUSHI MENU',,,,
-        'hero-subtitle': 'Authentic Japanese flavors delivered to your table',,,,
-        'cta-button': 'Call Us',,,,
-        'menu-title': 'Our Menu',,,,
-        'discount-title': 'Get 15% Discount',,,,
-        'discount-subtitle': 'Leave your contacts and get a personal discount on your first order',,,,
-        'discount-button': 'Get 15% Discount',,,,
-        'contact-title': 'Contacts',,,,
-        'follow-title': 'Follow Us',,,,
-        'address': 'Szczytnicka 54/1D, 50-382 Wrocław',,,,
-        'copyright': '© 2024 Sushi Club. All rights reserved.',,,,
-        'name-placeholder': 'Your name',,,,
-        'email-placeholder': 'Your email',,,,
+        'hero-title': 'SUSHI MENU',
+        'hero-subtitle': 'Authentic Japanese flavors delivered to your table',
+        'cta-button': 'Call Us',
+        'menu-title': 'Our Menu',
+        'discount-title': 'Get 15% Discount',
+        'discount-subtitle': 'Leave your contacts and get a personal discount on your first order',
+        'discount-button': 'Get 15% Discount',
+        'contact-title': 'Contacts',
+        'follow-title': 'Follow Us',
+        'address': 'Szczytnicka 54/1D, 50-382 Wrocław',
+        'copyright': '© 2024 Sushi Club. All rights reserved.',
+        'name-placeholder': 'Your name',
+        'email-placeholder': 'Your email',
         'menu-item-1-title': 'Set 1',
-        'menu-item-1-desc': 'Futomak  pieczony łosoś (6 pieces) <br>Hosomaki grilled salmon (8 pieces)',
+        'menu-item-1-desc': 'Futomak grilled salmon (6 pieces)<br>Hosomaki grilled salmon (8 pieces)',
         'menu-item-1-subtitle': '1 free roll with every set.',
         'menu-item-1-price': 'Price: 67 zł',
         'menu-item-2-title': 'Set 2',
-        'menu-item-2-desc': 'Futomak łosoś surowy (6 pieces) <br>Hosomaki raw salmon (8 pieces) <br>1 free roll (6 pieces)',
+        'menu-item-2-desc': 'Futomak raw salmon (6 pieces)<br>Hosomaki raw salmon (8 pieces)<br>1 free roll (6 pieces)',
         'menu-item-2-subtitle': '1 free roll with every set.',
         'menu-item-2-price': 'Price: 67 zł',
         'menu-item-3-title': 'Set 3',
-        'menu-item-3-desc': 'California raw tuna wrapped in mango (8 pieces) <br>Futomak łosoś pieczony (6 pieces) <br>Hosomaki cucumber (8 pieces)',
+        'menu-item-3-desc': 'California raw tuna wrapped in mango (8 pieces)<br>Futomak grilled salmon (6 pieces)<br>Hosomaki cucumber (8 pieces)',
         'menu-item-3-subtitle': '1 free roll with every set.',
         'menu-item-3-price': 'Price: 137 zł',
         'menu-item-4-title': 'Set 4',
-        'menu-item-4-desc': 'Philadelphia mango z łososiem opalony z sosem unagi (8 pieces)<br>California krewetka okładaną tatarem (10 pieces)<br>Futomak tilapia tempura (6 pieces)<br>Hosomaki cucumber (8 pieces)<br>Hosomaki sweet potato (8 pieces)',
+        'menu-item-4-desc': 'Philadelphia mango with salmon grilled with unagi sauce (8 pieces)<br>California shrimp wrapped in tartar (10 pieces)<br>Futomak tilapia tempura (6 pieces)<br>Hosomaki cucumber (8 pieces)<br>Hosomaki sweet potato (8 pieces)',
         'menu-item-4-subtitle': '1 free roll with every set.',
         'menu-item-4-price': 'Price: 197 zł',
         'menu-item-5-title': 'Set 5',
-        'menu-item-5-desc': 'California eel in green masago (8 pieces)<br>Futomaki surimi salad in tempura (6 pieces)<br> Futomaki cooked shrimp (6 pieces) <br>Hosomaki mango (8 pieces)<br>Hosomaki avocado (8 pieces)  <br>Hosomaki salmon (8 pieces)',
+        'menu-item-5-desc': 'California eel in green masago (8 pieces)<br>Futomaki surimi salad in tempura (6 pieces)<br>Futomaki cooked shrimp (6 pieces)<br>Hosomaki mango (8 pieces)<br>Hosomaki avocado (8 pieces)<br>Hosomaki salmon (8 pieces)',
         'menu-item-5-subtitle': '1 free roll with every set.',
         'menu-item-5-price': 'Price: 223 zł',
         'menu-item-6-title': 'Set 6',
-        'menu-item-6-desc': 'Vulkan łosoś pieczony (2 sztuki)<br>nori, ryż, serek Philadelphia, awokado, czapeczki serowe, z sosem słodkim <br><br>Vulkan tatar z łososia (2 sztuki)<br>nori, ryż, łosoś, por, olej sezamowy <br><br>Vulkan krabowy (2 sztuki)<br>nori, ryż, serek philadelphia, krewetka gotowana, masago<br><br>Nigiri łosoś (2 sztuki) <br>Nigiri tuńczyk (2 sztuki)<br>Nigiri węgorz (2 sztuki)',
+        'menu-item-6-desc': 'Vulkan grilled salmon (2 pieces)<br>nori, rice, Philadelphia cheese, avocado, cheese caps, with sweet sauce<br><br>Vulkan salmon tartar (2 pieces)<br>nori, rice, salmon, leek, sesame oil<br><br>Vulkan crab (2 pieces)<br>nori, rice, philadelphia cheese, cooked shrimp, masago<br><br>Nigiri salmon (2 pieces)<br>Nigiri tuna (2 pieces)<br>Nigiri eel (2 pieces)',
         'menu-item-6-subtitle': '1 free roll with every set.',
         'menu-item-6-price': 'Price: 127 zł',
-        'menu-item-7-title': 'Set 7',
-        'menu-item-7-desc': 'Futomaki tatar z łososia (12 sztuk)<br>﻿﻿﻿Futomaki łosoś (12 sztuk)<br>Futomaki surimi salad in tempura (12 sztuk)<br>﻿﻿﻿Futomaki krewetka (12 sztuk)<br>﻿﻿﻿Futomaki tunczyk (12 sztuk)<br>﻿﻿﻿Futomaki wegetarianski (tofu, kampio, ogórek) (12 sztuk)',
+        'menu-item-7-title': 'Futo set',
+        'menu-item-7-desc': 'Futomaki salmon tartar (12 pieces)<br>Futomaki salmon (12 pieces)<br>Futomaki surimi salad in tempura (12 pieces)<br>Futomaki shrimp (12 pieces)<br>Futomaki tuna (12 pieces)<br>Futomaki vegetarian (tofu, kampyo, cucumber) (12 pieces)',
         'menu-item-7-price': 'Price: 395 zł',
-        'menu-item-8-title': 'Set 8',
-        'menu-item-8-desc': 'Philadelphia okładana tatarem opalonym<br>California pieczony łosoś okładany mango<br>Philadelphia łosoś<br>California tuńczyk w masago zielony<br>California batat okładana gruszka<br>California cukinia okładana boczkiem opalonym<br>Philadelphia węgorzem<br>California tunczyk w masago zielony<br>California batat oktadana gruszka<br>California cukinia oktadana boczkiem opalonym',
-        'menu-item-8-subtitle': '1 free roll with every set.',
+        'menu-item-8-title': 'California set',
+        'menu-item-8-desc': 'Philadelphia wrapped in grilled tartar<br>California grilled salmon wrapped in mango<br>Philadelphia salmon<br>California tuna in green masago<br>California sweet potato wrapped in pear<br>California zucchini wrapped in grilled bacon<br>Philadelphia eel<br>California tuna in green masago<br>California sweet potato wrapped in pear<br>California zucchini wrapped in grilled bacon',
+        'menu-item-8-subtitle': 'Each California – 10 pieces.',
         'menu-item-8-price': 'Price: 377 zł',
-        'menu-item-9-title': 'Set 9',
-        'menu-item-9-desc': 'Philadelphia tuńczyk<br>serek Philadelphia, masago, mango, łosoś - 57 zł<br><br>Philadelphia krewetka<br>serek Philadelphia, masago, mango, łosoś - 57 zł<br><br>Philadelphia węgorz<br>serek Philadelphia, masago, mango, łosoś - 59 zł<br><br>Philadelphia łosoś<br>serek Philadelphia, masago, mango, łosoś - 57 zł',
-        'menu-item-9-subtitle': '1 free roll with every set.',
-        'menu-item-10-title': 'Set 10',
-        'menu-item-10-desc': 'Futomaki tofu (6 pieces)<br>Kalifornia cukinia w ogórkach (10 pieces)<br>Philadelphia z ogórkiem okładana goma (10 pieces) <br>Hosomaki kampyo (8 pieces)<br>Hosomaki mango (8 pieces)<br>Nigiri z awokado (2 sztuki)',
+        'menu-item-9-title': 'PHILADELPHIA',
+        'menu-item-9-desc': 'Philadelphia tuna<br>Philadelphia cheese, masago, mango, salmon - 57 zł<br><br>Philadelphia shrimp<br>Philadelphia cheese, masago, mango, salmon - 57 zł<br><br>Philadelphia eel<br>Philadelphia cheese, masago, mango, salmon - 59 zł<br><br>Philadelphia salmon<br>Philadelphia cheese, masago, mango, salmon - 57 zł',
+        'menu-item-9-subtitle': 'Various types of Philadelphia',
+        'menu-item-10-title': 'Vegetarian set',
+        'menu-item-10-desc': 'Futomaki tofu (6 pieces)<br>California zucchini in cucumbers (10 pieces)<br>Philadelphia with cucumber wrapped in goma (10 pieces)<br>Hosomaki kampyo (8 pieces)<br>Hosomaki mango (8 pieces)<br>Nigiri with avocado (2 pieces)',
         'menu-item-10-price': 'Price: 167 zł',
-        'menu-item-11-title': 'Set 11',
-        'menu-item-11-desc': 'Hosomaki cucumber<br> Hosomaki kanpyo<br> Hosomaki mango<br> Hosomaki avocado<br> Hosomaki sweet potato<br> Hosomaki salmon<br> Hosomaki tuńczyk<br> Hosomaki salmon pieczony<br> Hosomaki krewetka<br> Hosomaki węgorzem',
+        'menu-item-11-title': 'Hosomaki set',
+        'menu-item-11-desc': 'Hosomaki cucumber<br>Hosomaki kampyo<br>Hosomaki mango<br>Hosomaki avocado<br>Hosomaki sweet potato<br>Hosomaki salmon<br>Hosomaki tuna<br>Hosomaki grilled salmon<br>Hosomaki shrimp<br>Hosomaki eel',
         'menu-item-11-price': 'Price: 167 zł',
-        'menu-item-12-title': 'Set 12',
-        'menu-item-12-desc': 'California Rainbow (łosoś tuńczyk, krewetka) (10 pieces) - 57 zł<br><br>California kurczak panko okładana boczkiem - 57 zł<br><br>Philadelphia tatar z losośia - 57 zł<br><br>California pieczony łosoś okładaną mango - 57 zł<br><br>Philadelphia  krewetka - 57 zł<br><br>Philadelphia losoś - 57 zł',
-        'menu-item-12-subtitle': '1 free roll with every set.',
-        'menu-item-13-title': 'Set 13',
-        'menu-item-13-desc': '(nori, ryż, łosoś, serek philadelphia, masago, sos sriracha, panko,<br>maka tempura, awokado, ogórek).',
+        'menu-item-12-title': 'SINGLE ROLLS',
+        'menu-item-12-desc': 'California Rainbow (salmon tuna, shrimp) (10 pieces) - 57 zł<br><br>California chicken panko wrapped in bacon - 57 zł<br><br>Philadelphia salmon tartar - 57 zł<br><br>California grilled salmon wrapped in mango - 57 zł<br><br>Philadelphia shrimp - 57 zł<br><br>Philadelphia salmon - 57 zł',
+        'menu-item-12-subtitle': 'Various rolls 10 pieces each',
+        'menu-item-13-title': 'Sushi burger salmon',
+        'menu-item-13-desc': '(nori, rice, salmon, philadelphia cheese, masago, sriracha sauce, panko, tempura flour, avocado, cucumber).',
         'menu-item-13-price': 'Price: 69 zł',
-        'menu-item-14-title': 'Set 14',
-        'menu-item-14-desc': '(nori, ryż, krewetka + mango, sos słodkie chilli, ser cheddar,<br>ogórek, panko, maka tempura).',
+        'menu-item-14-title': 'Sushi burger shrimp',
+        'menu-item-14-desc': '(nori, rice, shrimp + mango, sweet chili sauce, cheddar cheese, cucumber, panko, tempura flour).',
         'menu-item-14-price': 'Price: 69 zł',
-        'menu-item-15-title': 'Set 15',
-        'menu-item-15-desc': '(nori, ryż, batat, kampyo, ogórek, serek philadelphia,<br>mango, panko, maka tempura).',
+        'menu-item-15-title': 'Vegetarian sushi burger',
+        'menu-item-15-desc': '(nori, rice, sweet potato, kampyo, cucumber, philadelphia cheese, mango, panko, tempura flour).',
         'menu-item-15-price': 'Price: 59 zł',
-        'menu-item-16-title': 'Set 16',
-        'menu-item-16-desc': 'Tatar z łososia 150 gram (łosoś, por, olej sezamowy) - 35 zł <br><br>Sałatka goma (150 gram) - 17 zł <br><br>Pierożki gyoza z mięsem + sos sweet chilli (6 sztuk + 1 sztuka) - 25 zł <br><br>Pierożki gyoza wegetariańskie + sos sweet chilli (6 sztuk + 1 sztuka) - 23 zł<br><br>Kimchi (kapusta pekińska, por, marchew, biała rzodkiew, imbir, czosnek, chilli (150 gram) - 17 zł <br><br>Kalmary (6 sztuk + sos sweet chilli) - 29 zł <br><br>Krewetka (6 sztuk + sos ma słodki) - 29 zł',
-        'menu-item-16-subtitle': '1 free roll with every set.',
-        'menu-item-17-title': 'Set 17',
-        'menu-item-17-desc': 'Herbata 12 zł<br>Kawa 17 zł',
-        'menu-item-18-title': 'Set 18',
-        'menu-item-18-desc': 'pałeczki. 2 zł<br>pomocnik do pałeczek. 2 zł<br>imbir. 2 zł<br>wasabi 2 zł'
+        'menu-item-16-title': 'APPETIZERS',
+        'menu-item-16-desc': 'Salmon tartar 150 gram (salmon, leek, sesame oil) - 35 zł<br><br>Goma salad (150 gram) - 17 zł<br><br>Gyoza dumplings with meat + sweet chili sauce (6 pieces + 1 piece) - 25 zł<br><br>Vegetarian gyoza dumplings + sweet chili sauce (6 pieces + 1 piece) - 23 zł<br><br>Kimchi (Chinese cabbage, leek, carrot, white radish, ginger, garlic, chili (150 gram) - 17 zł<br><br>Squid (6 pieces + sweet chili sauce) - 29 zł<br><br>Shrimp (6 pieces + sweet sauce) - 29 zł',
+        'menu-item-16-subtitle': 'Various appetizers',
+        'menu-item-17-title': 'BEVERAGES',
+        'menu-item-17-desc': 'Tea 12 zł<br>Coffee 17 zł',
+        'menu-item-18-title': 'EXTRAS',
+        'menu-item-18-desc': 'chopsticks. 2 zł<br>chopstick helper. 2 zł<br>ginger. 2 zł<br>wasabi 2 zł'
     },
     pl: {
-        'hero-title': 'MENU SUSHI',,,
-        'hero-subtitle': 'Autentyczne japońskie smaki dostarczone do Twojego stołu',,,
-        'cta-button': 'Zadzwoń',,,
-        'menu-title': 'Nasze Menu',,,
-        'discount-title': 'Otrzymaj 15% zniżki',,,
-        'discount-subtitle': 'Zostaw swoje kontakty i otrzymaj personalną zniżkę na pierwsze zamówienie',,,
-        'discount-button': 'Otrzymaj 15% zniżki',,,
-        'contact-title': 'Kontakt',,,
-        'follow-title': 'Śledź nas',,,
-        'address': 'Szczytnicka 54/1D, 50-382 Wrocław',,,
-        'copyright': '© 2024 Sushi Club. Wszystkie prawa zastrzeżone.',,,
-        'name-placeholder': 'Twoje imię',,,
-        'email-placeholder': 'Twój email',,,
+        'hero-title': 'MENU SUSHI',
+        'hero-subtitle': 'Autentyczne japońskie smaki dostarczone do Twojego stołu',
+        'cta-button': 'Zadzwoń',
+        'menu-title': 'Nasze Menu',
+        'discount-title': 'Otrzymaj 15% zniżki',
+        'discount-subtitle': 'Zostaw swoje kontakty i otrzymaj personalną zniżkę na pierwsze zamówienie',
+        'discount-button': 'Otrzymaj 15% zniżki',
+        'contact-title': 'Kontakt',
+        'follow-title': 'Śledź nas',
+        'address': 'Szczytnicka 54/1D, 50-382 Wrocław',
+        'copyright': '© 2024 Sushi Club. Wszystkie prawa zastrzeżone.',
+        'name-placeholder': 'Twoje imię',
+        'email-placeholder': 'Twój email',
         'menu-item-1-title': 'Zestaw 1',
         'menu-item-1-desc': 'Futomak  pieczony łosoś (6 sztuk) <br>Hosomaki pieczony łosoś (8 sztuk)',
         'menu-item-1-subtitle': 'Do każdego zestawu 1 rolka gratis.',
@@ -150,62 +150,49 @@ const languageData = {
     }
 };
 
-// Current language state
-let currentLanguage = 'pl';
-
-// DOM elements
-const languageButtons = document.querySelectorAll('.lang-btn');
-const discountForm = document.getElementById('discountForm');
-
-// Initialize the application
-document.addEventListener('DOMContentLoaded', function() {
-    initializeLanguageSwitcher();
-    initializeFormHandling();
-    initializeImageLoading();
-    initializeSmoothScrolling();
-});
-
-// Language switcher functionality
 function initializeLanguageSwitcher() {
+    const languageButtons = document.querySelectorAll('.language-btn');
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'pl';
+    
     languageButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const selectedLanguage = this.getAttribute('data-lang');
-            switchLanguage(selectedLanguage);
-            updateActiveLanguageButton(this);
+        button.addEventListener('click', () => {
+            const language = button.getAttribute('data-lang');
+            switchLanguage(language);
+            updateActiveLanguageButton(button);
+            localStorage.setItem('selectedLanguage', language);
         });
     });
+    
+    // Apply saved language on page load
+    switchLanguage(savedLanguage);
+    const activeButton = document.querySelector(`[data-lang="${savedLanguage}"]`);
+    if (activeButton) {
+        updateActiveLanguageButton(activeButton);
+    }
 }
 
 function switchLanguage(language) {
-    if (!languageData[language]) {
-        console.error(`Language ${language} not found`);
-        return;
-    }
+    const elements = document.querySelectorAll('[data-key]');
     
-    currentLanguage = language;
-    
-    // Update document language
-    document.documentElement.lang = getLanguageCode(language);
-    
-    // Update all text elements
-    const elementsToTranslate = document.querySelectorAll('[data-key]');
-    elementsToTranslate.forEach(element => {
+    elements.forEach(element => {
         const key = element.getAttribute('data-key');
-        if (languageData[language][key]) {
-            element.textContent = languageData[language][key];
+        if (languageData[language] && languageData[language][key]) {
+            if (element.tagName === 'INPUT' && element.type === 'text') {
+                element.placeholder = languageData[language][key];
+            } else if (element.tagName === 'INPUT' && element.type === 'email') {
+                element.placeholder = languageData[language][key];
+            } else {
+                element.innerHTML = languageData[language][key];
+            }
         }
     });
     
-    // Update form placeholders
     updateFormPlaceholders(language);
-    
-    // Save language preference
-    localStorage.setItem('preferredLanguage', language);
 }
 
 function updateFormPlaceholders(language) {
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
+    const nameInput = document.querySelector('input[name="name"]');
+    const emailInput = document.querySelector('input[name="email"]');
     
     if (nameInput && languageData[language]['name-placeholder']) {
         nameInput.placeholder = languageData[language]['name-placeholder'];
@@ -217,22 +204,21 @@ function updateFormPlaceholders(language) {
 }
 
 function updateActiveLanguageButton(activeButton) {
-    languageButtons.forEach(button => {
-        button.classList.remove('active');
-    });
+    const languageButtons = document.querySelectorAll('.language-btn');
+    languageButtons.forEach(btn => btn.classList.remove('active'));
     activeButton.classList.add('active');
 }
 
 function getLanguageCode(language) {
     const languageCodes = {
-        'en': 'en',
-        'pl': 'pl'
+        'pl': 'pl-PL',
+        'en': 'en-US'
     };
-    return languageCodes[language] || 'pl';
+    return languageCodes[language] || 'pl-PL';
 }
 
-// Form handling
 function initializeFormHandling() {
+    const discountForm = document.getElementById('discountForm');
     if (discountForm) {
         discountForm.addEventListener('submit', handleFormSubmission);
     }
@@ -241,64 +227,52 @@ function initializeFormHandling() {
 function handleFormSubmission(event) {
     event.preventDefault();
     
-    const formData = new FormData(discountForm);
-    const name = formData.get('name').trim();
-    const email = formData.get('email').trim();
+    const formData = new FormData(event.target);
+    const name = formData.get('name');
+    const email = formData.get('email');
     
-    // Basic validation
-    if (!name || name.length < 2) {
-        showNotification('Please enter a valid name', 'error');
+    if (!name || !email) {
+        showNotification('Proszę wypełnić wszystkie pola', 'error');
         return;
     }
     
     if (!isValidEmail(email)) {
-        showNotification('Please enter a valid email address', 'error');
+        showNotification('Proszę podać prawidłowy adres email', 'error');
         return;
     }
     
-    // Submit to Google Sheets
-    const submitButton = discountForm.querySelector('.discount-button');
-    const originalText = submitButton.innerHTML;
-    
-    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
-    submitButton.disabled = true;
-    
-    // Submit data to Google Sheets
-    submitToGoogleSheets(name, email)
-        .then(() => {
-            showNotification('Thank you! Your 15% discount has been sent to your email.', 'success');
-            discountForm.reset();
-        })
-        .catch((error) => {
-            console.error('Error submitting to Google Sheets:', error);
-            showNotification('There was an error processing your request. Please try again.', 'error');
-        })
-        .finally(() => {
-            submitButton.innerHTML = originalText;
-            submitButton.disabled = false;
-        });
+    submitToGoogleSheets(name, email);
 }
 
 async function submitToGoogleSheets(name, email) {
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwYourScriptIdHere/exec';
-    const timestamp = new Date().toLocaleString();
+    const submitButton = document.querySelector('#discountForm button[type="submit"]');
+    const originalText = submitButton.textContent;
     
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('timestamp', timestamp);
-    formData.append('language', currentLanguage);
+    submitButton.disabled = true;
+    submitButton.textContent = 'Wysyłanie...';
     
-    const response = await fetch(scriptURL, {
-        method: 'POST',
-        body: formData
-    });
-    
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+    try {
+        const response = await fetch('https://script.google.com/macros/s/AKfycbwQEiwn5dNFDzHjK_8YHY9VtRaQ_6UkJ1ZL6rOJ8-qHCOB5i_yKKrRsG8QK-0vB-VzV/exec', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`
+        });
+        
+        if (response.ok) {
+            showNotification('Dziękujemy! Skontaktujemy się z Tobą wkrótce.', 'success');
+            document.getElementById('discountForm').reset();
+        } else {
+            throw new Error('Network response was not ok');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        showNotification('Wystąpił błąd. Spróbuj ponownie później.', 'error');
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
     }
-    
-    return response.text();
 }
 
 function isValidEmail(email) {
@@ -307,122 +281,75 @@ function isValidEmail(email) {
 }
 
 function showNotification(message, type = 'info') {
-    // Create notification element
     const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.innerHTML = `
-        <div class="notification-content">
-            <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
-            <span>${message}</span>
-        </div>
-    `;
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
     
-    // Add notification styles
     notification.style.cssText = `
         position: fixed;
         top: 20px;
         right: 20px;
-        background: ${type === 'success' ? '#28a745' : type === 'error' ? '#dc3545' : '#17a2b8'};
+        padding: 15px 20px;
+        border-radius: 5px;
         color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        font-weight: bold;
         z-index: 1000;
-        transform: translateX(400px);
-        transition: transform 0.3s ease;
-        max-width: 350px;
+        animation: slideIn 0.3s ease-out;
+        max-width: 300px;
+        word-wrap: break-word;
     `;
     
-    // Add to DOM
+    if (type === 'success') {
+        notification.style.backgroundColor = '#28a745';
+    } else if (type === 'error') {
+        notification.style.backgroundColor = '#dc3545';
+    } else {
+        notification.style.backgroundColor = '#17a2b8';
+    }
+    
     document.body.appendChild(notification);
     
-    // Animate in
     setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 100);
-    
-    // Remove after delay
-    setTimeout(() => {
-        notification.style.transform = 'translateX(400px)';
+        notification.style.animation = 'slideOut 0.3s ease-in';
         setTimeout(() => {
-            if (notification.parentNode) {
-                notification.parentNode.removeChild(notification);
-            }
+            document.body.removeChild(notification);
         }, 300);
-    }, 4000);
+    }, 5000);
 }
 
-// Image loading optimization
 function initializeImageLoading() {
-    const images = document.querySelectorAll('.menu-item-image img');
+    const images = document.querySelectorAll('.menu-item-image');
     
-    // Add loading class initially
-    images.forEach(img => {
-        img.classList.add('loading');
+    images.forEach((img, index) => {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.5s ease-in-out';
         
-        if (img.complete && img.naturalHeight !== 0) {
-            img.classList.add('loaded');
-            img.classList.remove('loading');
-        } else {
-            img.addEventListener('load', function() {
-                this.classList.add('loaded');
-                this.classList.remove('loading');
-            });
-            
-            img.addEventListener('error', function() {
-                this.classList.remove('loading');
-                this.alt = 'Image failed to load';
-                console.warn('Failed to load image:', this.src);
-            });
-        }
+        setTimeout(() => {
+            img.style.opacity = '1';
+        }, index * 100);
     });
 }
 
-// Smooth scrolling for anchor links
 function initializeSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
     
     links.forEach(link => {
-        link.addEventListener('click', function(event) {
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
             
-            if (targetElement) {
-                event.preventDefault();
-                
-                const headerOffset = 80;
-                const elementPosition = targetElement.offsetTop;
-                const offsetPosition = elementPosition - headerOffset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         });
     });
 }
 
-// Load saved language preference
-document.addEventListener('DOMContentLoaded', function() {
-    const savedLanguage = localStorage.getItem('preferredLanguage');
-    if (savedLanguage && languageData[savedLanguage]) {
-        const languageButton = document.querySelector(`[data-lang="${savedLanguage}"]`);
-        if (languageButton) {
-            switchLanguage(savedLanguage);
-            updateActiveLanguageButton(languageButton);
-        }
-    } else {
-        // Default to Polish if no saved preference
-        const polishButton = document.querySelector(`[data-lang="pl"]`);
-        if (polishButton) {
-            switchLanguage('pl');
-            updateActiveLanguageButton(polishButton);
-        }
-    }
-});
-
-// Performance optimization: Intersection Observer for animations
 function initializeScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -433,60 +360,49 @@ function initializeScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-in');
-                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
     
-    // Observe menu items for scroll animations
-    const menuItems = document.querySelectorAll('.menu-item');
-    menuItems.forEach(item => {
-        observer.observe(item);
-    });
+    const animatedElements = document.querySelectorAll('.menu-item, .hero-content, .section-title');
+    animatedElements.forEach(el => observer.observe(el));
 }
 
-// Initialize scroll animations when DOM is loaded
-document.addEventListener('DOMContentLoaded', initializeScrollAnimations);
-
-// Handle phone link clicks (for analytics/tracking)
-document.addEventListener('click', function(event) {
-    if (event.target.matches('a[href^="tel:"]')) {
-        // Track phone click event
-        console.log('Phone number clicked:', event.target.href);
-        
-        // You can add analytics tracking here
-        // Example: gtag('event', 'phone_click', { 'phone_number': event.target.href });
-    }
+// Initialize all functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeLanguageSwitcher();
+    initializeFormHandling();
+    initializeImageLoading();
+    initializeSmoothScrolling();
+    initializeScrollAnimations();
 });
 
-// Accessibility improvements
-document.addEventListener('keydown', function(event) {
-    // Handle escape key to close any open modals/dropdowns
-    if (event.key === 'Escape') {
-        // Close any notifications
-        const notifications = document.querySelectorAll('.notification');
-        notifications.forEach(notification => {
-            if (notification.parentNode) {
-                notification.style.transform = 'translateX(400px)';
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.parentNode.removeChild(notification);
-                    }
-                }, 300);
-            }
-        });
+// Add CSS animations
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideIn {
+        from { transform: translateX(300px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
     }
-});
-
-// Handle form input focus for better UX
-document.addEventListener('focus', function(event) {
-    if (event.target.matches('input')) {
-        event.target.parentNode.classList.add('focused');
+    
+    @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(300px); opacity: 0; }
     }
-}, true);
-
-document.addEventListener('blur', function(event) {
-    if (event.target.matches('input')) {
-        event.target.parentNode.classList.remove('focused');
+    
+    .animate-in {
+        animation: fadeInUp 0.6s ease-out forwards;
     }
-}, true);
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(style);

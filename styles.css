@@ -214,22 +214,20 @@ body {
     background-repeat: no-repeat;
     background-color: #f8f9fa;
     border-radius: 15px 15px 0 0;
+}
+
+/* Fallback for items without images */
+.menu-item-image:not([style*="background-image"]) {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.menu-item-image::before {
+.menu-item-image:not([style*="background-image"])::before {
     content: "📷";
     font-size: 3rem;
     color: #ccc;
-    position: absolute;
-    z-index: 1;
-}
-
-.menu-item-image[style*="background-image"]::before {
-    display: none;
 }
 
 .menu-item-content {
