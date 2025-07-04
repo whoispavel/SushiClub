@@ -146,6 +146,13 @@ body {
     margin-right: auto;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .cta-button {
     display: inline-flex;
     align-items: center;
@@ -165,6 +172,16 @@ body {
     background-color: var(--hover-color);
     transform: translateY(-2px);
     box-shadow: 0 6px 25px rgba(38, 72, 50, 0.2);
+}
+
+.instagram-button {
+    background: linear-gradient(135deg, #E4405F, #C13584);
+}
+
+.instagram-button:hover {
+    background: linear-gradient(135deg, #C13584, #833AB4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(196, 53, 132, 0.3);
 }
 
 /* Menu Section */
