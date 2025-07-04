@@ -311,6 +311,30 @@
         </div>
     </footer>
 
+    <!-- Callback Widget -->
+    <div id="callback-widget" class="callback-widget">
+        <button id="callback-btn" class="callback-btn">
+            <i class="fas fa-phone"></i>
+            <span>Замовити дзвінок</span>
+        </button>
+        
+        <div id="callback-form" class="callback-form">
+            <div class="callback-header">
+                <h3>Замовити дзвінок</h3>
+                <button id="close-callback" class="close-btn">&times;</button>
+            </div>
+            <form id="callback-form-data">
+                <input type="tel" id="callback-phone" placeholder="Ваш номер телефону" required>
+                <input type="email" id="callback-email" placeholder="Ваш email (опціонально)">
+                <textarea id="callback-message" placeholder="Коментар (опціонально)" rows="3"></textarea>
+                <button type="submit">Надіслати</button>
+            </form>
+            <div id="callback-success" class="callback-success" style="display: none;">
+                <p>✓ Дякуємо! Ми зателефонуємо вам протягом 15 хвилин.</p>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

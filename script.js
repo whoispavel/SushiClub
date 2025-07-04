@@ -406,3 +406,67 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Callback Widget Functionality
+function initializeCallbackWidget() {
+    const callbackBtn = document.getElementById('callback-btn');
+    const callbackForm = document.getElementById('callback-form');
+    const closeBtn = document.getElementById('close-callback');
+    const formData = document.getElementById('callback-form-data');
+    const successDiv = document.getElementById('callback-success');
+
+    if (!callbackBtn || !callbackForm) return;
+
+    // Open callback form
+    callbackBtn.addEventListener('click', () => {
+        callbackForm.classList.add('active');
+    });
+
+    // Close callback form
+    closeBtn.addEventListener('click', () => {
+        callbackForm.classList.remove('active');
+        resetForm();
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (!callbackForm.contains(e.target) && !callbackBtn.contains(e.target)) {
+            callbackForm.classList.remove('active');
+            resetForm();
+        }
+    });
+
+    // Handle form submission
+    formData.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const phone = document.getElementById('callback-phone').value;
+        const email = document.getElementById('callback-email').value;
+        const message = document.getElementById('callback-message').value;
+
+        // Simulate form submission (в реальному проекті тут буде відправка на сервер)
+        setTimeout(() => {
+            formData.style.display = 'none';
+            successDiv.style.display = 'block';
+            
+            // Auto close after 3 seconds
+            setTimeout(() => {
+                callbackForm.classList.remove('active');
+                resetForm();
+            }, 3000);
+        }, 500);
+    });
+
+    function resetForm() {
+        formData.style.display = 'block';
+        successDiv.style.display = 'none';
+        formData.reset();
+    }
+}
+
+// Initialize callback widget when DOM is loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeCallbackWidget);
+} else {
+    initializeCallbackWidget();
+}
