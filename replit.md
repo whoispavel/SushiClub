@@ -4,14 +4,14 @@
 Multilingual, interactive sushi restaurant website for SUSHI CLUB in Wrocław, Poland. Features a comprehensive digital menu with real photos, bilingual support (Polish/English), and responsive design.
 
 ## Recent Changes (2025-01-12)
-- ✓ Created separate menu-data.json file for easy menu management
-- ✓ Added active social media links (Instagram, TikTok, Telegram)
-- ✓ Removed email/name form section completely
-- ✓ Added Instagram button next to phone button in hero section
-- ✓ Integrated 10+ real menu photos replacing placeholder images
-- ✓ Consolidated duplicate menu categories (PHILADELPHIA, ROLKI POJEDYNCZE, PRZYSTAWKI)
-- ✓ Reduced menu from 27 to 18 items without losing content
-- ✓ Fixed JavaScript syntax errors preventing photo display
+- ✓ Restructured website to Ninja Sushi-style architecture
+- ✓ Created new header with sticky navigation and category filters
+- ✓ Added modern product grid layout with card design
+- ✓ Implemented category-based menu filtering (Zestawy, Rolki, Burgery, etc.)
+- ✓ Maintained all existing features: CallbackHunter, social media, photos
+- ✓ Enhanced mobile responsiveness with improved navigation
+- ✓ Added hero section with call-to-action buttons
+- ✓ Preserved all 18 menu items with real photos
 
 ## Project Architecture
 
