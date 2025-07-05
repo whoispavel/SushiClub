@@ -407,6 +407,73 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Phone number validation and formatting
+function formatPhoneNumber(phone) {
+    // Remove all non-digit characters
+    const cleaned = phone.replace(/\D/g, '');
+    
+    // Format for Polish numbers (9 digits)
+    if (cleaned.length === 9) {
+        return cleaned.replace(/(\d{3})(\d{3})(\d{3})/, '$1 $2 $3');
+    }
+    
+    // Format for international numbers starting with +48
+    if (cleaned.startsWith('48') && cleaned.length === 11) {
+        const number = cleaned.substring(2);
+        return '+48 ' + number.replace(/(\d{3})(\d{3})(\d{3})/, '$1 $2 $3');
+    }
+    
+    return phone;
+}
+
+function validatePhoneNumber(phone) {
+    const cleaned = phone.replace(/\D/g, '');
+    
+    // Polish mobile numbers (9 digits starting with 5, 6, 7, 8, 9)
+    if (cleaned.length === 9 && /^[5-9]/.test(cleaned)) {
+        return true;
+    }
+    
+    // International Polish numbers (+48 followed by 9 digits)
+    if (cleaned.startsWith('48') && cleaned.length === 11 && /^48[5-9]/.test(cleaned)) {
+        return true;
+    }
+    
+    return false;
+}
+
+// Telegram bot configuration
+const TELEGRAM_BOT_TOKEN = '8007889504:AAESFASDeT0njLEczDDpO__vENkVJd5d340';
+const TELEGRAM_CHAT_ID = '7364136001';
+
+async function sendToTelegram(data) {
+    const message = `
+📞 *Новий запит на дзвінок*
+
+📱 *Телефон:* ${data.phone}
+📧 *Email:* ${data.email}
+💬 *Коментар:* ${data.message}
+⏰ *Час:* ${data.timestamp}
+🌐 *Джерело:* ${data.source}
+    `.trim();
+
+    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+    
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: message,
+            parse_mode: 'Markdown'
+        })
+    });
+
+    return response;
+}
+
 // Callback Widget Functionality
 function initializeCallbackWidget() {
     const callbackBtn = document.getElementById('callback-btn');
@@ -414,8 +481,38 @@ function initializeCallbackWidget() {
     const closeBtn = document.getElementById('close-callback');
     const formData = document.getElementById('callback-form-data');
     const successDiv = document.getElementById('callback-success');
+    const phoneInput = document.getElementById('callback-phone');
 
     if (!callbackBtn || !callbackForm) return;
+
+    // Phone number formatting and validation
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            let value = e.target.value;
+            
+            // Allow only digits, spaces, +, -, (, )
+            value = value.replace(/[^\d\s\+\-\(\)]/g, '');
+            
+            // Format the number
+            const formatted = formatPhoneNumber(value);
+            e.target.value = formatted;
+            
+            // Visual feedback
+            if (value.length > 0) {
+                const isValid = validatePhoneNumber(value);
+                e.target.style.borderColor = isValid ? '#28a745' : '#dc3545';
+            } else {
+                e.target.style.borderColor = '';
+            }
+        });
+
+        // Auto-focus on phone input when form opens
+        callbackBtn.addEventListener('click', () => {
+            setTimeout(() => {
+                phoneInput.focus();
+            }, 300);
+        });
+    }
 
     // Open callback form
     callbackBtn.addEventListener('click', () => {
@@ -437,31 +534,232 @@ function initializeCallbackWidget() {
     });
 
     // Handle form submission
-    formData.addEventListener('submit', (e) => {
+    formData.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         const phone = document.getElementById('callback-phone').value;
         const email = document.getElementById('callback-email').value;
         const message = document.getElementById('callback-message').value;
 
-        // Simulate form submission (в реальному проекті тут буде відправка на сервер)
-        setTimeout(() => {
-            formData.style.display = 'none';
-            successDiv.style.display = 'block';
+        // Validate phone number
+        if (!validatePhoneNumber(phone)) {
+            showNotification('Будь ласка, введіть правильний номер телефону', 'error');
+            return;
+        }
+
+        // Validate email if provided
+        if (email && !isValidEmail(email)) {
+            showNotification('Будь ласка, введіть правильний email', 'error');
+            return;
+        }
+
+        // Show loading state
+        const submitBtn = formData.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Відправляємо...';
+        submitBtn.disabled = true;
+
+        try {
+            // Send to Telegram bot
+            const telegramData = {
+                phone: phone,
+                email: email || 'Не вказано',
+                message: message || 'Без коментаря',
+                timestamp: new Date().toLocaleString('uk-UA'),
+                source: 'Sushi Club Website'
+            };
+
+            const response = await sendToTelegram(telegramData);
             
-            // Auto close after 3 seconds
-            setTimeout(() => {
-                callbackForm.classList.remove('active');
-                resetForm();
-            }, 3000);
-        }, 500);
+            if (response.ok) {
+                formData.style.display = 'none';
+                successDiv.style.display = 'block';
+                
+                // Auto close after 3 seconds
+                setTimeout(() => {
+                    callbackForm.classList.remove('active');
+                    resetForm();
+                }, 3000);
+            } else {
+                throw new Error('Failed to send to Telegram');
+            }
+        } catch (error) {
+            console.error('Error sending to Telegram:', error);
+            showNotification('Помилка відправки. Спробуйте ще раз.', 'error');
+        } finally {
+            // Reset button state
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
     });
 
     function resetForm() {
         formData.style.display = 'block';
         successDiv.style.display = 'none';
         formData.reset();
+        
+        // Reset phone input styling
+        if (phoneInput) {
+            phoneInput.style.borderColor = '';
+        }
     }
+}
+
+// Footer popup functionality
+function initializeFooterPopup() {
+    const footer = document.querySelector('.footer');
+    const footerPopup = document.getElementById('footer-popup');
+    const closeFooterPopup = document.getElementById('close-footer-popup');
+    const footerPopupForm = document.getElementById('footer-popup-form');
+    const footerPopupSuccess = document.getElementById('footer-popup-success');
+    const footerPopupPhone = document.getElementById('footer-popup-phone');
+
+    let popupShown = false;
+
+    // Check if footer is in viewport
+    function isFooterInViewport() {
+        if (!footer) return false;
+        const rect = footer.getBoundingClientRect();
+        return rect.top <= window.innerHeight && rect.bottom >= 0;
+    }
+
+    // Show popup when footer is reached
+    function checkFooterScroll() {
+        if (!popupShown && isFooterInViewport()) {
+            footerPopup.classList.add('active');
+            popupShown = true;
+            
+            // Focus on phone input
+            setTimeout(() => {
+                if (footerPopupPhone) {
+                    footerPopupPhone.focus();
+                }
+            }, 300);
+        }
+    }
+
+    // Close popup and reset to button
+    function closeFooterPopupAndReset() {
+        footerPopup.classList.remove('active');
+        popupShown = false;
+        
+        // Reset form
+        if (footerPopupForm) {
+            footerPopupForm.reset();
+            footerPopupForm.style.display = 'block';
+        }
+        if (footerPopupSuccess) {
+            footerPopupSuccess.style.display = 'none';
+        }
+        
+        // Reset phone input styling
+        if (footerPopupPhone) {
+            footerPopupPhone.style.borderColor = '';
+        }
+    }
+
+    // Phone number formatting and validation for footer popup
+    if (footerPopupPhone) {
+        footerPopupPhone.addEventListener('input', (e) => {
+            let value = e.target.value;
+            
+            // Allow only digits, spaces, +, -, (, )
+            value = value.replace(/[^\d\s\+\-\(\)]/g, '');
+            
+            // Format the number
+            const formatted = formatPhoneNumber(value);
+            e.target.value = formatted;
+            
+            // Visual feedback
+            if (value.length > 0) {
+                const isValid = validatePhoneNumber(value);
+                e.target.style.borderColor = isValid ? '#28a745' : '#dc3545';
+            } else {
+                e.target.style.borderColor = '';
+            }
+        });
+    }
+
+    // Close popup
+    if (closeFooterPopup) {
+        closeFooterPopup.addEventListener('click', closeFooterPopupAndReset);
+    }
+
+    // Close on outside click
+    if (footerPopup) {
+        footerPopup.addEventListener('click', (e) => {
+            if (e.target === footerPopup) {
+                closeFooterPopupAndReset();
+            }
+        });
+    }
+
+    // Handle form submission
+    if (footerPopupForm) {
+        footerPopupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const phone = document.getElementById('footer-popup-phone').value;
+            const email = document.getElementById('footer-popup-email').value;
+            const message = document.getElementById('footer-popup-message').value;
+
+            // Validate phone number
+            if (!validatePhoneNumber(phone)) {
+                showNotification('Будь ласка, введіть правильний номер телефону', 'error');
+                return;
+            }
+
+            // Validate email if provided
+            if (email && !isValidEmail(email)) {
+                showNotification('Будь ласка, введіть правильний email', 'error');
+                return;
+            }
+
+            // Show loading state
+            const submitBtn = footerPopupForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Відправляємо...';
+            submitBtn.disabled = true;
+
+            try {
+                // Send to Telegram bot
+                const telegramData = {
+                    phone: phone,
+                    email: email || 'Не вказано',
+                    message: message || 'Без коментаря',
+                    timestamp: new Date().toLocaleString('uk-UA'),
+                    source: 'Sushi Club Website - Footer Popup'
+                };
+
+                const response = await sendToTelegram(telegramData);
+                
+                if (response.ok) {
+                    footerPopupForm.style.display = 'none';
+                    footerPopupSuccess.style.display = 'block';
+                    
+                    // Auto close after 3 seconds
+                    setTimeout(() => {
+                        closeFooterPopupAndReset();
+                    }, 3000);
+                } else {
+                    throw new Error('Failed to send to Telegram');
+                }
+            } catch (error) {
+                console.error('Error sending to Telegram:', error);
+                showNotification('Помилка відправки. Спробуйте ще раз.', 'error');
+            } finally {
+                // Reset button state
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
+    // Listen for scroll events
+    window.addEventListener('scroll', checkFooterScroll);
+    
+    // Initial check
+    checkFooterScroll();
 }
 
 // Initialize website functionality when DOM is loaded
@@ -469,8 +767,10 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
         initializeLanguageSwitcher();
         initializeCallbackWidget();
+        initializeFooterPopup();
     });
 } else {
     initializeLanguageSwitcher();
     initializeCallbackWidget();
+    initializeFooterPopup();
 }

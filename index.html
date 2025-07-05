@@ -14,7 +14,7 @@
     <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link rel="stylesheet" href="styles.css?v=7">
+    <link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
     <!-- Header -->
@@ -166,7 +166,7 @@
                 </div>
                 
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Wegetariański set.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Wegetariański set_1751729190676.jpg')"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="menu-item-10-title">Wegetariański set</h3>
                         <div class="menu-item-details">
@@ -199,7 +199,7 @@
                 </div>
                 
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Sushi burger łosoś.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Sushi burger łosoś_1751729582539.jpg')"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="menu-item-13-title">Sushi burger łosoś</h3>
                         <div class="menu-item-details">
@@ -221,7 +221,7 @@
                 </div>
                 
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Sushi burger wegetariański.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Sushi burger wegetariański_1751729567960.jpg')"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="menu-item-15-title">Sushi burger wegetariański</h3>
                         <div class="menu-item-details">
@@ -243,7 +243,7 @@
                 </div>
                 
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/menu-17.jpg')"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="menu-item-17-title">NAPOJE</h3>
                         <div class="menu-item-details">
@@ -253,7 +253,7 @@
                 </div>
                 
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/menu-18.jpg')"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-key="menu-item-18-title">DODATKI</h3>
                         <div class="menu-item-details">
@@ -324,8 +324,8 @@
                 <button id="close-callback" class="close-btn">&times;</button>
             </div>
             <form id="callback-form-data">
-                <input type="tel" id="callback-phone" placeholder="Ваш номер телефону" required>
-                <input type="email" id="callback-email" placeholder="Ваш email (опціонально)">
+                <input type="tel" id="callback-phone" placeholder="Ваш номер телефону" required autocomplete="tel" inputmode="tel" pattern="[0-9+\-\s\(\)]+" maxlength="20">
+                <input type="email" id="callback-email" placeholder="Ваш email (опціонально)" autocomplete="email">
                 <textarea id="callback-message" placeholder="Коментар (опціонально)" rows="3"></textarea>
                 <button type="submit">Надіслати</button>
             </form>
@@ -335,6 +335,25 @@
         </div>
     </div>
 
-    <script src="script.js?v=5"></script>
+    <!-- Footer Popup -->
+    <div id="footer-popup" class="footer-popup">
+        <div class="footer-popup-content">
+            <div class="footer-popup-header">
+                <h3>Замовити дзвінок</h3>
+                <button id="close-footer-popup" class="close-btn">&times;</button>
+            </div>
+            <form id="footer-popup-form">
+                <input type="tel" id="footer-popup-phone" placeholder="Ваш номер телефону" required autocomplete="tel" inputmode="tel" pattern="[0-9+\-\s\(\)]+" maxlength="20">
+                <input type="email" id="footer-popup-email" placeholder="Ваш email (опціонально)" autocomplete="email">
+                <textarea id="footer-popup-message" placeholder="Коментар (опціонально)" rows="3"></textarea>
+                <button type="submit">Надіслати</button>
+            </form>
+            <div id="footer-popup-success" class="callback-success" style="display: none;">
+                <p>✓ Дякуємо! Ми зателефонуємо вам протягом 15 хвилин.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=8"></script>
 </body>
 </html>
