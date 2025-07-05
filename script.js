@@ -70,7 +70,7 @@ const languageData = {
         'menu-item-16-desc': 'Salmon tartar 150 gram (salmon, leek, sesame oil) - 35 zł<br><br>Goma salad (150 gram) - 17 zł<br><br>Gyoza dumplings with meat + sweet chili sauce (6 pieces + 1 piece) - 25 zł<br><br>Vegetarian gyoza dumplings + sweet chili sauce (6 pieces + 1 piece) - 23 zł<br><br>Kimchi (Chinese cabbage, leek, carrot, white radish, ginger, garlic, chili (150 gram) - 17 zł<br><br>Squid (6 pieces + sweet chili sauce) - 29 zł<br><br>Shrimp (6 pieces + sweet sauce) - 29 zł',
         'menu-item-16-subtitle': 'Various appetizers',
         'menu-item-17-title': 'BEVERAGES',
-        'menu-item-17-desc': 'Tea 12 zł<br>Coffee 17 zł',
+        'menu-item-17-desc': 'Still water - 4 zł<br>Sprite lime - 7 zł<br>Coca Cola Zero Sugar - 7 zł<br>Coca Cola Original - 7 zł<br><br>Tea - 12 zł<br>Coffee - 17 zł',
         'menu-item-18-title': 'EXTRAS',
         'menu-item-18-desc': 'chopsticks. 2 zł<br>chopstick helper. 2 zł<br>ginger. 2 zł<br>wasabi 2 zł'
     },
@@ -144,7 +144,7 @@ const languageData = {
         'menu-item-16-desc': 'Tatar z łososia 150 gram (łosoś, por, olej sezamowy) - 35 zł <br><br>Sałatka goma (150 gram) - 17 zł <br><br>Pierożki gyoza z mięsem + sos sweet chilli (6 sztuk + 1 sztuka) - 25 zł <br><br>Pierożki gyoza wegetariańskie + sos sweet chilli (6 sztuk + 1 sztuka) - 23 zł<br><br>Kimchi (kapusta pekińska, por, marchew, biała rzodkiew, imbir, czosnek, chilli (150 gram) - 17 zł <br><br>Kalmary (6 sztuk + sos sweet chilli) - 29 zł <br><br>Krewetka (6 sztuk + sos ma słodki) - 29 zł',
         'menu-item-16-subtitle': 'Różne przystawki',
         'menu-item-17-title': 'NAPOJE',
-        'menu-item-17-desc': 'Herbata 12 zł<br>Kawa 17 zł',
+        'menu-item-17-desc': 'Still water - 4 zł<br>Sprite lime - 7 zł<br>Coca Cola Zero Sugar - 7 zł<br>Coca Cola Original - 7 zł<br><br>Herbata - 12 zł<br>Kawa - 17 zł',
         'menu-item-18-title': 'DODATKI',
         'menu-item-18-desc': 'pałeczki. 2 zł<br>pomocnik do pałeczek. 2 zł<br>imbir. 2 zł<br>wasabi 2 zł'
     }
