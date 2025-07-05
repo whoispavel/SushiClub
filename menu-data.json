@@ -78,7 +78,7 @@
       "subtitle": "",
       "description": "Futomaki tofu (6 sztuk)\nKalifornia cukinia w ogórkach (10 sztuk)\nPhiladelphia z ogórkiem okładana goma (10 sztuk) \nHosomaki kampyo (8 sztuk)\nHosomaki mango (8 sztuk)\nNigiri z awokado (2 sztuki)",
       "price": "167",
-      "image": "Wegetariański set _1751663968265.jpg"
+      "image": "Wegetariański set_1751729190676.jpg"
     },
     {
       "id": 11,
@@ -102,7 +102,7 @@
       "subtitle": "",
       "description": "(nori, ryż, łosoś, serek philadelphia, masago, sos sriracha, panko,\nmaka tempura, awokado, ogórek).",
       "price": "69",
-      "image": "Sushi burger łosoś _1751663968265.jpg"
+      "image": "Sushi burger łosoś_1751729582539.jpg"
     },
     {
       "id": 14,
@@ -118,7 +118,7 @@
       "subtitle": "",
       "description": "(nori, ryż, batat, kampyo, ogórek, serek philadelphia,\nmango, panko, maka tempura).",
       "price": "59",
-      "image": "Sushi burger wegetariański_1751663968265.jpg"
+      "image": "Sushi burger wegetariański_1751729567960.jpg"
     },
     {
       "id": 16,
@@ -132,9 +132,9 @@
       "id": 17,
       "title": "NAPOJE",
       "subtitle": "",
-      "description": "Herbata 12 zł\nKawa 17 zł",
+      "description": "Still water - 4 zł\nSprite lime - 7 zł\nCoca Cola Zero Sugar - 7 zł\nCoca Cola Original - 7 zł\n\nHerbata - 12 zł\nKawa - 17 zł",
       "price": "",
-      "image": "menu-17.jpg"
+      "image": ""
     },
     {
       "id": 18,
@@ -142,7 +142,7 @@
       "subtitle": "",
       "description": "pałeczki. 2 zł\npomocnik do pałeczek. 2 zł\nimbir. 2 zł\nwasabi 2 zł",
       "price": "",
-      "image": "menu-18.jpg"
+      "image": ""
     }
   ]
 }

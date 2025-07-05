@@ -14,6 +14,16 @@ Multilingual, interactive sushi restaurant website for SUSHI CLUB in Wrocław, P
 - ✓ Fixed JavaScript syntax errors preventing photo display
 - ✓ Temporarily tested Ninja Sushi structure but reverted to original design at user request
 
+## Latest Updates (2025-01-05)
+- ✓ Added 3 new high-quality menu photos (Wegetariański set, Sushi burger łosoś, Sushi burger wegetariański)
+- ✓ Removed photos from NAPOJE and DODATKI sections as requested
+- ✓ Added specific drinks menu: Still water (4zł), Sprite lime (7zł), Coca Cola Zero Sugar (7zł), Coca Cola Original (7zł)
+- ✓ Made banner background 30% less bright (reduced opacity from 0.9 to 0.7)
+- ✓ Increased logo image size by 15% (40px → 46px)
+- ✓ Increased logo text size by 15% (0.72rem → 0.83rem)
+- ✓ Updated all menu items to use new photo paths in menu-data.json
+- ✓ All menu photos now display as perfect squares (1:1 aspect ratio)
+
 ## Project Architecture
 
 ### Core Files
