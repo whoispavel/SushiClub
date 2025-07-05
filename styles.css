@@ -119,10 +119,7 @@ body {
 .hero {
     padding: 4rem 0 6rem;
     text-align: center;
-    background: linear-gradient(135deg, rgba(248, 249, 250, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%), url('images/baner.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
 }
 
 .hero-content {
