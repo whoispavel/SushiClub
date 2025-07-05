@@ -23,6 +23,9 @@ Multilingual, interactive sushi restaurant website for SUSHI CLUB in Wrocław, P
 - ✓ Increased logo text size by 15% (0.72rem → 0.83rem)
 - ✓ Updated all menu items to use new photo paths in menu-data.json
 - ✓ All menu photos now display as perfect squares (1:1 aspect ratio)
+- ✓ **FIXED burger photo display issues**: Resolved URL encoding problems with Polish characters
+- ✓ Created proper image files for all three burger items using high-quality user-provided photo
+- ✓ Updated HTML to use correct Polish filenames: "Sushi burger łosoś.jpg", "Sushi burger wegetariański.jpg", "Wegetariański set.jpg"
 
 ## Project Architecture
 
