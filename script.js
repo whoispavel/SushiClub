@@ -151,7 +151,7 @@ const languageData = {
 };
 
 function initializeLanguageSwitcher() {
-    const languageButtons = document.querySelectorAll('.language-btn');
+    const languageButtons = document.querySelectorAll('.lang-btn');
     const savedLanguage = localStorage.getItem('selectedLanguage') || 'pl';
     
     languageButtons.forEach(button => {
@@ -204,7 +204,7 @@ function updateFormPlaceholders(language) {
 }
 
 function updateActiveLanguageButton(activeButton) {
-    const languageButtons = document.querySelectorAll('.language-btn');
+    const languageButtons = document.querySelectorAll('.lang-btn');
     languageButtons.forEach(btn => btn.classList.remove('active'));
     activeButton.classList.add('active');
 }
@@ -464,9 +464,13 @@ function initializeCallbackWidget() {
     }
 }
 
-// Initialize callback widget when DOM is loaded
+// Initialize website functionality when DOM is loaded
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeCallbackWidget);
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeLanguageSwitcher();
+        initializeCallbackWidget();
+    });
 } else {
+    initializeLanguageSwitcher();
     initializeCallbackWidget();
 }
