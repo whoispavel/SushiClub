@@ -1,0 +1,25 @@
+{
+    "name": "Sushi Club Wrocław",
+    "short_name": "Sushi Club",
+    "description": "Autentyczne japońskie sushi w centrum Wrocławia",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#1a1a1a",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "categories": ["food", "restaurant"],
+    "lang": "pl",
+    "dir": "ltr"
+} 
