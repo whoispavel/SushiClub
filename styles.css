@@ -867,7 +867,10 @@ body {
     align-items: stretch;
 }
 
-.footer-popup input, .footer-popup textarea, .callback-form input, .callback-form textarea {
+.footer-popup input,
+.footer-popup textarea,
+.callback-form input,
+.callback-form textarea {
     width: 100%;
     min-width: 0;
     min-height: 64px;
@@ -881,7 +884,8 @@ body {
     display: block;
 }
 
-.footer-popup textarea, .callback-form textarea {
+.footer-popup textarea,
+.callback-form textarea {
     height: 64px;
     min-height: 64px;
     max-height: 64px;
@@ -1072,4 +1076,27 @@ body {
         flex-direction: column;
         gap: 0.5rem;
     }
+}
+
+/* Виправлення для попап-форми */
+.footer-popup input,
+.footer-popup textarea {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.footer-popup textarea {
+    min-height: 70px;
+    resize: vertical;
+}
+
+.footer-popup input:last-child,
+.footer-popup textarea:last-child {
+    margin-bottom: 0;
+}
+
+.footer-popup form > *:not(:last-child) {
+    margin-bottom: 1rem;
 }
