@@ -249,47 +249,57 @@ body {
     color: #ccc;
 }
 
-.menu-item-content {
-    width: 100%;
-    padding: 1.5rem;
-}
-
-.menu-item-title {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-    letter-spacing: 0.5px;
-}
-
-.menu-item-details {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.menu-item-subtitle {
-    color: var(--text-light);
-    font-size: 0.9rem;
-    font-style: italic;
-    margin-bottom: 0.5rem;
-}
-
-.menu-item-description {
-    color: var(--text-color);
-    line-height: 1.6;
-    font-size: 0.95rem;
-    font-weight: 300;
-}
-
-.menu-item-price {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--primary-color);
-    margin-top: 1rem;
-}
+    .menu-item-content {
+        width: 100%;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .menu-item-title {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+        letter-spacing: 0.5px;
+        /* Ensure title is always visible */
+        flex-shrink: 0;
+    }
+    
+    .menu-item-details {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        flex-grow: 1;
+    }
+    
+    .menu-item-subtitle {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        font-style: italic;
+        margin-bottom: 0.5rem;
+    }
+    
+    .menu-item-description {
+        color: var(--text-color);
+        line-height: 1.6;
+        font-size: 0.95rem;
+        font-weight: 300;
+        flex-grow: 1;
+    }
+    
+    .menu-item-price {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: var(--primary-color);
+        margin-top: 1rem;
+        /* Ensure price is always visible at the bottom */
+        flex-shrink: 0;
+        margin-top: auto;
+    }
 
 /* Discount Section */
 .discount {
@@ -525,6 +535,8 @@ body {
     .menu-item-title {
         font-size: 1.4rem;
         margin-bottom: 0.5rem;
+        /* Ensure title is always visible */
+        flex-shrink: 0;
     }
     
     .menu-item-description {
@@ -579,6 +591,8 @@ body {
         font-size: 1.1rem;
         margin-top: auto;
         padding-top: 0.5rem;
+        /* Ensure price is always visible at the bottom */
+        flex-shrink: 0;
     }
     
     .discount-form {
@@ -637,6 +651,8 @@ body {
     
     .menu-item-title {
         font-size: 1.2rem;
+        /* Ensure title is always visible */
+        flex-shrink: 0;
     }
     
     .menu-item-description {
@@ -645,6 +661,8 @@ body {
     
     .menu-item-price {
         font-size: 1rem;
+        /* Ensure price is always visible at the bottom */
+        flex-shrink: 0;
     }
     
     .form-group input {

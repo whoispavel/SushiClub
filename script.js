@@ -835,11 +835,13 @@ if (document.readyState === 'loading') {
         initializeLanguageSwitcher();
         initializeCallbackWidget();
         initializeFooterPopup();
+        initializeReadMore();
     });
 } else {
     initializeLanguageSwitcher();
     initializeCallbackWidget();
     initializeFooterPopup();
+    initializeReadMore();
 }
 
 // Read More functionality for mobile menu items
