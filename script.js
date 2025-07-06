@@ -418,6 +418,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeImageLoading();
     initializeSmoothScrolling();
     initializeScrollAnimations();
+    initializeReadMore();
 });
 
 // Add CSS animations
@@ -839,4 +840,64 @@ if (document.readyState === 'loading') {
     initializeLanguageSwitcher();
     initializeCallbackWidget();
     initializeFooterPopup();
+}
+
+// Read More functionality for mobile menu items
+function initializeReadMore() {
+    const menuItems = document.querySelectorAll('.menu-item');
+    
+    menuItems.forEach(item => {
+        const description = item.querySelector('.menu-item-description');
+        if (!description) return;
+        
+        // Check if description is long enough to need truncation
+        const descriptionHeight = description.scrollHeight;
+        const maxHeight = 80; // Same as CSS max-height
+        
+        if (descriptionHeight > maxHeight) {
+            // Create read more button
+            const readMoreBtn = document.createElement('button');
+            readMoreBtn.className = 'read-more-btn';
+            readMoreBtn.textContent = getReadMoreText();
+            readMoreBtn.style.display = 'block';
+            
+            // Insert button after description
+            description.parentNode.insertBefore(readMoreBtn, description.nextSibling);
+            
+            // Add click handler
+            readMoreBtn.addEventListener('click', function() {
+                const isExpanded = description.classList.contains('expanded');
+                
+                if (isExpanded) {
+                    description.classList.remove('expanded');
+                    readMoreBtn.textContent = getReadMoreText();
+                } else {
+                    description.classList.add('expanded');
+                    readMoreBtn.textContent = getReadLessText();
+                }
+            });
+        }
+    });
+}
+
+function getReadMoreText() {
+    const lang = document.documentElement.lang || 'pl';
+    const texts = {
+        'pl': 'Więcej',
+        'en': 'More',
+        'uk': 'Більше',
+        'ru': 'Больше'
+    };
+    return texts[lang] || texts['pl'];
+}
+
+function getReadLessText() {
+    const lang = document.documentElement.lang || 'pl';
+    const texts = {
+        'pl': 'Mniej',
+        'en': 'Less',
+        'uk': 'Менше',
+        'ru': 'Меньше'
+    };
+    return texts[lang] || texts['pl'];
 }
