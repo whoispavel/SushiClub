@@ -407,6 +407,13 @@ body {
     color: var(--background-color);
 }
 
+.footer-text i {
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
 .social-links {
     display: flex;
     gap: 1rem;
@@ -639,6 +646,9 @@ body {
 
 .callback-btn i {
     animation: ring 2s infinite;
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
 }
 
 @keyframes pulse {
@@ -1058,6 +1068,8 @@ body {
 .map-hours i {
     color: var(--primary-color);
     font-size: 1.2rem;
+    display: inline-block;
+    margin-right: 0.5rem;
 }
 
 .map-address strong,
