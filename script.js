@@ -217,9 +217,9 @@ function initializeLanguageSwitcher() {
 }
 
 function switchLanguage(language) {
-    const elements = document.querySelectorAll('[data-key]');
-    
-    elements.forEach(element => {
+    // Update elements with data-key
+    const keyElements = document.querySelectorAll('[data-key]');
+    keyElements.forEach(element => {
         const key = element.getAttribute('data-key');
         if (languageData[language] && languageData[language][key]) {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
@@ -229,7 +229,14 @@ function switchLanguage(language) {
             }
         }
     });
-    
+    // Update elements with data-i18n
+    const i18nElements = document.querySelectorAll('[data-i18n]');
+    i18nElements.forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (languageData[language] && languageData[language][key]) {
+            element.innerHTML = languageData[language][key];
+        }
+    });
     updateFormPlaceholders(language);
 }
 
