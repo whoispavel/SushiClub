@@ -524,19 +524,32 @@ body {
     }
     
     .menu-item {
-        padding: 1rem;
-        min-height: 250px;
-        max-height: 350px;
+        min-height: 430px;
         display: flex;
         flex-direction: column;
-        position: relative;
+        justify-content: stretch;
+    }
+    
+    .menu-item-image {
+        height: 110px !important;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 1.2rem 1.2rem 0 0;
     }
     
     .menu-item-content {
+        flex: 1 1 auto;
         display: flex;
         flex-direction: column;
-        height: 100%;
+        justify-content: stretch;
         padding: 0.8rem;
+    }
+    
+    .menu-item-details {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
     }
     
     .menu-item-title {
@@ -597,11 +610,8 @@ body {
     }
     
     .menu-item-price {
-        font-size: 1rem;
         margin-top: auto;
-        padding-top: 0.5rem;
-        /* Ensure price is always visible at the bottom */
-        flex-shrink: 0;
+        font-size: 1.1rem;
     }
     
     .discount-form {
@@ -636,13 +646,6 @@ body {
     .menu-item-subtitle {
         font-size: 0.8rem;
         margin-bottom: 0.5rem;
-    }
-    
-    .menu-item-image {
-        height: 144px !important; /* якщо стандартна висота 180px, 80% = 144px */
-        object-fit: cover;
-        width: 100%;
-        border-radius: 1.2rem 1.2rem 0 0;
     }
 }
 
