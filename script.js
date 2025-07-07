@@ -856,7 +856,8 @@ function initializeReadMore() {
         const descriptionHeight = description.scrollHeight;
         const maxHeight = 80; // Same as CSS max-height
         
-        if (descriptionHeight > maxHeight) {
+        // Перевірка: якщо кнопка вже є, не додавати ще одну
+        if (descriptionHeight > maxHeight && !description.parentNode.querySelector('.read-more-btn')) {
             // Create read more button
             const readMoreBtn = document.createElement('button');
             readMoreBtn.className = 'read-more-btn';
@@ -869,12 +870,13 @@ function initializeReadMore() {
             // Add click handler
             readMoreBtn.addEventListener('click', function() {
                 const isExpanded = description.classList.contains('expanded');
-                
                 if (isExpanded) {
                     description.classList.remove('expanded');
+                    item.classList.remove('expanded');
                     readMoreBtn.textContent = getReadMoreText();
                 } else {
                     description.classList.add('expanded');
+                    item.classList.add('expanded');
                     readMoreBtn.textContent = getReadLessText();
                 }
             });
@@ -903,3 +905,44 @@ function getReadLessText() {
     };
     return texts[lang] || texts['pl'];
 }
+
+// --- HEADER SCROLL EFFECTS ---
+let lastScrollY = window.scrollY;
+let ticking = false;
+const header = document.querySelector('.header');
+const logo = document.querySelector('.logo');
+
+function onScroll() {
+    if (!header) return;
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        // Скрол вниз — ховати хедер
+        header.classList.add('header--hidden');
+        header.classList.remove('header--small');
+    } else if (currentScrollY < lastScrollY && currentScrollY > 0) {
+        // Скрол вгору — зменшити хедер
+        header.classList.remove('header--hidden');
+        header.classList.add('header--small');
+    } else if (currentScrollY === 0) {
+        // На самому верху — стандартний хедер
+        header.classList.remove('header--hidden');
+        header.classList.remove('header--small');
+    }
+    lastScrollY = currentScrollY;
+    ticking = false;
+}
+
+window.addEventListener('scroll', function() {
+    if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+    }
+});
+
+if (logo) {
+    logo.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+// --- END HEADER SCROLL EFFECTS ---

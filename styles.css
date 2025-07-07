@@ -1255,3 +1255,23 @@ body {
     height: auto !important;
     overflow: visible !important;
 }
+
+.header--hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-100%);
+    transition: opacity 0.3s, transform 0.3s;
+}
+.header--small {
+    height: 48px !important;
+    min-height: 0 !important;
+    transition: height 0.3s;
+}
+.header--small .logo-image {
+    height: 28px !important;
+    transition: height 0.3s;
+}
+.header--small .logo h1 {
+    font-size: 0.6rem !important;
+    transition: font-size 0.3s;
+}
