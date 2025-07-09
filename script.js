@@ -531,6 +531,8 @@ async function sendToTelegram(data) {
 
 // Callback Widget Functionality
 function initializeCallbackWidget() {
+    console.log('📞 Ініціалізація callback widget...');
+    
     const callbackBtn = document.getElementById('callback-btn');
     const callbackForm = document.getElementById('callback-form');
     const closeBtn = document.getElementById('close-callback');
@@ -538,7 +540,21 @@ function initializeCallbackWidget() {
     const successDiv = document.getElementById('callback-success');
     const phoneInput = document.getElementById('callback-phone');
 
-    if (!callbackBtn || !callbackForm) return;
+    console.log('🔍 Знайдені елементи:', {
+        callbackBtn: !!callbackBtn,
+        callbackForm: !!callbackForm,
+        closeBtn: !!closeBtn,
+        formData: !!formData,
+        successDiv: !!successDiv,
+        phoneInput: !!phoneInput
+    });
+
+    if (!callbackBtn || !callbackForm) {
+        console.error('❌ Не знайдено необхідні елементи форми');
+        return;
+    }
+    
+    console.log('✅ Callback widget ініціалізовано успішно');
 
     // Phone number formatting and validation
     if (phoneInput) {
@@ -571,6 +587,7 @@ function initializeCallbackWidget() {
 
     // Open callback form
     callbackBtn.addEventListener('click', () => {
+        console.log('🖱️ Клік на кнопку callback');
         callbackForm.classList.add('active');
     });
 
@@ -590,6 +607,7 @@ function initializeCallbackWidget() {
 
     // Handle form submission
     formData.addEventListener('submit', async (e) => {
+        console.log('📝 Форма відправляється...');
         e.preventDefault();
         
         const phone = document.getElementById('callback-phone').value;
@@ -849,12 +867,14 @@ function initializeFooterPopup() {
 // Initialize website functionality when DOM is loaded
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
+        console.log('🚀 DOM завантажено, ініціалізація функцій...');
         initializeLanguageSwitcher();
         initializeCallbackWidget();
         initializeFooterPopup();
         initializeReadMore();
     });
 } else {
+    console.log('🚀 DOM вже готовий, ініціалізація функцій...');
     initializeLanguageSwitcher();
     initializeCallbackWidget();
     initializeFooterPopup();
