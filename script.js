@@ -487,6 +487,8 @@ const TELEGRAM_BOT_TOKEN = '8007889504:AAESFASDeT0njLEczDDpO__vENkVJd5d340';
 const TELEGRAM_CHAT_ID = '7364136001';
 
 async function sendToTelegram(data) {
+    console.log('🚀 Початок відправки в Telegram:', data);
+    
     const message = `
 📞 *Новий запит на дзвінок*
 
@@ -498,20 +500,33 @@ async function sendToTelegram(data) {
     `.trim();
 
     const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+    console.log('📡 URL запиту:', url);
     
-    const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            chat_id: TELEGRAM_CHAT_ID,
-            text: message,
-            parse_mode: 'Markdown'
-        })
-    });
-
-    return response;
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                chat_id: TELEGRAM_CHAT_ID,
+                text: message,
+                parse_mode: 'Markdown'
+            })
+        });
+        
+        console.log('📨 Відповідь від Telegram:', response.status, response.statusText);
+        
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('❌ Помилка Telegram API:', errorText);
+        }
+        
+        return response;
+    } catch (error) {
+        console.error('💥 Помилка fetch:', error);
+        throw error;
+    }
 }
 
 // Callback Widget Functionality
@@ -600,6 +615,7 @@ function initializeCallbackWidget() {
         submitBtn.disabled = true;
 
         try {
+            console.log('📝 Підготовка даних для Telegram...');
             // Send to Telegram bot
             const telegramData = {
                 phone: phone,
@@ -609,9 +625,13 @@ function initializeCallbackWidget() {
                 source: 'Sushi Club Website'
             };
 
+            console.log('📤 Надсилання даних:', telegramData);
             const response = await sendToTelegram(telegramData);
             
+            console.log('✅ Відповідь отримана:', response.status);
+            
             if (response.ok) {
+                console.log('🎉 Успішно надіслано!');
                 formData.style.display = 'none';
                 successDiv.style.display = 'block';
                 
@@ -621,10 +641,11 @@ function initializeCallbackWidget() {
                     resetForm();
                 }, 3000);
             } else {
+                console.error('❌ Помилка відповіді:', response.status, response.statusText);
                 throw new Error('Failed to send to Telegram');
             }
         } catch (error) {
-            console.error('Error sending to Telegram:', error);
+            console.error('💥 Помилка відправки в Telegram:', error);
             showNotification('Помилка відправки. Спробуйте ще раз.', 'error');
         } finally {
             // Reset button state
