@@ -699,3 +699,76 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('🍪 Cookie Banner initialized');
 });
+
+// --- Callback Button Functionality ---
+(function() {
+    const callbackButton = document.getElementById('callback-button');
+    const footerPopup = document.getElementById('footer-popup');
+    const closeFooterPopup = document.querySelector('.footer-popup .close-btn');
+    
+    if (callbackButton && footerPopup) {
+        callbackButton.addEventListener('click', function() {
+            footerPopup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    // Функція для відновлення скролу
+    function restoreScroll() {
+        document.body.style.overflow = '';
+    }
+    
+    // Відновлюємо скрол при закритті попапу
+    if (closeFooterPopup && footerPopup) {
+        closeFooterPopup.addEventListener('click', function() {
+            footerPopup.classList.remove('active');
+            restoreScroll();
+        });
+        
+        // Клік поза попапом закриває його
+        document.addEventListener('mousedown', function(e) {
+            if (footerPopup.classList.contains('active') && !footerPopup.contains(e.target)) {
+                footerPopup.classList.remove('active');
+                restoreScroll();
+            }
+        });
+    }
+    
+    // Відновлюємо скрол після успішної відправки форми
+    const footerPopupForm = document.getElementById('footer-popup-form');
+    const footerPopupSuccess = document.getElementById('footer-popup-success');
+    
+    if (footerPopupForm && footerPopupSuccess) {
+        footerPopupForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const phone = document.getElementById('footer-phone').value;
+            const email = document.getElementById('footer-email').value;
+            const message = document.getElementById('footer-message').value;
+            const result = await sendToTelegram({
+                phone: phone,
+                email: email,
+                message: message,
+                timestamp: new Date().toLocaleString('uk-UA'),
+                source: 'Footer Popup'
+            });
+            if (result) {
+                footerPopupForm.style.display = 'none';
+                footerPopupSuccess.style.display = 'block';
+                setTimeout(() => {
+                    footerPopup.classList.remove('active');
+                    footerPopupForm.style.display = '';
+                    footerPopupSuccess.style.display = 'none';
+                    footerPopupForm.reset();
+                    restoreScroll();
+                }, 2500);
+            } else {
+                footerPopupSuccess.style.display = 'block';
+                footerPopupSuccess.innerHTML = '<p style="color:red;">❌ Помилка відправки. Спробуйте ще раз.</p>';
+                setTimeout(() => {
+                    footerPopupSuccess.style.display = 'none';
+                    footerPopupSuccess.innerHTML = '<p>✓ Дякуємо! Ми зателефонуємо найближчим часом.</p>';
+                }, 2500);
+            }
+        });
+    }
+})();
