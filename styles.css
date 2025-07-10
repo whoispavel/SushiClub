@@ -476,8 +476,6 @@ body {
     position: relative;
     overflow: hidden;
     min-width: 200px;
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 .discount-button::before {
@@ -609,8 +607,6 @@ body {
     position: relative;
     overflow: hidden;
     min-width: 200px;
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 .footer-callback-btn::before {
