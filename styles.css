@@ -250,6 +250,8 @@ body {
     min-height: 300px;
     overflow: visible;
     align-items: stretch;
+    padding: 1.2em 1em 1em 1em;
+    min-height: unset;
 }
 
 .menu-item:hover {
@@ -288,6 +290,7 @@ body {
     flex-direction: column;
     height: 100%;
     padding: 1.5rem;
+    margin-bottom: 0.5em;
 }
 
 .menu-item-title {
@@ -337,7 +340,7 @@ body {
 .menu-item-price {
     display: block;
     font-size: 1.1rem;
-    margin-top: 0.5em;
+    margin-top: 0.2em;
     margin-bottom: 0;
     font-family: 'TTFirsNeue-Light', sans-serif;
     font-weight: 500;
@@ -364,6 +367,7 @@ body {
     position: relative;
     z-index: 10;
     text-shadow: 0 1px 4px #fff, 0 0 2px #e5f0ea;
+    margin-bottom: 0.2em;
 }
 .read-more-btn:hover {
     opacity: 1;
@@ -1745,6 +1749,43 @@ body {
     font-size: 1.6em;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+.callback-btn {
+    min-width: 220px;
+    max-width: 320px;
+    height: 48px;
+    font-size: 1.15em;
+    font-weight: 700;
+    border-radius: 12px;
+    border: 1.5px solid var(--primary-color);
+    color: var(--primary-color) !important;
+    background: #fff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7em;
+    box-shadow: none;
+    margin: 0 auto;
+    padding: 0 1.5em;
+    transition: background 0.2s, color 0.2s;
+}
+.callback-btn i {
+    font-size: 1.3em;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (min-width: 900px) {
+    .callback-btn {
+        min-width: 260px;
+        height: 54px;
+        font-size: 1.18em;
+        border-radius: 14px;
+        padding: 0 2em;
+    }
 }
 
 

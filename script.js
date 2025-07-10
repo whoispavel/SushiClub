@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'menu-item-3-desc': '·California tuńczyk w mango — nori, ryż, serek Philadelphia, tuńczyk, sriracha, ogórek, mango<br>·Futomak łosoś pieczony — nori, ryż, łosoś pieczony, serek Philadelphia, ogórek, kanpyo<br>·Hosomaki ogórek — nori, ryż, serek Philadelphia, ogórek',
                 'menu-item-3-price': '137,00 PLN',
                 // ... ДОДАЙТЕ ВСІ menu-item-X-title, subtitle, desc, price ...
+                'footer-hours': 'Godziny otwarcia: Pon-Ndz 11:00-22:00',
             },
             en: {
                 'hero-title': 'SUSHI MENU',
@@ -96,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'menu-item-3-desc': '·California tuna in mango — nori, rice, Philadelphia cheese, tuna, sriracha, cucumber, mango<br>·Baked salmon futomaki — nori, rice, baked salmon, Philadelphia cheese, cucumber, kanpyo<br>·Cucumber hosomaki — nori, rice, Philadelphia cheese, cucumber',
                 'menu-item-3-price': '137.00 PLN',
                 // ... ДОДАЙТЕ ВСІ menu-item-X-title, subtitle, desc, price ...
+                'footer-hours': 'Opening hours: Mon-Sun 11:00-22:00',
             }
         };
         const currentTranslations = translations[language];
@@ -173,6 +175,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 msg.textContent = currentTranslations['callback-success'];
             }
         });
+
+        // Додаю переклад для кнопки callback
+        const callbackBtn = document.querySelector('.callback-btn span');
+        if (callbackBtn) {
+            if (language === 'pl') callbackBtn.textContent = 'Zadzwoń';
+            else if (language === 'en') callbackBtn.textContent = 'Call';
+            else callbackBtn.textContent = 'Замовити дзвінок';
+        }
+
+        // Оновлюю текст у footer-hours
+        const footerHours = document.querySelector('[data-key="footer-hours"]');
+        if (footerHours && translations[language]['footer-hours']) {
+            footerHours.textContent = translations[language]['footer-hours'];
+        }
     }
     
     // Ініціалізуємо контент з поточною мовою
@@ -253,6 +269,33 @@ document.addEventListener('DOMContentLoaded', function() {
     header.addEventListener('mouseleave', function() {
         header.style.setProperty('--caustic-intensity', '0.4');
         header.style.setProperty('--caustic-speed', '6s');
+    });
+
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('.header');
+        const logo = document.querySelector('.header-logo');
+        const title = document.querySelector('.header-title');
+        if (window.scrollY > 10) {
+            if (logo) logo.style.display = 'none';
+            if (title) {
+                title.textContent = 'SUSHI CLUB';
+                title.style.justifyContent = 'center';
+                title.style.width = '100%';
+                title.style.letterSpacing = '0.18em';
+                title.style.padding = '0 2vw';
+                title.style.textAlign = 'center';
+            }
+        } else {
+            if (logo) logo.style.display = '';
+            if (title) {
+                title.textContent = 'SUSHI CLUB';
+                title.style.justifyContent = '';
+                title.style.width = '';
+                title.style.letterSpacing = '';
+                title.style.padding = '';
+                title.style.textAlign = '';
+            }
+        }
     });
 });
 
