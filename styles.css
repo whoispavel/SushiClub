@@ -1753,8 +1753,8 @@ body {
 
 .callback-btn {
     min-width: 0;
-    max-width: 220px;
-    width: 100%;
+    max-width: unset;
+    width: auto;
     height: 48px;
     font-size: 1.15em;
     font-weight: 700;
@@ -1768,16 +1768,15 @@ body {
     gap: 0.7em;
     box-shadow: none;
     margin: 0 auto;
-    padding: 0 1.2em;
+    padding: 0.7em 1.5em;
     transition: background 0.2s, color 0.2s;
 }
 @media (min-width: 900px) {
     .callback-btn {
-        max-width: 220px;
         height: 54px;
         font-size: 1.18em;
         border-radius: 14px;
-        padding: 0 1.2em;
+        padding: 0.9em 2em;
     }
 }
 @media (max-width: 768px) {
