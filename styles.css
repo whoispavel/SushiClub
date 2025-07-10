@@ -972,47 +972,35 @@ body {
     z-index: 1000;
 }
 
+/* Сучасна кнопка callback */
 .callback-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    background: var(--primary-color);
-    color: white;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #3a6b4a 100%);
+    color: #fff;
     border: none;
-    padding: 12px 20px;
-    border-radius: 50px;
-    font-size: 14px;
+    padding: 0.65rem 1.3rem;
+    border-radius: 40px;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(38, 72, 50, 0.3);
-    animation: pulse 2s infinite;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.callback-btn:hover {
-    background: var(--hover-color);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(38, 72, 50, 0.4);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 14px rgba(38, 72, 50, 0.13), 0 1px 4px rgba(38, 72, 50, 0.08);
+    min-width: 120px;
+    position: relative;
+    overflow: hidden;
 }
 
 .callback-btn i {
-    animation: ring 2s infinite;
-    display: inline-block;
-    margin-right: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.1em;
+    margin-right: 0.2em;
 }
 
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-@keyframes ring {
-    0%, 100% { transform: rotate(0deg); }
-    10%, 30%, 50%, 70%, 90% { transform: rotate(10deg); }
-    20%, 40%, 60%, 80% { transform: rotate(-10deg); }
+.callback-btn:hover {
+    background: linear-gradient(135deg, #1a3525 0%, var(--primary-color) 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(38, 72, 50, 0.18), 0 2px 8px rgba(38, 72, 50, 0.12);
 }
 
 .callback-form {
