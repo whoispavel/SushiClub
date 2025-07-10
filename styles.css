@@ -201,6 +201,12 @@ body {
     position: relative;
     overflow: hidden;
     min-width: 200px;
+    /* padding-left: 20px; */
+    /* padding-right: 20px; */
+}
+
+/* Додаю падінги тільки для кнопки "Замовити дзвінок" у віджеті */
+.callback-cta-btn {
     padding-left: 20px;
     padding-right: 20px;
 }
