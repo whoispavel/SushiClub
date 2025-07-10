@@ -205,7 +205,7 @@ body {
     /* padding-right: 20px; */
 }
 
-/* Додаю падінги тільки для кнопки "Замовити дзвінок" у віджеті */
+/* Падінги 20px тільки для кнопки у віджеті callback */
 .callback-cta-btn {
     padding-left: 20px;
     padding-right: 20px;
