@@ -52,6 +52,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 'callback-submit': 'Wyślij',
                 'callback-success': '✓ Dziękujemy! Oddzwonimy wkrótce.',
                 'footer-callback-title': 'Zamów telefon',
+                // --- Cookie Banner ---
+                'cookie-title': '🍪 Polityka plików cookie',
+                'cookie-description': 'Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. Pliki cookie pomagają nam analizować ruch na stronie i dostosowywać treści do Twoich preferencji.',
+                'cookie-necessary': 'Niezbędne:',
+                'cookie-necessary-desc': 'Zapewniają podstawowe funkcje strony (język, callback popup)',
+                'cookie-analytics': 'Analityczne:',
+                'cookie-analytics-desc': 'Pomagają zrozumieć, jak odwiedzający korzystają ze strony',
+                'cookie-accept-all': 'Akceptuję wszystkie',
+                'cookie-accept-necessary': 'Tylko niezbędne',
+                'cookie-settings': 'Ustawienia',
+                'cookie-settings-title': 'Ustawienia plików cookie',
+                'cookie-necessary-title': 'Niezbędne pliki cookie',
+                'cookie-necessary-modal-desc': 'Te pliki cookie są niezbędne do działania strony i nie można ich wyłączyć.',
+                'cookie-analytics-title': 'Pliki cookie analityczne',
+                'cookie-analytics-modal-desc': 'Pomagają nam zrozumieć, jak odwiedzający korzystają ze strony poprzez zbieranie i raportowanie informacji anonimowo.',
+                'cookie-save-settings': 'Zapisz ustawienia',
+                'cookie-cancel': 'Anuluj',
                 // --- Меню ---
                 'menu-item-1-title': 'Zestaw 1',
                 'menu-item-1-subtitle': '(14 szt. + 6 szt. GRATIS)',
@@ -83,6 +100,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 'callback-submit': 'Send',
                 'callback-success': '✓ Thank you! We\'ll call back soon.',
                 'footer-callback-title': 'Order call',
+                // --- Cookie Banner ---
+                'cookie-title': '🍪 Cookie Policy',
+                'cookie-description': 'We use cookies to provide the best experience on our website. Cookies help us analyze website traffic and customize content to your preferences.',
+                'cookie-necessary': 'Necessary:',
+                'cookie-necessary-desc': 'Provide basic website functions (language, callback popup)',
+                'cookie-analytics': 'Analytics:',
+                'cookie-analytics-desc': 'Help understand how visitors use the website',
+                'cookie-accept-all': 'Accept all',
+                'cookie-accept-necessary': 'Necessary only',
+                'cookie-settings': 'Settings',
+                'cookie-settings-title': 'Cookie Settings',
+                'cookie-necessary-title': 'Necessary cookies',
+                'cookie-necessary-modal-desc': 'These cookies are essential for website functionality and cannot be disabled.',
+                'cookie-analytics-title': 'Analytics cookies',
+                'cookie-analytics-modal-desc': 'Help us understand how visitors use the website by collecting and reporting information anonymously.',
+                'cookie-save-settings': 'Save settings',
+                'cookie-cancel': 'Cancel',
                 // --- Menu ---
                 'menu-item-1-title': 'Set 1',
                 'menu-item-1-subtitle': '(14 pcs. + 6 pcs. FREE)',
@@ -526,4 +560,142 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
+});
+
+// --- Cookie Banner Logic ---
+document.addEventListener('DOMContentLoaded', function() {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieModal = document.getElementById('cookie-settings-modal');
+    const closeCookieBanner = document.getElementById('close-cookie-banner');
+    const closeCookieModal = document.getElementById('close-cookie-modal');
+    const acceptAllCookies = document.getElementById('accept-all-cookies');
+    const acceptNecessaryCookies = document.getElementById('accept-necessary-cookies');
+    const cookieSettings = document.getElementById('cookie-settings');
+    const saveCookieSettings = document.getElementById('save-cookie-settings');
+    const cancelCookieSettings = document.getElementById('cancel-cookie-settings');
+    const analyticsCookies = document.getElementById('analytics-cookies');
+
+    // Перевіряємо, чи користувач вже прийняв cookie
+    const cookieConsent = localStorage.getItem('cookieConsent');
+    
+    if (!cookieConsent && cookieBanner) {
+        // Показуємо банер через 1 секунду після завантаження
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 1000);
+    }
+
+    // Функція для збереження налаштувань cookie
+    function saveCookiePreferences(analytics = false) {
+        const preferences = {
+            necessary: true,
+            analytics: analytics,
+            timestamp: new Date().toISOString()
+        };
+        localStorage.setItem('cookieConsent', JSON.stringify(preferences));
+        
+        // Приховуємо банер з анімацією
+        cookieBanner.classList.remove('show');
+        cookieBanner.classList.add('slide-out');
+        
+        setTimeout(() => {
+            cookieBanner.style.display = 'none';
+        }, 400);
+
+        // Якщо аналітика дозволена, можна ініціалізувати Google Analytics
+        if (analytics) {
+            console.log('📊 Analytics cookies enabled');
+            // Тут можна додати ініціалізацію Google Analytics
+            // gtag('consent', 'update', { 'analytics_storage': 'granted' });
+        }
+    }
+
+    // Обробники подій для кнопок банеру
+    if (acceptAllCookies) {
+        acceptAllCookies.addEventListener('click', function() {
+            saveCookiePreferences(true);
+        });
+    }
+
+    if (acceptNecessaryCookies) {
+        acceptNecessaryCookies.addEventListener('click', function() {
+            saveCookiePreferences(false);
+        });
+    }
+
+    if (closeCookieBanner) {
+        closeCookieBanner.addEventListener('click', function() {
+            cookieBanner.classList.remove('show');
+            cookieBanner.classList.add('slide-out');
+            setTimeout(() => {
+                cookieBanner.style.display = 'none';
+            }, 400);
+        });
+    }
+
+    // Обробники подій для модального вікна налаштувань
+    if (cookieSettings) {
+        cookieSettings.addEventListener('click', function() {
+            if (cookieModal) {
+                cookieModal.classList.add('show');
+                
+                // Встановлюємо поточні налаштування
+                const currentConsent = localStorage.getItem('cookieConsent');
+                if (currentConsent) {
+                    const preferences = JSON.parse(currentConsent);
+                    if (analyticsCookies) {
+                        analyticsCookies.checked = preferences.analytics || false;
+                    }
+                }
+            }
+        });
+    }
+
+    if (closeCookieModal) {
+        closeCookieModal.addEventListener('click', function() {
+            cookieModal.classList.remove('show');
+        });
+    }
+
+    if (cancelCookieSettings) {
+        cancelCookieSettings.addEventListener('click', function() {
+            cookieModal.classList.remove('show');
+        });
+    }
+
+    if (saveCookieSettings) {
+        saveCookieSettings.addEventListener('click', function() {
+            const analyticsEnabled = analyticsCookies ? analyticsCookies.checked : false;
+            saveCookiePreferences(analyticsEnabled);
+            cookieModal.classList.remove('show');
+        });
+    }
+
+    // Закриття модального вікна при кліку поза ним
+    if (cookieModal) {
+        cookieModal.addEventListener('click', function(e) {
+            if (e.target === cookieModal) {
+                cookieModal.classList.remove('show');
+            }
+        });
+    }
+
+    // Функція для перевірки дозволів cookie
+    window.checkCookieConsent = function(type) {
+        const consent = localStorage.getItem('cookieConsent');
+        if (!consent) return false;
+        
+        const preferences = JSON.parse(consent);
+        return preferences[type] || false;
+    };
+
+    // Функція для отримання всіх налаштувань cookie
+    window.getCookiePreferences = function() {
+        const consent = localStorage.getItem('cookieConsent');
+        if (!consent) return null;
+        
+        return JSON.parse(consent);
+    };
+
+    console.log('🍪 Cookie Banner initialized');
 });

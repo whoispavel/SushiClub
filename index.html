@@ -823,6 +823,91 @@
       gtag('config', 'G-XXXXXXXXXX');
     </script> -->
     
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-header">
+                <h3 data-key="cookie-title">🍪 Polityka plików cookie</h3>
+                <button id="close-cookie-banner" class="cookie-close-btn">&times;</button>
+            </div>
+            <div class="cookie-body">
+                <p data-key="cookie-description">
+                    Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. 
+                    Pliki cookie pomagają nam analizować ruch na stronie i dostosowywać treści do Twoich preferencji.
+                </p>
+                <div class="cookie-types">
+                    <div class="cookie-type">
+                        <strong data-key="cookie-necessary">Niezbędne:</strong>
+                        <span data-key="cookie-necessary-desc">Zapewniają podstawowe funkcje strony (język, callback popup)</span>
+                    </div>
+                    <div class="cookie-type">
+                        <strong data-key="cookie-analytics">Analityczne:</strong>
+                        <span data-key="cookie-analytics-desc">Pomagają zrozumieć, jak odwiedzający korzystają ze strony</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cookie-actions">
+                <button id="accept-all-cookies" class="cookie-btn accept-btn" data-key="cookie-accept-all">
+                    <i class="fas fa-check"></i>
+                    Akceptuję wszystkie
+                </button>
+                <button id="accept-necessary-cookies" class="cookie-btn necessary-btn" data-key="cookie-accept-necessary">
+                    <i class="fas fa-shield-alt"></i>
+                    Tylko niezbędne
+                </button>
+                <button id="cookie-settings" class="cookie-btn settings-btn" data-key="cookie-settings">
+                    <i class="fas fa-cog"></i>
+                    Ustawienia
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div id="cookie-settings-modal" class="cookie-modal">
+        <div class="cookie-modal-content">
+            <div class="cookie-modal-header">
+                <h3 data-key="cookie-settings-title">Ustawienia plików cookie</h3>
+                <button id="close-cookie-modal" class="cookie-close-btn">&times;</button>
+            </div>
+            <div class="cookie-modal-body">
+                <div class="cookie-setting">
+                    <div class="cookie-setting-header">
+                        <label class="cookie-switch">
+                            <input type="checkbox" id="necessary-cookies" checked disabled>
+                            <span class="slider"></span>
+                        </label>
+                        <div class="cookie-setting-info">
+                            <strong data-key="cookie-necessary-title">Niezbędne pliki cookie</strong>
+                            <p data-key="cookie-necessary-modal-desc">Te pliki cookie są niezbędne do działania strony i nie można ich wyłączyć.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cookie-setting">
+                    <div class="cookie-setting-header">
+                        <label class="cookie-switch">
+                            <input type="checkbox" id="analytics-cookies">
+                            <span class="slider"></span>
+                        </label>
+                        <div class="cookie-setting-info">
+                            <strong data-key="cookie-analytics-title">Pliki cookie analityczne</strong>
+                            <p data-key="cookie-analytics-modal-desc">Pomagają nam zrozumieć, jak odwiedzający korzystają ze strony poprzez zbieranie i raportowanie informacji anonimowo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cookie-modal-actions">
+                <button id="save-cookie-settings" class="cookie-btn accept-btn" data-key="cookie-save-settings">
+                    <i class="fas fa-save"></i>
+                    Zapisz ustawienia
+                </button>
+                <button id="cancel-cookie-settings" class="cookie-btn cancel-btn" data-key="cookie-cancel">
+                    Anuluj
+                </button>
+            </div>
+        </div>
+    </div>
+    
     <script src="script.js?v=31"></script>
 </body>
 </html>
