@@ -1758,9 +1758,9 @@ body {
     font-size: 1.15em;
     font-weight: 700;
     border-radius: 12px;
-    border: 1.5px solid var(--primary-color);
-    color: var(--primary-color) !important;
-    background: #fff !important;
+    border: none;
+    color: #fff !important;
+    background: var(--primary-color) !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1785,6 +1785,23 @@ body {
         font-size: 1.18em;
         border-radius: 14px;
         padding: 0 2em;
+    }
+}
+@media (max-width: 768px) {
+    .callback-btn {
+        width: 60px;
+        height: 60px;
+        min-width: unset;
+        max-width: unset;
+        border-radius: 12px;
+        padding: 0;
+        gap: 0;
+    }
+    .callback-btn span {
+        display: none;
+    }
+    .callback-btn i {
+        font-size: 1.5em;
     }
 }
 
