@@ -250,8 +250,8 @@ body {
     min-height: 300px;
     overflow: visible;
     align-items: stretch;
-    padding: 1.2em 1em 1em 1em;
-    min-height: unset;
+    padding: 1.5em 1em 1.5em 1em;
+    min-height: 280px;
 }
 
 .menu-item:hover {
@@ -290,7 +290,7 @@ body {
     flex-direction: column;
     height: 100%;
     padding: 1.5rem;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 .menu-item-title {
@@ -340,7 +340,7 @@ body {
 .menu-item-price {
     display: block;
     font-size: 1.1rem;
-    margin-top: 0.2em;
+    margin-top: 0.5em;
     margin-bottom: 0;
     font-family: 'TTFirsNeue-Light', sans-serif;
     font-weight: 500;
@@ -367,7 +367,7 @@ body {
     position: relative;
     z-index: 10;
     text-shadow: 0 1px 4px #fff, 0 0 2px #e5f0ea;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.5em;
 }
 .read-more-btn:hover {
     opacity: 1;
