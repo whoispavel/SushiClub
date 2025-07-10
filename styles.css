@@ -614,48 +614,45 @@ body {
 .footer-callback-btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
+    gap: 0.6rem;
     background: linear-gradient(135deg, var(--primary-color) 0%, #3a6b4a 100%);
     color: #fff;
     border: none;
-    padding: 1.25rem 2.5rem;
-    border-radius: 50px;
+    padding: 0.65rem 1.3rem;
+    border-radius: 40px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 25px rgba(38, 72, 50, 0.15), 0 2px 8px rgba(38, 72, 50, 0.1);
-    margin-top: 15px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 14px rgba(38, 72, 50, 0.13), 0 1px 4px rgba(38, 72, 50, 0.08);
+    min-width: 120px;
     position: relative;
     overflow: hidden;
-    min-width: 200px;
+    margin-top: 0;
 }
 
-.footer-callback-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
+.footer-callback-btn i {
+    font-size: 1.1em;
+    margin-right: 0.2em;
 }
 
 .footer-callback-btn:hover {
     background: linear-gradient(135deg, #1a3525 0%, var(--primary-color) 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(38, 72, 50, 0.25), 0 4px 12px rgba(38, 72, 50, 0.15);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(38, 72, 50, 0.18), 0 2px 8px rgba(38, 72, 50, 0.12);
 }
 
-.footer-callback-btn:hover::before {
-    left: 100%;
-}
-
-.footer-callback-btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(38, 72, 50, 0.2);
+@media (max-width: 768px) {
+    .footer-callback-btn {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    .footer-callback-btn span {
+        display: none;
+    }
 }
 
 .copyright {
@@ -767,23 +764,6 @@ body {
     
     .menu-item-description.expanded {
         max-height: none;
-    }
-    
-    .menu-item-description::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        height: 20px;
-        background: linear-gradient(transparent, var(--background-color));
-        pointer-events: none;
-        opacity: 1;
-        transition: opacity 0.3s ease;
-    }
-    
-    .menu-item-description.expanded::after {
-        opacity: 0;
     }
     
     .read-more-btn {
