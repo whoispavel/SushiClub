@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'menu-item-3-price': '137,00 PLN',
                 // ... ДОДАЙТЕ ВСІ menu-item-X-title, subtitle, desc, price ...
                 'footer-hours': 'Godziny otwarcia: Pon-Ndz 11:00-22:00',
+                'callback-btn': 'Zamów rozmowę',
             },
             en: {
                 'hero-title': 'SUSHI MENU',
@@ -132,6 +133,56 @@ document.addEventListener('DOMContentLoaded', function() {
                 'menu-item-3-price': '137.00 PLN',
                 // ... ДОДАЙТЕ ВСІ menu-item-X-title, subtitle, desc, price ...
                 'footer-hours': 'Opening hours: Mon-Sun 11:00-22:00',
+                'callback-btn': 'Request a call',
+            },
+            uk: {
+                'hero-title': 'SUSHI MENU',
+                'hero-subtitle': 'Authentic Japanese flavors delivered to your table',
+                'cta-button': 'Call',
+                'instagram': 'Instagram',
+                'menu-title': 'SUSHI',
+                'read-more': 'Show more',
+                'read-less': 'Show less',
+                'callback-title': 'Leave your number — we\'ll call back!',
+                'callback-phone': 'Your phone',
+                'callback-email': 'Your email (optional)',
+                'callback-message': 'Comment (optional)',
+                'callback-submit': 'Send',
+                'callback-success': '✓ Thank you! We\'ll call back soon.',
+                'footer-callback-title': 'Order call',
+                // --- Cookie Banner ---
+                'cookie-title': '🍪 Cookie Policy',
+                'cookie-description': 'We use cookies to provide the best experience on our website. Cookies help us analyze website traffic and customize content to your preferences.',
+                'cookie-necessary': 'Necessary:',
+                'cookie-necessary-desc': 'Provide basic website functions (language, callback popup)',
+                'cookie-analytics': 'Analytics:',
+                'cookie-analytics-desc': 'Help understand how visitors use the website',
+                'cookie-accept-all': 'Accept all',
+                'cookie-accept-necessary': 'Necessary only',
+                'cookie-settings': 'Settings',
+                'cookie-settings-title': 'Cookie Settings',
+                'cookie-necessary-title': 'Necessary cookies',
+                'cookie-necessary-modal-desc': 'These cookies are essential for website functionality and cannot be disabled.',
+                'cookie-analytics-title': 'Analytics cookies',
+                'cookie-analytics-modal-desc': 'Help us understand how visitors use the website by collecting and reporting information anonymously.',
+                'cookie-save-settings': 'Save settings',
+                'cookie-cancel': 'Cancel',
+                // --- Menu ---
+                'menu-item-1-title': 'Set 1',
+                'menu-item-1-subtitle': '(14 pcs. + 6 pcs. FREE)',
+                'menu-item-1-desc': '·Baked salmon futomaki (6 pcs) — nori, rice, baked salmon, Philadelphia cheese, cucumber, kanpyo<br>·Baked salmon hosomaki (8 pcs) — nori, rice, baked salmon, Philadelphia cheese',
+                'menu-item-1-price': '67.00 PLN',
+                'menu-item-2-title': 'Set 2',
+                'menu-item-2-subtitle': '(14 pcs. + 6 pcs. FREE)',
+                'menu-item-2-desc': '·Raw salmon futomaki (6 pcs) — nori, rice, Philadelphia cheese, salmon, avocado, cucumber<br>·Raw salmon hosomaki (8 pcs) — nori, rice, salmon, Philadelphia cheese<br>·1 roll FREE (6 pcs)',
+                'menu-item-2-price': '67.00 PLN',
+                'menu-item-3-title': 'Set 3',
+                'menu-item-3-subtitle': '(26 pcs. + 6 pcs. FREE)',
+                'menu-item-3-desc': '·California tuna in mango — nori, rice, Philadelphia cheese, tuna, sriracha, cucumber, mango<br>·Baked salmon futomaki — nori, rice, baked salmon, Philadelphia cheese, cucumber, kanpyo<br>·Cucumber hosomaki — nori, rice, Philadelphia cheese, cucumber',
+                'menu-item-3-price': '137.00 PLN',
+                // ... ДОДАЙТЕ ВСІ menu-item-X-title, subtitle, desc, price ...
+                'footer-hours': 'Opening hours: Mon-Sun 11:00-22:00',
+                'callback-btn': 'Замовити дзвінок',
             }
         };
         const currentTranslations = translations[language];
@@ -210,12 +261,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Додаю переклад для кнопки callback
-        const callbackBtn = document.querySelector('.callback-btn span');
-        if (callbackBtn) {
-            if (language === 'pl') callbackBtn.textContent = 'Zadzwoń';
-            else if (language === 'en') callbackBtn.textContent = 'Call';
-            else callbackBtn.textContent = 'Замовити дзвінок';
+        // --- Видаляю ручну зміну тексту кнопки callback, бо тепер працює через data-key ---
+
+        // Оновлюємо текст кнопки "Замовити дзвінок" (callback)
+        const callbackBtnText = document.querySelector('.callback-button .callback-text');
+        const callbackBtn = document.getElementById('callback-button');
+        if (callbackBtnText && callbackBtn) {
+            if (language === 'pl') {
+                callbackBtnText.textContent = 'Zamów rozmowę';
+                callbackBtn.setAttribute('aria-label', 'Zamów rozmowę');
+            } else if (language === 'en') {
+                callbackBtnText.textContent = 'Request a call';
+                callbackBtn.setAttribute('aria-label', 'Request a call');
+            } else {
+                callbackBtnText.textContent = 'Замовити дзвінок';
+                callbackBtn.setAttribute('aria-label', 'Замовити дзвінок');
+            }
         }
 
         // Оновлюю текст у footer-hours
