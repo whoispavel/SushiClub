@@ -175,26 +175,36 @@
     document.addEventListener('DOMContentLoaded', function() {
       var consent = getConsent();
       if (!consent) {
-        showConsentBanner();
+        // Показуємо кастомний банер (додаємо клас show)
+        var banner = document.getElementById('cookie-banner');
+        if (banner) banner.classList.add('show');
       } else {
         updateGtagConsent(consent);
         if (consent.analytics) loadGA();
       }
-      document.getElementById('consent-accept').onclick = function() {
-        var analytics = document.getElementById('consent-analytics').checked;
-        var ads = document.getElementById('consent-ads').checked;
-        var consent = {analytics: analytics, ads: ads};
-        setConsent(consent);
-        updateGtagConsent(consent);
-        hideConsentBanner();
-        if (analytics) loadGA();
-      };
-      document.getElementById('consent-decline').onclick = function() {
-        var consent = {analytics: false, ads: false};
-        setConsent(consent);
-        updateGtagConsent(consent);
-        hideConsentBanner();
-      };
+      var acceptBtn = document.getElementById('accept-all-cookies');
+      if (acceptBtn) {
+        acceptBtn.onclick = function() {
+          var analytics = document.getElementById('analytics-cookies')?.checked;
+          var ads = document.getElementById('ads-cookies')?.checked;
+          var consent = {analytics: !!analytics, ads: !!ads};
+          setConsent(consent);
+          updateGtagConsent(consent);
+          var banner = document.getElementById('cookie-banner');
+          if (banner) banner.classList.remove('show');
+          if (analytics) loadGA();
+        };
+      }
+      var declineBtn = document.getElementById('accept-necessary-cookies');
+      if (declineBtn) {
+        declineBtn.onclick = function() {
+          var consent = {analytics: false, ads: false};
+          setConsent(consent);
+          updateGtagConsent(consent);
+          var banner = document.getElementById('cookie-banner');
+          if (banner) banner.classList.remove('show');
+        };
+      }
     });
     </script>
 </head>
@@ -207,14 +217,6 @@
   <button id="consent-accept">Akceptuję</button>
   <button id="consent-decline">Odrzuć</button>
 </div>
-<script>
-function showConsentBanner() {
-  document.getElementById('cookie-banner').style.display = 'block';
-}
-function hideConsentBanner() {
-  document.getElementById('cookie-banner').style.display = 'none';
-}
-</script>
 <!-- Видаляю тестову форму для Telegram -->
 <!-- <form id="test-form" style="z-index:9999;position:relative;background:#fff;padding:20px;border:2px solid #333;max-width:400px;margin:20px auto;">
     <input type="tel" id="phone" placeholder="Телефон" value="+48123456789" required style="display:block;width:100%;margin-bottom:10px;">
@@ -1030,7 +1032,9 @@ function hideConsentBanner() {
     document.addEventListener('DOMContentLoaded', function() {
       var consent = getConsent();
       if (!consent) {
-        showConsentBanner();
+        // Показуємо кастомний банер (додаємо клас show)
+        var banner = document.getElementById('cookie-banner');
+        if (banner) banner.classList.add('show');
       } else {
         updateGtagConsent(consent);
         if (consent.analytics) {
