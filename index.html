@@ -136,6 +136,72 @@
             </filter>
         </defs>
     </svg>
+
+    <!-- Google Consent Mode (default: denied) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied'
+      });
+    </script>
+
+    <!-- Динамічне підключення GA4 -->
+    <script>
+    function loadGA() {
+      if (window.gaLoaded) return;
+      window.gaLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-QH2QWS0XPY";
+      document.head.appendChild(s);
+      s.onload = function() {
+        gtag('js', new Date());
+        gtag('config', 'G-QH2QWS0XPY');
+      }
+    }
+    </script>
+
+    <!-- Оновлена логіка банера -->
+    <script>
+    function setConsent(consent) {
+      localStorage.setItem('consentMode', JSON.stringify(consent));
+    }
+    function getConsent() {
+      try { return JSON.parse(localStorage.getItem('consentMode')); } catch(e){ return null; }
+    }
+    function updateGtagConsent(consent) {
+      gtag('consent', 'update', {
+        'analytics_storage': consent.analytics ? 'granted' : 'denied',
+        'ad_storage': consent.ads ? 'granted' : 'denied'
+      });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var consent = getConsent();
+      if (!consent) {
+        showConsentBanner();
+      } else {
+        updateGtagConsent(consent);
+        if (consent.analytics) loadGA();
+      }
+      document.getElementById('consent-accept').onclick = function() {
+        var analytics = document.getElementById('consent-analytics').checked;
+        var ads = document.getElementById('consent-ads').checked;
+        var consent = {analytics: analytics, ads: ads};
+        setConsent(consent);
+        updateGtagConsent(consent);
+        hideConsentBanner();
+        if (analytics) loadGA();
+      };
+      document.getElementById('consent-decline').onclick = function() {
+        var consent = {analytics: false, ads: false};
+        setConsent(consent);
+        updateGtagConsent(consent);
+        hideConsentBanner();
+      };
+    });
+    </script>
 </head>
 <body>
 <!-- Видаляю тестову форму для Telegram -->
@@ -809,15 +875,6 @@
     <!-- Callback Modal (копія футер-попапу) -->
     <!-- Видалено: дубль попапу, тепер використовується лише футерний -->
 
-    <!-- Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script> -->
-    
     <!-- Cookie Banner -->
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-content">
