@@ -4,13 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QH2QWS0XPY"></script>
+    <!-- Видалено дубльований блок підключення gtag.js та gtag('config', ...) -->
+    
+    <!-- Google Consent Mode (default: denied) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-QH2QWS0XPY');
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied'
+      });
     </script>
+
+    <!-- Динамічне підключення GA4 -->
+    <script>
+    function loadGA() {
+      if (window.gaLoaded) return;
+      window.gaLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-QH2QWS0XPY";
+      document.head.appendChild(s);
+      s.onload = function() {
+        gtag('js', new Date());
+        gtag('config', 'G-QH2QWS0XPY');
+      }
+    }
+    </script>
+    
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
       script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://maps.googleapis.com https://maps.gstatic.com;
@@ -137,32 +158,6 @@
         </defs>
     </svg>
 
-    <!-- Google Consent Mode (default: denied) -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'analytics_storage': 'denied'
-      });
-    </script>
-
-    <!-- Динамічне підключення GA4 -->
-    <script>
-    function loadGA() {
-      if (window.gaLoaded) return;
-      window.gaLoaded = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = "https://www.googletagmanager.com/gtag/js?id=G-QH2QWS0XPY";
-      document.head.appendChild(s);
-      s.onload = function() {
-        gtag('js', new Date());
-        gtag('config', 'G-QH2QWS0XPY');
-      }
-    }
-    </script>
-
     <!-- Оновлена логіка банера -->
     <script>
     function setConsent(consent) {
@@ -204,6 +199,22 @@
     </script>
 </head>
 <body>
+<!-- Мінімальний cookie-банер для тесту Consent Mode (якщо його немає) -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#fff;border-top:1px solid #ccc;z-index:9999;padding:1rem;display:none;text-align:center;">
+  <span>Ta strona używa plików cookie. </span>
+  <label><input type="checkbox" id="consent-analytics"> Analityczne</label>
+  <label><input type="checkbox" id="consent-ads"> Reklamowe</label>
+  <button id="consent-accept">Akceptuję</button>
+  <button id="consent-decline">Odrzuć</button>
+</div>
+<script>
+function showConsentBanner() {
+  document.getElementById('cookie-banner').style.display = 'block';
+}
+function hideConsentBanner() {
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
 <!-- Видаляю тестову форму для Telegram -->
 <!-- <form id="test-form" style="z-index:9999;position:relative;background:#fff;padding:20px;border:2px solid #333;max-width:400px;margin:20px auto;">
     <input type="tel" id="phone" placeholder="Телефон" value="+48123456789" required style="display:block;width:100%;margin-bottom:10px;">
