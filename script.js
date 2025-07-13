@@ -761,42 +761,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Відновлюємо скрол після успішної відправки форми
-    const footerPopupForm = document.getElementById('footer-popup-form');
-    const footerPopupSuccess = document.getElementById('footer-popup-success');
-    
-    if (footerPopupForm && footerPopupSuccess) {
-        footerPopupForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const phone = document.getElementById('footer-popup-phone').value;
-            const email = document.getElementById('footer-popup-email').value;
-            const message = document.getElementById('footer-popup-message').value;
-            const result = await sendToTelegram({
-                phone: phone,
-                email: email,
-                message: message,
-                timestamp: new Date().toLocaleString('uk-UA'),
-                source: 'Footer Popup'
-            });
-            if (result) {
-                footerPopupForm.style.display = 'none';
-                footerPopupSuccess.style.display = 'block';
-                setTimeout(() => {
-                    footerPopup.classList.remove('active');
-                    footerPopupForm.style.display = '';
-                    footerPopupSuccess.style.display = 'none';
-                    footerPopupForm.reset();
-                    restoreScroll();
-                }, 2500);
-            } else {
-                footerPopupSuccess.style.display = 'block';
-                footerPopupSuccess.innerHTML = '<p style="color:red;">❌ Помилка відправки. Спробуйте ще раз.</p>';
-                setTimeout(() => {
-                    footerPopupSuccess.style.display = 'none';
-                    footerPopupSuccess.innerHTML = '<p>✓ Дякуємо! Ми зателефонуємо найближчим часом.</p>';
-                }, 2500);
-            }
-        });
-    }
+    // ДУБЛЬОВАНИЙ ОБРОБНИК submit ВИДАЛЕНО
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
