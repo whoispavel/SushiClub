@@ -802,4 +802,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// --- Cookie Banner Logic ---
+document.addEventListener('DOMContentLoaded', function() {
+    const acceptAllBtn = document.getElementById('accept-all-cookies');
+    const analyticsCheckbox = document.getElementById('analytics-cookies');
+    const cookieSettingsBtn = document.getElementById('cookie-settings-btn');
+    const cookieModal = document.getElementById('cookie-settings-modal');
+
+    if (acceptAllBtn && analyticsCheckbox) {
+        acceptAllBtn.addEventListener('click', function() {
+            analyticsCheckbox.checked = true;
+            updateConsent(true, false);
+            const banner = document.getElementById('cookie-banner');
+            if (banner) banner.classList.remove('show');
+        });
+    }
+
+    if (cookieSettingsBtn && cookieModal && analyticsCheckbox) {
+        cookieSettingsBtn.addEventListener('click', function() {
+            const consent = getConsent();
+            analyticsCheckbox.checked = !!(consent && consent.analytics);
+            cookieModal.classList.add('show');
+        });
+    }
+});
+
 console.log('=== END OF JS ===');
