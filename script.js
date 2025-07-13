@@ -566,6 +566,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
+        console.log('[i18n] language:', language, '| dict:', window.i18n && window.i18n[language]);
     }
     
     // Ініціалізуємо контент з поточною мовою
