@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) -->
-    <!-- Видалено дубльований блок підключення gtag.js та gtag('config', ...) -->
-    
-    <!-- Google Consent Mode (default: denied) -->
+    <!-- Google tag (gtag.js) + Consent Mode Advanced -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QH2QWS0XPY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -14,22 +12,8 @@
         'ad_storage': 'denied',
         'analytics_storage': 'denied'
       });
-    </script>
-
-    <!-- Динамічне підключення GA4 -->
-    <script>
-    function loadGA() {
-      if (window.gaLoaded) return;
-      window.gaLoaded = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = "https://www.googletagmanager.com/gtag/js?id=G-QH2QWS0XPY";
-      document.head.appendChild(s);
-      s.onload = function() {
-        gtag('js', new Date());
-        gtag('config', 'G-QH2QWS0XPY');
-      }
-    }
+      gtag('js', new Date());
+      gtag('config', 'G-QH2QWS0XPY');
     </script>
     
     <meta http-equiv="Content-Security-Policy" content="
@@ -185,22 +169,21 @@
       var acceptBtn = document.getElementById('accept-all-cookies');
       if (acceptBtn) {
         acceptBtn.onclick = function() {
-          var analytics = document.getElementById('analytics-cookies')?.checked;
-          var ads = document.getElementById('ads-cookies')?.checked;
-          var consent = {analytics: !!analytics, ads: !!ads};
-          setConsent(consent);
-          updateGtagConsent(consent);
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted'
+          });
           var banner = document.getElementById('cookie-banner');
           if (banner) banner.classList.remove('show');
-          if (analytics) loadGA();
         };
       }
       var declineBtn = document.getElementById('accept-necessary-cookies');
       if (declineBtn) {
         declineBtn.onclick = function() {
-          var consent = {analytics: false, ads: false};
-          setConsent(consent);
-          updateGtagConsent(consent);
+          gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+          });
           var banner = document.getElementById('cookie-banner');
           if (banner) banner.classList.remove('show');
         };
@@ -983,86 +966,6 @@
     </script> -->
     
     <script src="script.js?v=37"></script>
-
-    <!-- Google Consent Mode Banner -->
-    <div id="consent-banner" class="consent-banner" style="display:none; position:fixed; left:0; right:0; bottom:0; z-index:9999; background:#fff; box-shadow:0 -2px 16px rgba(0,0,0,0.08); padding:2rem 1rem;">
-      <div style="max-width:480px;margin:0 auto;">
-        <h3 style="color:#264832; font-size:1.2rem; margin-bottom:1rem;">Używamy plików cookie</h3>
-        <p style="color:#666; font-size:1rem; margin-bottom:1.2rem;">Wykorzystujemy pliki cookie do analityki i personalizacji reklam. Wybierz, na co się zgadzasz:</p>
-        <div style="display:flex; flex-direction:column; gap:0.7rem; margin-bottom:1.2rem;">
-          <label style="display:flex; align-items:center; gap:0.7rem;">
-            <input type="checkbox" id="consent-analytics" checked>
-            <span>Analityczne cookie (Google Analytics)</span>
-          </label>
-          <label style="display:flex; align-items:center; gap:0.7rem;">
-            <input type="checkbox" id="consent-ads">
-            <span>Reklamowe cookie (Google Ads, Remarketing)</span>
-          </label>
-        </div>
-        <div style="display:flex; gap:1rem;">
-          <button id="consent-accept" style="background:#264832;color:#fff;padding:0.6rem 1.5rem;border:none;border-radius:6px;cursor:pointer;">Akceptuję</button>
-          <button id="consent-decline" style="background:#eee;color:#264832;padding:0.6rem 1.5rem;border:none;border-radius:6px;cursor:pointer;">Odrzuć</button>
-        </div>
-      </div>
-    </div>
-
-    <script>
-    // Consent Mode Banner Logic
-    function showConsentBanner() {
-      document.getElementById('consent-banner').style.display = 'block';
-    }
-    function hideConsentBanner() {
-      document.getElementById('consent-banner').style.display = 'none';
-    }
-    function setConsent(consent) {
-      localStorage.setItem('consentMode', JSON.stringify(consent));
-    }
-    function getConsent() {
-      try { return JSON.parse(localStorage.getItem('consentMode')); } catch(e){ return null; }
-    }
-    function updateGtagConsent(consent) {
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', {
-          'analytics_storage': consent.analytics ? 'granted' : 'denied',
-          'ad_storage': consent.ads ? 'granted' : 'denied'
-        });
-      }
-    }
-    // Показати банер якщо немає згоди
-    document.addEventListener('DOMContentLoaded', function() {
-      var consent = getConsent();
-      if (!consent) {
-        // Показуємо кастомний банер (додаємо клас show)
-        var banner = document.getElementById('cookie-banner');
-        if (banner) banner.classList.add('show');
-      } else {
-        updateGtagConsent(consent);
-        if (consent.analytics) {
-          window.initAnalytics && window.initAnalytics();
-        }
-      }
-      // Кнопки
-      document.getElementById('consent-accept').onclick = function() {
-        var analytics = document.getElementById('consent-analytics').checked;
-        var ads = document.getElementById('consent-ads').checked;
-        var consent = {analytics: analytics, ads: ads};
-        setConsent(consent);
-        updateGtagConsent(consent);
-        hideConsentBanner();
-        if (analytics) {
-          window.initAnalytics && window.initAnalytics();
-        }
-      };
-      document.getElementById('consent-decline').onclick = function() {
-        var consent = {analytics: false, ads: false};
-        setConsent(consent);
-        updateGtagConsent(consent);
-        hideConsentBanner();
-      };
-    });
-    // Кнопка у футері
-    window.showConsentSettings = showConsentBanner;
-    </script>
 
     <!-- Кнопка "Змінити згоду" у футері -->
     <script>
