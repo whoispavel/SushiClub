@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) + Consent Mode Advanced -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QH2QWS0XPY"></script>
+    
+    <!-- Google Consent Mode Advanced -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -12,17 +12,15 @@
         'ad_storage': 'denied',
         'analytics_storage': 'denied'
       });
-      gtag('js', new Date());
-      gtag('config', 'G-QH2QWS0XPY');
     </script>
     
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
-      script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://maps.googleapis.com https://maps.gstatic.com;
+      script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://maps.googleapis.com https://maps.gstatic.com https://www.googletagmanager.com;
       style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://maps.googleapis.com;
       font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
       img-src 'self' data: https: https://maps.googleapis.com https://maps.gstatic.com;
-      connect-src 'self' https://api.telegram.org https://maps.googleapis.com https://maps.gstatic.com;
+      connect-src 'self' https://api.telegram.org https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com;
       frame-src https://www.google.com https://maps.google.com;
     ">
     <title>Sushi Wrocław - Zamów Online | Dostawa Sushi Wrocław | Sushi Club</title>
@@ -109,7 +107,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="fonts/MexaRegular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="fonts/SushiClub_2025.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="logo.png" as="image">
     
     <link rel="stylesheet" href="styles.css?v=36">
@@ -192,41 +190,6 @@
     </script>
 </head>
 <body>
-<!-- Мінімальний cookie-банер для тесту Consent Mode (якщо його немає) -->
-<div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#fff;border-top:1px solid #ccc;z-index:9999;padding:1rem;display:none;text-align:center;">
-  <span>Ta strona używa plików cookie. </span>
-  <label><input type="checkbox" id="consent-analytics"> Analityczne</label>
-  <label><input type="checkbox" id="consent-ads"> Reklamowe</label>
-  <button id="consent-accept">Akceptuję</button>
-  <button id="consent-decline">Odrzuć</button>
-</div>
-<!-- Видаляю тестову форму для Telegram -->
-<!-- <form id="test-form" style="z-index:9999;position:relative;background:#fff;padding:20px;border:2px solid #333;max-width:400px;margin:20px auto;">
-    <input type="tel" id="phone" placeholder="Телефон" value="+48123456789" required style="display:block;width:100%;margin-bottom:10px;">
-    <input type="email" id="email" placeholder="Email" value="test@example.com" style="display:block;width:100%;margin-bottom:10px;">
-    <textarea id="message" placeholder="Повідомлення" style="display:block;width:100%;margin-bottom:10px;">Тестове повідомлення</textarea>
-    <button type="submit" style="width:100%;">Відправити тест</button>
-</form>
-<div id="result" style="max-width:400px;margin:0 auto 20px auto;"></div> -->
-
-<!-- Footer Popup (повертаю якщо був раніше) -->
-<div id="footer-popup" class="footer-popup">
-    <div class="footer-popup-content">
-        <div class="footer-popup-header">
-            <h3 data-key="callback-title">Залиште номер — ми передзвонимо!</h3>
-            <button id="close-footer-popup" class="close-btn">&times;</button>
-        </div>
-        <form id="footer-popup-form">
-            <input type="tel" id="footer-popup-phone" name="phone" data-key="callback-phone" placeholder="Ваш телефон" required autocomplete="tel" inputmode="tel" pattern="[0-9+\-\s\(\)]+" maxlength="20">
-            <input type="email" id="footer-popup-email" name="email" data-key="callback-email" placeholder="Ваш email (необов'язково)" autocomplete="email">
-            <textarea id="footer-popup-message" name="message" data-key="callback-message" placeholder="Коментар (необов'язково)" rows="3"></textarea>
-            <button type="submit" data-key="callback-submit">Відправити</button>
-        </form>
-        <div id="footer-popup-success" class="footer-popup-success" style="display: none;">
-            <p data-key="callback-success">✓ Дякуємо! Ми зателефонуємо найближчим часом.</p>
-        </div>
-    </div>
-</div>
     <!-- Header -->
     <header class="header">
         <nav class="nav">
@@ -868,42 +831,39 @@
         </button>
     </div>
 
-    <!-- Callback Modal (копія футер-попапу) -->
-    <!-- Видалено: дубль попапу, тепер використовується лише футерний -->
-
     <!-- Cookie Banner -->
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-content">
             <div class="cookie-header">
-                <h3 data-key="cookie-title">🍪 Polityka plików cookie</h3>
+                <h3>🍪 Polityka plików cookie</h3>
                 <button id="close-cookie-banner" class="cookie-close-btn">&times;</button>
             </div>
             <div class="cookie-body">
-                <p data-key="cookie-description">
+                <p>
                     Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. 
                     Pliki cookie pomagają nam analizować ruch na stronie i dostosowywać treści do Twoich preferencji.
                 </p>
                 <div class="cookie-types">
                     <div class="cookie-type">
-                        <strong data-key="cookie-necessary">Niezbędne:</strong>
-                        <span data-key="cookie-necessary-desc">Zapewniają podstawowe funkcje strony (język, callback popup)</span>
+                        <strong>Niezbędne:</strong>
+                        <span>Zapewniają podstawowe funkcje strony (język, callback popup)</span>
                     </div>
                     <div class="cookie-type">
-                        <strong data-key="cookie-analytics">Analityczne:</strong>
-                        <span data-key="cookie-analytics-desc">Pomagają zrozumieć, jak odwiedzający korzystają ze strony poprzez zbieranie i raportowanie informacji anonimowo.</span>
+                        <strong>Analityczne:</strong>
+                        <span>Pomagają zrozumieć, jak odwiedzający korzystają ze strony poprzez zbieranie i raportowanie informacji anonimowo.</span>
                     </div>
                 </div>
             </div>
             <div class="cookie-actions">
-                <button id="accept-all-cookies" class="cookie-btn accept-btn" data-key="cookie-accept-all">
+                <button id="accept-all-cookies" class="cookie-btn accept-btn">
                     <i class="fas fa-check"></i>
                     Akceptuję wszystkie
                 </button>
-                <button id="accept-necessary-cookies" class="cookie-btn necessary-btn" data-key="cookie-accept-necessary">
+                <button id="accept-necessary-cookies" class="cookie-btn necessary-btn">
                     <i class="fas fa-shield-alt"></i>
                     Tylko niezbędne
                 </button>
-                <button id="cookie-settings" class="cookie-btn settings-btn" data-key="cookie-settings">
+                <button id="cookie-settings" class="cookie-btn settings-btn">
                     <i class="fas fa-cog"></i>
                     Ustawienia
                 </button>
@@ -915,7 +875,7 @@
     <div id="cookie-settings-modal" class="cookie-modal">
         <div class="cookie-modal-content">
             <div class="cookie-modal-header">
-                <h3 data-key="cookie-settings-title">Ustawienia plików cookie</h3>
+                <h3>Ustawienia plików cookie</h3>
                 <button id="close-cookie-modal" class="cookie-close-btn">&times;</button>
             </div>
             <div class="cookie-modal-body">
@@ -926,8 +886,8 @@
                             <span class="slider"></span>
                         </label>
                         <div class="cookie-setting-info">
-                            <strong data-key="cookie-necessary-title">Niezbędne pliki cookie</strong>
-                            <p data-key="cookie-necessary-modal-desc">Te pliki cookie są niezbędne do działania strony i nie można ich wyłączyć.</p>
+                            <strong>Niezbędne pliki cookie</strong>
+                            <p>Te pliki cookie są niezbędne do działania strony i nie można ich wyłączyć.</p>
                         </div>
                     </div>
                 </div>
@@ -938,46 +898,24 @@
                             <span class="slider"></span>
                         </label>
                         <div class="cookie-setting-info">
-                            <strong data-key="cookie-analytics-title">Pliki cookie analityczne</strong>
-                            <p data-key="cookie-analytics-modal-desc">Pomagają nam zrozumieć, jak odwiedzający korzystają ze strony poprzez zbieranie i raportowanie informacji anonimowo.</p>
+                            <strong>Pliki cookie analityczne</strong>
+                            <p>Pomagają nam zrozumieć, jak odwiedzający korzystają ze strony poprzez zbieranie i raportowanie informacji anonimowo.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="cookie-modal-actions">
-                <button id="save-cookie-settings" class="cookie-btn accept-btn" data-key="cookie-save-settings">
+                <button id="save-cookie-settings" class="cookie-btn accept-btn">
                     <i class="fas fa-save"></i>
                     Zapisz ustawienia
                 </button>
-                <button id="cancel-cookie-settings" class="cookie-btn cancel-btn" data-key="cookie-cancel">
+                <button id="cancel-cookie-settings" class="cookie-btn cancel-btn">
                     Anuluj
                 </button>
             </div>
         </div>
     </div>
     
-    <!-- Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script> -->
-    
     <script src="script.js?v=37"></script>
-
-    <!-- Кнопка "Змінити згоду" у футері -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var btn = document.getElementById('cookie-settings-btn');
-      if (btn) {
-        btn.onclick = function() {
-          var banner = document.getElementById('cookie-banner');
-          if (banner) banner.classList.add('show');
-        };
-      }
-    });
-    </script>
 </body>
 </html>
