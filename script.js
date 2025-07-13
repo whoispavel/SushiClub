@@ -416,4 +416,32 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const saveSettingsBtn = document.getElementById('save-cookie-settings');
+    const cancelSettingsBtn = document.getElementById('cancel-cookie-settings');
+    const closeModalBtn = document.getElementById('close-cookie-modal');
+    const analyticsCheckbox = document.getElementById('analytics-cookies');
+    const cookieModal = document.getElementById('cookie-settings-modal');
+    const cookieBanner = document.getElementById('cookie-banner');
+
+    if (saveSettingsBtn) {
+        saveSettingsBtn.addEventListener('click', function() {
+            const analytics = analyticsCheckbox ? analyticsCheckbox.checked : false;
+            updateConsent(analytics, false);
+            if (cookieModal) cookieModal.classList.remove('show');
+            if (cookieBanner) cookieBanner.classList.remove('show');
+        });
+    }
+    if (cancelSettingsBtn) {
+        cancelSettingsBtn.addEventListener('click', function() {
+            if (cookieModal) cookieModal.classList.remove('show');
+        });
+    }
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', function() {
+            if (cookieModal) cookieModal.classList.remove('show');
+        });
+    }
+});
+
 console.log('=== END OF JS ===');
