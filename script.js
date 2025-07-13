@@ -406,4 +406,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 })();
 
+document.addEventListener('DOMContentLoaded', function() {
+    const footerSettingsBtn = document.getElementById('cookie-settings-btn');
+    if (footerSettingsBtn) {
+        footerSettingsBtn.addEventListener('click', function() {
+            const cookieModal = document.getElementById('cookie-settings-modal');
+            if (cookieModal) cookieModal.classList.add('show');
+        });
+    }
+});
+
 console.log('=== END OF JS ===');
