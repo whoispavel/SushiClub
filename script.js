@@ -570,7 +570,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Ініціалізуємо контент з поточною мовою
-    updatePageContent(currentLang);
 });
 
 // --- Header Logic ---
