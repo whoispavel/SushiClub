@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Google Consent Mode Advanced -->
+    <!-- Google Consent Mode Advanced (GA4: G-2NKTYCN4NG) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -188,6 +188,16 @@
       }
     });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-i18n@1.7.0/dist/vanilla-i18n.min.js"></script>
+    <script>
+      window.i18n = new I18n({
+        defaultLang: 'pl',
+        translations: {
+          pl: {}, // Сюди додамо всі ключі
+          en: {}  // Сюди додамо всі ключі
+        }
+      });
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -196,7 +206,7 @@
             <div class="container">
                 <div class="nav-content">
                     <div class="logo">
-                        <img src="logo.png" alt="Sushi Club Logo" class="logo-image" loading="eager" decoding="async">
+                        <img src="logo.png" alt="Sushi Club Logo" class="logo-image" loading="eager" decoding="async" data-i18n-alt="logo-alt">
                         <h1>SUSHI CLUB</h1>
                     </div>
                     <div class="language-switcher" role="group" aria-label="Wybór języka">
@@ -212,16 +222,16 @@
     <section class="hero" role="banner" aria-label="Główna sekcja">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title" data-key="hero-title">Sushi Wrocław - Zamów Online</h1>
-                <p class="hero-subtitle" data-key="hero-subtitle">Autentyczne japońskie smaki dostarczone do Twojego stołu</p>
+                <h1 class="hero-title" data-i18n="hero-title">Sushi Wrocław - Zamów Online</h1>
+                <p class="hero-subtitle" data-i18n="hero-subtitle">Autentyczne japońskie smaki dostarczone do Twojego stołu</p>
                 <div class="hero-top-buttons">
                     <a href="tel:+48501496055" class="cta-button" aria-label="Zadzwoń do Sushi Club">
                         <i class="fas fa-phone" aria-hidden="true"></i>
-                        <span>Zadzwoń</span>
+                        <span data-i18n="call-now">Zadzwoń</span>
                     </a>
                     <a href="https://www.instagram.com/sushiclub.wro" target="_blank" rel="noopener noreferrer" class="cta-button instagram-button" aria-label="Instagram Sushi Club">
                         <i class="fab fa-instagram" aria-hidden="true"></i>
-                        <span>Instagram</span>
+                        <span data-i18n="instagram">Instagram</span>
                     </a>
                 </div>
             </div>
@@ -232,12 +242,12 @@
     <section class="seo-content" style="padding: 2rem 0; background: #f8f9fa;">
         <div class="container">
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Sushi Wrocław - Najlepsze Sushi w Mieście</h2>
-                <p style="line-height: 1.6; color: #666; margin-bottom: 1rem;">
+                <h2 style="color: var(--primary-color); margin-bottom: 1rem;" data-i18n="seo-title">Sushi Wrocław - Najlepsze Sushi w Mieście</h2>
+                <p style="line-height: 1.6; color: #666; margin-bottom: 1rem;" data-i18n="seo-desc1">
                     Sushi Club Wrocław oferuje autentyczne japońskie sushi z dostawą do domu. Nasze menu zawiera szeroki wybór rolek: Philadelphia, California, Hosomaki, Futomaki. 
                     Wszystkie dania przygotowywane są ze świeżych składników przez doświadczonych kucharzy. Szybka dostawa sushi w całym Wrocławiu.
                 </p>
-                <p style="line-height: 1.6; color: #666;">
+                <p style="line-height: 1.6; color: #666;" data-i18n="seo-desc2">
                     Zamów sushi online lub zadzwoń +48 501 496 055. Dostawa sushi Wrocław - codziennie od 11:00 do 22:00.
                 </p>
             </div>
@@ -247,78 +257,78 @@
     <!-- Menu Section -->
     <section class="menu sushi-menu" role="main" aria-label="Menu sushi">
         <div class="container">
-            <h2 class="section-title" data-key="menu-title" style="text-align:center; margin-bottom:2.5rem;">SUSHI</h2>
+            <h2 class="section-title" data-i18n="menu-title" style="text-align:center; margin-bottom:2.5rem;">SUSHI</h2>
             <div class="menu-grid">
                 <!-- SUSHI BLOCK START -->
                 <!-- Zestaw 1 -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Zestaw 1.jpg')" title="Zestaw 1 - Futomak pieczony łosoś i Hosomaki pieczony łosoś" alt="Sushi Wrocław - Zestaw 1 z pieczonym łososiem" loading="lazy"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Zestaw 1.jpg')" title="Zestaw 1 - Futomak pieczony łosoś i Hosomaki pieczony łosoś" alt="Sushi Wrocław - Zestaw 1 z pieczonym łososiem" loading="lazy" data-i18n-title="menu-item-1-img-title" data-i18n-alt="menu-item-1-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-1-title">Zestaw 1</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-1-subtitle">(14 szt. + 6 szt. GRATIS)</div>
                         <div class="menu-item-description" data-i18n="menu-item-1-desc">·Futomak pieczony łosoś (6 sztuk) — nori, ryż, łosoś pieczony, serek Philadelphia, ogórek, kanpyo<br>·Hosomaki pieczony łosoś (8 sztuk) — nori, ryż, pieczony łosoś, serek Philadelphia</div>
-                        <button class="read-more-btn">Відкрити весь опис</button>
+                        <button class="read-more-btn" data-i18n="read-more">Відкрити весь опис</button>
                     </div>
                     <div class="menu-item-price" data-i18n="menu-item-1-price" style="font-weight: 100;">67,00 PLN</div>
                 </div>
                 <!-- Zestaw 2 -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Zestaw 2.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Zestaw 2.jpg')" data-i18n-title="menu-item-2-img-title" data-i18n-alt="menu-item-2-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-2-title">Zestaw 2</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-2-subtitle">(14 szt. + 6 szt. GRATIS)</div>
                         <div class="menu-item-description" data-i18n="menu-item-2-desc">·Futomak łosoś surowy (6 szt.) — nori, ryż, serek Philadelphia, łosoś, avocado, ogórek<br>·Hosomaki łosoś surowy (8 szt.) — nori, ryż, łosoś, serek Philadelphia<br>·1 rolka GRATIS (6 szt.)</div>
-                        <button class="read-more-btn">Відкрити весь опис</button>
+                        <button class="read-more-btn" data-i18n="read-more">Відкрити весь опис</button>
                     </div>
                     <div class="menu-item-price" data-i18n="menu-item-2-price" style="font-weight: 100;">67,00 PLN</div>
                 </div>
                 <!-- Zestaw 3 -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Zestaw 3 .jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Zestaw 3 .jpg')" data-i18n-title="menu-item-3-img-title" data-i18n-alt="menu-item-3-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-3-title">Zestaw 3</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-3-subtitle">(26 szt. + 6 szt. GRATIS)</div>
                         <div class="menu-item-description" data-i18n="menu-item-3-desc">·California tuńczyk w mango — nori, ryż, serek Philadelphia, tuńczyk, sriracha, ogórek, mango<br>·Futomak łosoś pieczony — nori, ryż, łosoś pieczony, serek Philadelphia, ogórek, kanpyo<br>·Hosomaki ogórek — nori, ryż, serek Philadelphia, ogórek</div>
-                        <button class="read-more-btn">Відкрити весь опис</button>
+                        <button class="read-more-btn" data-i18n="read-more">Відкрити весь опис</button>
                     </div>
                     <div class="menu-item-price" data-i18n="menu-item-3-price" style="font-weight: 100;">137,00 PLN</div>
                 </div>
                 <!-- Zestaw 4 -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Zestaw 4.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Zestaw 4.jpg')" data-i18n-title="menu-item-4-img-title" data-i18n-alt="menu-item-4-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-4-title">Zestaw 4</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-4-subtitle">(46 szt. + 6 szt. GRATIS)</div>
                         <div class="menu-item-description" data-i18n="menu-item-4-desc">·Philadelphia mango z łososiem — nori, ryż, serek Philadelphia, mango, łosoś opalany, sos unagi<br>·California krewetka — nori, ryż, sos majonez, krewetka tempura, ogórek, tatar z łososia, olej sezamowy<br>·Futomak tilapia — nori, ryż, tilapia tempura, sos majonez, ogórek<br>·Hosomaki ogórek — nori, ryż, serek Philadelphia, ogórek<br>·Hosomaki batat — nori, ryż, serek Philadelphia, batat</div>
-                        <button class="read-more-btn">Відкрити весь опис</button>
+                        <button class="read-more-btn" data-i18n="read-more">Відкрити весь опис</button>
                     </div>
                     <div class="menu-item-price" data-i18n="menu-item-4-price" style="font-weight: 100;">197,00 PLN</div>
                 </div>
                 <!-- Zestaw 5 -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Zestaw 5.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Zestaw 5.jpg')" data-i18n-title="menu-item-5-img-title" data-i18n-alt="menu-item-5-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-5-title">Zestaw 5</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-5-subtitle">(46 szt. + 6 szt. GRATIS)</div>
                         <div class="menu-item-description" data-i18n="menu-item-5-desc">·California węgorz — nori, ryż, zielone masago, serek Philadelphia, węgorz, ogórek<br>·Futomaki surimi — nori, ryż, serek Philadelphia, majonez, por, surimi, togarashi, tempura<br>·Futomaki krewetka — nori, ryż, majonez, krewetka<br>·Hosomaki mango — nori, ryż, serek Philadelphia, mango<br>·Hosomaki awokado — nori, ryż, serek Philadelphia, awokado<br>·Hosomaki łosoś — nori, ryż, serek Philadelphia, łosoś</div>
-                        <button class="read-more-btn">Відкрити весь опис</button>
+                        <button class="read-more-btn" data-i18n="read-more">Відкрити весь опис</button>
                     </div>
                     <div class="menu-item-price" data-i18n="menu-item-5-price" style="font-weight: 100;">205,00 PLN</div>
                 </div>
                 <!-- Zestaw 6 -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Zestaw 6.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Zestaw 6.jpg')" data-i18n-title="menu-item-6-img-title" data-i18n-alt="menu-item-6-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-6-title">Zestaw 6</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-6-subtitle">(12 szt. + 6 szt. GRATIS)</div>
                         <div class="menu-item-description" data-i18n="menu-item-6-desc">·Vulkan łosoś pieczony — nori, ryż, serek Philadelphia, łosoś pieczony, sos słodki<br>·Vulkan tatar z łososia — nori, ryż, tatar z łososia, por, togarashi, olej sezamowy<br>·Vulkan krabowy — nori, ryż, serek Philadelphia, krewetka gotowana, masago, sos słodki<br>·Nigiri łosoś — ryż, łosoś<br>·Nigiri tuńczyk — ryż, tuńczyk, sriracha<br>·Nigiri węgorz — ryż, węgorz</div>
-                        <button class="read-more-btn">Відкрити весь опис</button>
+                        <button class="read-more-btn" data-i18n="read-more">Відкрити весь опис</button>
                     </div>
                     <div class="menu-item-price" data-i18n="menu-item-6-price" style="font-weight: 100;">127,00 PLN</div>
                 </div>
                 <!-- Futo set -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Futo set.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Futo set.jpg')" data-i18n-title="menu-item-7-img-title" data-i18n-alt="menu-item-7-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-7-title">Futo Set</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-7-subtitle">(72 szt. + 6 szt. GRATIS)</div>
@@ -328,7 +338,7 @@
                 </div>
                 <!-- California set -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/California set.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/California set.jpg')" data-i18n-title="menu-item-8-img-title" data-i18n-alt="menu-item-8-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-8-title">California Set</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-8-subtitle">(70 szt. + 6 szt. GRATIS)</div>
@@ -338,7 +348,7 @@
                 </div>
                 <!-- Wegetariański set -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/wegetarianski_set.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/wegetarianski_set.jpg')" data-i18n-title="menu-item-9-img-title" data-i18n-alt="menu-item-9-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-9-title">Wegetariański Set</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-9-subtitle">(50 szt. + 6 szt. GRATIS)</div>
@@ -348,7 +358,7 @@
                 </div>
                 <!-- Hosomaki set -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Hosomaki set.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Hosomaki set.jpg')" data-i18n-title="menu-item-10-img-title" data-i18n-alt="menu-item-10-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-10-title">Hosomaki Set</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-10-subtitle">(80 szt. + 6 szt. GRATIS)</div>
@@ -358,7 +368,7 @@
                 </div>
                 <!-- Philadelphia łosoś -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/philadelphia_losos.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/philadelphia_losos.jpg')" data-i18n-title="menu-item-11-img-title" data-i18n-alt="menu-item-11-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-11-title">Philadelphia łosoś</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-11-subtitle">(10 szt.)</div>
@@ -368,7 +378,7 @@
                 </div>
                 <!-- Philadelphia węgorz -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/philadelphia_wegorz.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/philadelphia_wegorz.jpg')" data-i18n-title="menu-item-12-img-title" data-i18n-alt="menu-item-12-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-12-title">Philadelphia węgorz</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-12-subtitle">(10 szt.)</div>
@@ -378,7 +388,7 @@
                 </div>
                 <!-- Philadelphia tuńczyk -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/philadelphia_tunczyk.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/philadelphia_tunczyk.jpg')" data-i18n-title="menu-item-13-img-title" data-i18n-alt="menu-item-13-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-13-title">Philadelphia tuńczyk</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-13-subtitle">(10 szt.)</div>
@@ -388,7 +398,7 @@
                 </div>
                 <!-- Philadelphia krewetka -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Philadelphia krewetka (10 szt.).jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Philadelphia krewetka (10 szt.).jpg')" data-i18n-title="menu-item-14-img-title" data-i18n-alt="menu-item-14-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-14-title">Philadelphia krewetka</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-14-subtitle">(10 szt.)</div>
@@ -398,7 +408,7 @@
                 </div>
                 <!-- Philadelphia tatar z łososia -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Philadelphia tatar z łososia (10 szt.).jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Philadelphia tatar z łososia (10 szt.).jpg')" data-i18n-title="menu-item-15-img-title" data-i18n-alt="menu-item-15-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-15-title">Philadelphia tatar z łososia</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-15-subtitle">(10 szt.)</div>
@@ -408,7 +418,7 @@
                 </div>
                 <!-- California pieczony łosoś okładana mango -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/california_pieczony_losos_okladana_mango.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/california_pieczony_losos_okladana_mango.jpg')" data-i18n-title="menu-item-16-img-title" data-i18n-alt="menu-item-16-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-16-title">California pieczony łosoś okładana mango</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-16-subtitle">(10 szt.)</div>
@@ -418,7 +428,7 @@
                 </div>
                 <!-- California Rainbow -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/California Rainbow.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/California Rainbow.jpg')" data-i18n-title="menu-item-17-img-title" data-i18n-alt="menu-item-17-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-17-title">California Rainbow</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-17-subtitle">(10 szt.)</div>
@@ -428,7 +438,7 @@
                 </div>
                 <!-- California kurczak panko okładana boczkiem -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/California kurczak panko okładana boczkiem.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/California kurczak panko okładana boczkiem.jpg')" data-i18n-title="menu-item-18-img-title" data-i18n-alt="menu-item-18-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-18-title">California kurczak panko okładana boczkiem</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-18-subtitle">(10 szt.)</div>
@@ -444,11 +454,11 @@
     <!-- BURGERY Section -->
     <section class="menu burger-menu">
         <div class="container">
-            <h2 class="section-title" data-key="burger-title" style="text-align:center; margin-bottom:2.5rem;">BURGERY</h2>
+            <h2 class="section-title" data-i18n="burger-title" style="text-align:center; margin-bottom:2.5rem;">BURGERY</h2>
             <div class="menu-grid">
                 <!-- Sushi burger łosoś -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/sushi_burger_losos.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/sushi_burger_losos.jpg')" data-i18n-title="menu-item-19-img-title" data-i18n-alt="menu-item-19-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-19-title">Sushi burger łosoś</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-19-subtitle">(nori, ryż, łosoś, serek philadelphia, masago, sos sriracha, panko, maka tempura, awokado, ogórek)</div>
@@ -458,7 +468,7 @@
                 </div>
                 <!-- Sushi burger krewetka -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Sushi burger krewetka.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Sushi burger krewetka.jpg')" data-i18n-title="menu-item-20-img-title" data-i18n-alt="menu-item-20-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-20-title">Sushi burger krewetka</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-20-subtitle">(nori, ryż, krewetka + mango, sos słodkie chilli, ser cheddar, ogórek, panko, maka tempura)</div>
@@ -468,7 +478,7 @@
                 </div>
                 <!-- Sushi burger wegetariański -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/sushi_burger_wegetarianski.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/sushi_burger_wegetarianski.jpg')" data-i18n-title="menu-item-21-img-title" data-i18n-alt="menu-item-21-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-21-title">Sushi burger wegetariański</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-21-subtitle">(nori, ryż, batat, kampyo, ogórek, serek philadelphia, mango, panko, maka tempura)</div>
@@ -484,35 +494,35 @@
     <!-- LUNCHE Section -->
     <section class="menu lunch-menu">
         <div class="container">
-            <h2 class="section-title" data-key="lunch-title" style="text-align:center; margin-bottom:2.5rem;">LUNCHE</h2>
+            <h2 class="section-title" data-i18n="lunch-title" style="text-align:center; margin-bottom:2.5rem;">LUNCHE</h2>
             <div class="menu-grid">
                 <!-- Lancz 1 surowy -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/lunch 1 surowy.jpg?v=1')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/lunch 1 surowy.jpg?v=1')" data-i18n-title="menu-item-22-img-title" data-i18n-alt="menu-item-22-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-22-title">Lancz 1 surowy</h3>
                         <div class="menu-item-description" data-i18n="menu-item-22-desc">1: futo łosoś (6 sztuk)<br>2: sałatka goma (80 gram)<br>3: zupka miso z łososiem<br>4: pierożki gyoza wieprzowe (3 sztuki)</div>
-                        <button class="read-more-btn">Відкрити весь опис</button>
+                        <button class="read-more-btn" data-i18n="read-more">Відкрити весь опис</button>
                     </div>
                     <div class="menu-item-price" data-i18n="menu-item-22-price" style="font-weight: 100;">70,00 PLN</div>
                 </div>
                 <!-- Lancz 2 pieczony -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/lunch 2 pieczony.jpg?v=1')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/lunch 2 pieczony.jpg?v=1')" data-i18n-title="menu-item-23-img-title" data-i18n-alt="menu-item-23-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-23-title">Lancz 2 pieczony</h3>
                         <div class="menu-item-description" data-i18n="menu-item-23-desc">1: futo łosoś pieczony (6 sztuk)<br>2: zupka miso z łososiem<br>3: pierożki gyoza wieprzowa (3 sztuki)<br>4: sałatka goma (80 gram)</div>
-                        <button class="read-more-btn">Відкрити весь опис</button>
+                        <button class="read-more-btn" data-i18n="read-more">Відкрити весь опис</button>
                     </div>
                     <div class="menu-item-price" data-i18n="menu-item-23-price" style="font-weight: 100;">70,00 PLN</div>
                 </div>
                 <!-- Lancz 3 wegetariański -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/lunch3_wegetarianski.jpg?v=1')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/lunch3_wegetarianski.jpg?v=1')" data-i18n-title="menu-item-24-img-title" data-i18n-alt="menu-item-24-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-24-title">Lancz 3 wegetariański</h3>
                         <div class="menu-item-description" data-i18n="menu-item-24-desc">1: futo wegetariańskie (6 sztuk)<br>2: zupka miso z tofu<br>3: sałatka goma (80 gram)<br>4: pierożki gyoza wegetariańskie (3 sztuki)</div>
-                        <button class="read-more-btn">Відкрити весь опис</button>
+                        <button class="read-more-btn" data-i18n="read-more">Відкрити весь опис</button>
                     </div>
                     <div class="menu-item-price" data-i18n="menu-item-24-price" style="font-weight: 100;">65,00 PLN</div>
                 </div>
@@ -524,11 +534,11 @@
     <!-- NAPOJE & DODATKI Section -->
     <section class="menu drinks-extras-menu">
         <div class="container">
-            <h2 class="section-title" data-key="drinks-title" style="text-align:center; margin-bottom:2.5rem;">NAPOJE & DODATKI</h2>
+            <h2 class="section-title" data-i18n="drinks-title" style="text-align:center; margin-bottom:2.5rem;">NAPOJE & DODATKI</h2>
             <div class="menu-grid">
                 <!-- Sos sojowy -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Sos sojowy.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Sos sojowy.jpg')" data-i18n-title="menu-item-25-img-title" data-i18n-alt="menu-item-25-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-25-title">Sos sojowy</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-25-subtitle">(w opakowaniu porcjowanym)</div>
@@ -538,7 +548,7 @@
                 </div>
                 <!-- Sos słodki teriyaki -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Sos słodki teriyaki.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Sos słodki teriyaki.jpg')" data-i18n-title="menu-item-26-img-title" data-i18n-alt="menu-item-26-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-26-title">Sos słodki teriyaki</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-26-subtitle">(w opakowaniu porcjowanym)</div>
@@ -548,7 +558,7 @@
                 </div>
                 <!-- Sos sriracha -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Sos sriracha.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Sos sriracha.jpg')" data-i18n-title="menu-item-27-img-title" data-i18n-alt="menu-item-27-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-27-title">Sos sriracha</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-27-subtitle">(w opakowaniu porcjowanym)</div>
@@ -558,7 +568,7 @@
                 </div>
                 <!-- Sos sweet chili -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Sos sweet chili.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Sos sweet chili.jpg')" data-i18n-title="menu-item-28-img-title" data-i18n-alt="menu-item-28-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-28-title">Sos sweet chili</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-28-subtitle">(w opakowaniu porcjowanym)</div>
@@ -568,7 +578,7 @@
                 </div>
                 <!-- Wasabi -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Wasabi.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Wasabi.jpg')" data-i18n-title="menu-item-29-img-title" data-i18n-alt="menu-item-29-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-29-title">Wasabi</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-29-subtitle">(pasta ostra)</div>
@@ -578,7 +588,7 @@
                 </div>
                 <!-- Imbir -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Imbir.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Imbir.jpg')" data-i18n-title="menu-item-30-img-title" data-i18n-alt="menu-item-30-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-30-title">Imbir</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-30-subtitle">(marynowany)</div>
@@ -588,7 +598,7 @@
                 </div>
                 <!-- Pałeczki -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/patechj.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/patechj.jpg')" data-i18n-title="menu-item-31-img-title" data-i18n-alt="menu-item-31-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-31-title">Pałeczki</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-31-subtitle">(jednorazowe)</div>
@@ -598,7 +608,7 @@
                 </div>
                 <!-- Woda niegazowana -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/woda.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/woda.jpg')" data-i18n-title="menu-item-32-img-title" data-i18n-alt="menu-item-32-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-32-title">Woda niegazowana</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-32-subtitle">(butelkowana)</div>
@@ -608,7 +618,7 @@
                 </div>
                 <!-- Coca Cola zero cukru -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/cola zero.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/cola zero.jpg')" data-i18n-title="menu-item-33-img-title" data-i18n-alt="menu-item-33-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-33-title">Coca Cola zero cukru</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-33-subtitle">(butelkowana)</div>
@@ -618,7 +628,7 @@
                 </div>
                 <!-- Coca Cola original -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/cola original.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/cola original.jpg')" data-i18n-title="menu-item-34-img-title" data-i18n-alt="menu-item-34-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-34-title">Coca Cola original</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-34-subtitle">(butelkowana)</div>
@@ -628,7 +638,7 @@
                 </div>
                 <!-- Sprite lime -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/sprite.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/sprite.jpg')" data-i18n-title="menu-item-35-img-title" data-i18n-alt="menu-item-35-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-35-title">Sprite lime</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-35-subtitle">(butelkowany)</div>
@@ -638,7 +648,7 @@
                 </div>
                 <!-- Pomocnik do pałeczek -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/pomocnik do pałeczek.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/pomocnik do pałeczek.jpg')" data-i18n-title="menu-item-36-img-title" data-i18n-alt="menu-item-36-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-36-title">Pomocnik do pałeczek</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-36-subtitle">(trener)</div>
@@ -654,11 +664,11 @@
     <!-- PRZYSTAWKI Section -->
     <section class="menu appetizers-menu">
         <div class="container">
-            <h2 class="section-title" data-key="appetizers-title" style="text-align:center; margin-bottom:2.5rem;">PRZYSTAWKI</h2>
+            <h2 class="section-title" data-i18n="appetizers-title" style="text-align:center; margin-bottom:2.5rem;">PRZYSTAWKI</h2>
             <div class="menu-grid">
                 <!-- Krewetka (6 sztuk + sos sweet chilli) -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/krewetka_6_sztuk_sos_sweet_chilli.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/krewetka_6_sztuk_sos_sweet_chilli.jpg')" data-i18n-title="menu-item-37-img-title" data-i18n-alt="menu-item-37-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-37-title">Krewetka</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-37-subtitle">(6 sztuk + sos sweet chilli)</div>
@@ -668,7 +678,7 @@
                 </div>
                 <!-- Kalmary (6 sztuk + sos sweet chilli) -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/kalmary_6_sztuk_sos_sweet_chilli.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/kalmary_6_sztuk_sos_sweet_chilli.jpg')" data-i18n-title="menu-item-38-img-title" data-i18n-alt="menu-item-38-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-38-title">Kalmary</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-38-subtitle">(6 sztuk + sos sweet chilli)</div>
@@ -678,7 +688,7 @@
                 </div>
                 <!-- Pierożki gyoza wegetariańskie + sos sweet chilli (6+1 sztuk) -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/pierozki_gyoza_wegetarianskie_sos_sweet_chilli_6_1.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/pierozki_gyoza_wegetarianskie_sos_sweet_chilli_6_1.jpg')" data-i18n-title="menu-item-39-img-title" data-i18n-alt="menu-item-39-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-39-title">Pierożki gyoza z mięsem</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-39-subtitle">(6 sztuk + 1 sztuka, sos sweet chili)</div>
@@ -688,7 +698,7 @@
                 </div>
                 <!-- Pierożki gyoza z mięsem + sos sweet chilli (6+1 sztuk) -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/pierozki_gyoza_z_miesem_sos_sweet_chilli_6_1.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/pierozki_gyoza_z_miesem_sos_sweet_chilli_6_1.jpg')" data-i18n-title="menu-item-40-img-title" data-i18n-alt="menu-item-40-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-40-title">Pierożki gyoza z mięsem</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-40-subtitle">(6 sztuk + 1 sztuka, sos sweet chili)</div>
@@ -698,7 +708,7 @@
                 </div>
                 <!-- Kimchi (150 gram) -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Kimchi.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Kimchi.jpg')" data-i18n-title="menu-item-41-img-title" data-i18n-alt="menu-item-41-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-41-title">Kimchi</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-41-subtitle">(150 gram)</div>
@@ -708,7 +718,7 @@
                 </div>
                 <!-- Sałatka goma (150 gram) -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Sałatka goma.jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Sałatka goma.jpg')" data-i18n-title="menu-item-42-img-title" data-i18n-alt="menu-item-42-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-42-title">Sałatka goma</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-42-subtitle">(150 gram)</div>
@@ -718,7 +728,7 @@
                 </div>
                 <!-- tatar z łososia (150 gram) -->
                 <div class="menu-item">
-                    <div class="menu-item-image" style="background-image: url('images/Philadelphia tatar z łososia (10 sztuk).jpg')"></div>
+                    <div class="menu-item-image" style="background-image: url('images/Philadelphia tatar z łososia (10 sztuk).jpg')" data-i18n-title="menu-item-43-img-title" data-i18n-alt="menu-item-43-img-alt"></div>
                     <div class="menu-item-content">
                         <h3 class="menu-item-title" data-i18n="menu-item-43-title">tatar z łososia</h3>
                         <div class="menu-item-subtitle" data-i18n="menu-item-43-subtitle">(150 gram)</div>
@@ -734,7 +744,7 @@
     <!-- MAP Section -->
     <section class="map-section">
         <div class="container">
-            <h2 class="section-title" data-key="location-title" style="text-align:center; margin-bottom:2.5rem;">Lokalizacja</h2>
+            <h2 class="section-title" data-i18n="location-title" style="text-align:center; margin-bottom:2.5rem;">Lokalizacja</h2>
             <div class="map-container">
                 <iframe
                   width="100%"
@@ -749,9 +759,9 @@
             <div class="map-info">
                 <p class="map-address">
                     <i class="fas fa-map-marker-alt"></i>
-                    <strong>Szczytnicka 54/1D, 50-382 Wrocław</strong>
+                    <strong data-i18n="address-strong">Szczytnicka 54/1D, 50-382 Wrocław</strong>
                 </p>
-                <div class="footer-hours" data-key="footer-hours">
+                <div class="footer-hours" data-i18n="footer-hours">
                     Godziny otwarcia: Pon-Ndz 11:00-22:00
                 </div>
             </div>
@@ -764,7 +774,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3 class="footer-title" data-key="contact-title">Kontakt</h3>
+                    <h3 class="footer-title" data-i18n="contact-title">Kontakt</h3>
                     <p class="footer-text">
                         <i class="fas fa-phone"></i>
                         <a href="tel:+48501496055">+48 501 496 055</a>
@@ -775,12 +785,12 @@
                     </p>
                     <p class="footer-text">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span data-key="address">Szczytnicka 54/1D, 50-382 Wrocław</span>
+                        <span data-i18n="address">Szczytnicka 54/1D, 50-382 Wrocław</span>
                     </p>
                 </div>
                 
                 <div class="footer-section">
-                    <h3 class="footer-title" data-key="follow-title">Śledź nas</h3>
+                    <h3 class="footer-title" data-i18n="follow-title">Śledź nas</h3>
                     <div class="social-links">
                         <a href="https://www.instagram.com/sushiclub.wro" target="_blank" rel="noopener noreferrer" class="social-link instagram">
                             <i class="fab fa-instagram"></i>
@@ -796,11 +806,11 @@
             </div>
             
             <div class="footer-bottom">
-                <p class="copyright" data-key="copyright">© 2025 Sushi Club. Wszystkie prawa zastrzeżone.</p>
-                <p class="credits">Produced by specialstudio.ink</p>
-                <p class="privacy-link"><a href="privacy.html" target="_blank" rel="noopener">Polityka Prywatności</a></p>
+                <p class="copyright" data-i18n="copyright">© 2025 Sushi Club. Wszystkie prawa zastrzeżone.</p>
+                <p class="credits" data-i18n="credits">Produced by specialstudio.ink</p>
+                <p class="privacy-link"><a href="privacy.html" target="_blank" rel="noopener" data-i18n="privacy-policy">Polityka Prywatności</a></p>
                 <button id="cookie-settings-btn" class="cookie-btn settings-btn" style="margin-left:1rem;">
-                    <i class="fas fa-cog"></i> Zmień ustawienia cookies
+                    <i class="fas fa-cog"></i> <span data-i18n="cookie-settings-btn">Zmień ustawienia cookies</span>
                 </button>
             </div>
         </div>
@@ -810,26 +820,26 @@
     <div id="footer-popup" class="footer-popup">
         <div class="footer-popup-content">
             <div class="footer-popup-header">
-                <h3>Замовити дзвінок</h3>
+                <h3 data-i18n="callback-title">Замовити дзвінок</h3>
                 <button id="close-footer-popup" class="close-btn">&times;</button>
             </div>
             <form id="footer-popup-form">
-                <input type="tel" id="footer-popup-phone" name="phone" data-key="callback-phone" placeholder="Ваш телефон" required autocomplete="tel" inputmode="tel" pattern="[0-9+\-\s\(\)]+" maxlength="20">
-                <input type="email" id="footer-popup-email" name="email" data-key="callback-email" placeholder="Ваш email (необов'язково)" autocomplete="email">
-                <textarea id="footer-popup-message" name="message" data-key="callback-message" placeholder="Коментар (необов'язково)" rows="3"></textarea>
-                <button type="submit">Відправити</button>
+                <input type="tel" id="footer-popup-phone" name="phone" data-key="callback-phone" placeholder="Ваш телефон" required autocomplete="tel" inputmode="tel" pattern="[0-9+\-\s\(\)]+" maxlength="20" data-i18n-placeholder="callback-phone-ph">
+                <input type="email" id="footer-popup-email" name="email" data-key="callback-email" placeholder="Ваш email (необов'язково)" autocomplete="email" data-i18n-placeholder="callback-email-ph">
+                <textarea id="footer-popup-message" name="message" data-key="callback-message" placeholder="Коментар (необов'язково)" rows="3" data-i18n-placeholder="callback-message-ph"></textarea>
+                <button type="submit" data-i18n="callback-send">Відправити</button>
             </form>
             <div id="footer-popup-success" class="footer-popup-success" style="display: none;">
-                <p>✓ Дякуємо! Ми зателефонуємо найближчим часом.</p>
+                <p data-i18n="callback-success">✓ Дякуємо! Ми зателефонуємо найближчим часом.</p>
             </div>
         </div>
     </div>
 
     <!-- Callback Button -->
     <div class="callback-button-container">
-        <button class="callback-button" id="callback-button" aria-label="Замовити дзвінок">
+        <button class="callback-button" id="callback-button" aria-label="Замовити дзвінок" data-i18n-aria="callback-btn-aria">
             <i class="fas fa-phone"></i>
-            <span class="callback-text" data-key="callback-btn">Замовити дзвінок</span>
+            <span class="callback-text" data-i18n="callback-btn">Замовити дзвінок</span>
         </button>
     </div>
 
@@ -837,37 +847,37 @@
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-content">
             <div class="cookie-header">
-                <h3>🍪 Polityka plików cookie</h3>
+                <h3 data-i18n="cookie-banner-title">🍪 Polityka plików cookie</h3>
                 <button id="close-cookie-banner" class="cookie-close-btn">&times;</button>
             </div>
             <div class="cookie-body">
-                <p>
-                    Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. 
-                    Pliki cookie pomagają nam analizować ruch na stronie i dostosowywać treści do Twoich preferencji.
+                <p data-i18n="cookie-banner-desc">
+                    Używamy plików cookie, aby zapewnić najlepsze doświadczenia на naszej stronie. 
+                    Pliki cookie pomagają нам analizować ruch на stronie і dostosowywać treści до Twoich preferencji.
                 </p>
                 <div class="cookie-types">
                     <div class="cookie-type">
-                        <strong>Niezbędne:</strong>
-                        <span>Zapewniają podstawowe funkcje strony (język, callback popup)</span>
+                        <strong data-i18n="cookie-necessary-title">Niezbędne:</strong>
+                        <span data-i18n="cookie-necessary-desc">Zapewniają podstawowe funkcje strony (język, callback popup)</span>
                     </div>
                     <div class="cookie-type">
-                        <strong>Analityczne:</strong>
-                        <span>Pomagają zrozumieć, jak odwiedzający korzystają ze strony poprzez zbieranie i raportowanie informacji anonimowo.</span>
+                        <strong data-i18n="cookie-analytics-title">Analityczne:</strong>
+                        <span data-i18n="cookie-analytics-desc">Pomagają zrozumieć, jak odwiedzający korzystają ze strony poprzez zbieranie i raportowanie informacji anonimowo.</span>
                     </div>
                 </div>
             </div>
             <div class="cookie-actions">
                 <button id="accept-all-cookies" class="cookie-btn accept-btn">
                     <i class="fas fa-check"></i>
-                    Akceptuję wszystkie
+                    <span data-i18n="cookie-accept-all">Akceptuję wszystkie</span>
                 </button>
                 <button id="accept-necessary-cookies" class="cookie-btn necessary-btn">
                     <i class="fas fa-shield-alt"></i>
-                    Tylko niezbędne
+                    <span data-i18n="cookie-accept-necessary">Tylko niezbędne</span>
                 </button>
                 <button id="cookie-settings" class="cookie-btn settings-btn">
                     <i class="fas fa-cog"></i>
-                    Ustawienia
+                    <span data-i18n="cookie-settings">Ustawienia</span>
                 </button>
             </div>
         </div>
@@ -877,7 +887,7 @@
     <div id="cookie-settings-modal" class="cookie-modal">
         <div class="cookie-modal-content">
             <div class="cookie-modal-header">
-                <h3>Ustawienia plików cookie</h3>
+                <h3 data-i18n="cookie-modal-title">Ustawienia plików cookie</h3>
                 <button id="close-cookie-modal" class="cookie-close-btn">&times;</button>
             </div>
             <div class="cookie-modal-body">
@@ -888,8 +898,8 @@
                             <span class="slider"></span>
                         </label>
                         <div class="cookie-setting-info">
-                            <strong>Niezbędne pliki cookie</strong>
-                            <p>Te pliki cookie są niezbędne do działania strony i nie można ich wyłączyć.</p>
+                            <strong data-i18n="cookie-modal-necessary-title">Niezbędne pliki cookie</strong>
+                            <p data-i18n="cookie-modal-necessary-desc">Te pliki cookie są niezbędne do działania strony i nie można ich wyłączyć.</p>
                         </div>
                     </div>
                 </div>
@@ -900,8 +910,8 @@
                             <span class="slider"></span>
                         </label>
                         <div class="cookie-setting-info">
-                            <strong>Pliki cookie analityczne</strong>
-                            <p>Pomagają nam zrozumieć, jak odwiedzający korzystają ze strony poprzez zbieranie i raportowanie informacji anonimowo.</p>
+                            <strong data-i18n="cookie-modal-analytics-title">Pliki cookie analityczne</strong>
+                            <p data-i18n="cookie-modal-analytics-desc">Pomagają nam zrozumieć, jak odwiedzający korzystają ze strony poprzez zbieranie i raportowanie informacji anonimowo.</p>
                         </div>
                     </div>
                 </div>
@@ -909,10 +919,10 @@
             <div class="cookie-modal-actions">
                 <button id="save-cookie-settings" class="cookie-btn accept-btn">
                     <i class="fas fa-save"></i>
-                    Zapisz ustawienia
+                    <span data-i18n="cookie-modal-save">Zapisz ustawienia</span>
                 </button>
                 <button id="cancel-cookie-settings" class="cookie-btn cancel-btn">
-                    Anuluj
+                    <span data-i18n="cookie-modal-cancel">Anuluj</span>
                 </button>
             </div>
         </div>

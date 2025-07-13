@@ -1,7 +1,7 @@
 console.log('=== START OF JS ===');
 
 // Google Analytics ID
-const GA_ID = 'G-QH2QWS0XPY';
+const GA_ID = 'G-2NKTYCN4NG';
 
 // --- Google Consent Mode Advanced ---
 let gaLoaded = false;
