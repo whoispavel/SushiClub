@@ -217,9 +217,9 @@
             <button id="close-footer-popup" class="close-btn">&times;</button>
         </div>
         <form id="footer-popup-form">
-            <input type="tel" id="footer-popup-phone" data-key="callback-phone" placeholder="Ваш телефон" required autocomplete="tel" inputmode="tel" pattern="[0-9+\-\s\(\)]+" maxlength="20">
-            <input type="email" id="footer-popup-email" data-key="callback-email" placeholder="Ваш email (необов'язково)" autocomplete="email">
-            <textarea id="footer-popup-message" data-key="callback-message" placeholder="Коментар (необов'язково)" rows="3"></textarea>
+            <input type="tel" id="footer-popup-phone" name="phone" data-key="callback-phone" placeholder="Ваш телефон" required autocomplete="tel" inputmode="tel" pattern="[0-9+\-\s\(\)]+" maxlength="20">
+            <input type="email" id="footer-popup-email" name="email" data-key="callback-email" placeholder="Ваш email (необов'язково)" autocomplete="email">
+            <textarea id="footer-popup-message" name="message" data-key="callback-message" placeholder="Коментар (необов'язково)" rows="3"></textarea>
             <button type="submit" data-key="callback-submit">Відправити</button>
         </form>
         <div id="footer-popup-success" class="footer-popup-success" style="display: none;">
@@ -849,9 +849,9 @@
                 <button id="close-footer-popup" class="close-btn">&times;</button>
             </div>
             <form id="footer-popup-form">
-                <input type="tel" id="footer-phone" placeholder="Ваш телефон" required autocomplete="tel" inputmode="tel" pattern="[0-9+\-\s\(\)]+" maxlength="20">
-                <input type="email" id="footer-email" placeholder="Ваш email (необов'язково)" autocomplete="email">
-                <textarea id="footer-message" placeholder="Коментар (необов'язково)" rows="3"></textarea>
+                <input type="tel" id="footer-popup-phone" name="phone" data-key="callback-phone" placeholder="Ваш телефон" required autocomplete="tel" inputmode="tel" pattern="[0-9+\-\s\(\)]+" maxlength="20">
+                <input type="email" id="footer-popup-email" name="email" data-key="callback-email" placeholder="Ваш email (необов'язково)" autocomplete="email">
+                <textarea id="footer-popup-message" name="message" data-key="callback-message" placeholder="Коментар (необов'язково)" rows="3"></textarea>
                 <button type="submit">Відправити</button>
             </form>
             <div id="footer-popup-success" class="footer-popup-success" style="display: none;">

@@ -833,3 +833,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 })();
+
+document.addEventListener('DOMContentLoaded', function () {
+  const callbackForm = document.querySelector('#callback-form');
+  const popupForm = document.querySelector('#footer-popup-form');
+
+  function sendTelegram(form) {
+    const phone = form.querySelector('input[name="phone"]')?.value.trim() || '';
+    const email = form.querySelector('input[name="email"]')?.value.trim() || '';
+    const message = form.querySelector('textarea[name="message"]')?.value.trim() || '';
+
+    if (!phone) {
+      alert('Введіть номер телефону');
+      return;
+    }
+
+    const text = `📞 Нове повідомлення з сайту Sushi Club:\n\nТелефон: ${phone}\nEmail: ${email || 'Не вказано'}\nКоментар: ${message || 'Без коментаря'}`;
+
+    fetch("https://api.telegram.org/bot8007889504:AAESFASDeT0njLEczDDpO__vENkVJd5d340/sendMessage", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: "7364136001",
+        text: text,
+        parse_mode: "HTML"
+      })
+    }).then((res) => {
+      return res.json();
+    }).then((data) => {
+      if (data.ok) {
+        form.reset();
+        alert('Дякуємо! Повідомлення надіслано.');
+      } else {
+        alert('Помилка. Спробуйте ще раз.');
+      }
+    });
+  }
+
+  if (callbackForm) {
+    callbackForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      sendTelegram(callbackForm);
+    });
+  }
+
+  if (popupForm) {
+    popupForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      sendTelegram(popupForm);
+    });
+  }
+});
