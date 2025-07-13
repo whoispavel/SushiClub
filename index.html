@@ -972,7 +972,10 @@
     document.addEventListener('DOMContentLoaded', function() {
       var btn = document.getElementById('cookie-settings-btn');
       if (btn) {
-        btn.onclick = function(){ window.showConsentSettings && window.showConsentSettings(); };
+        btn.onclick = function() {
+          var banner = document.getElementById('cookie-banner');
+          if (banner) banner.classList.add('show');
+        };
       }
     });
     </script>
