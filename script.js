@@ -802,9 +802,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (footerPopupForm && footerPopupSuccess) {
         footerPopupForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            const phone = document.getElementById('footer-phone').value;
-            const email = document.getElementById('footer-email').value;
-            const message = document.getElementById('footer-message').value;
+            const phone = document.getElementById('footer-popup-phone').value;
+            const email = document.getElementById('footer-popup-email').value;
+            const message = document.getElementById('footer-popup-message').value;
             const result = await sendToTelegram({
                 phone: phone,
                 email: email,
