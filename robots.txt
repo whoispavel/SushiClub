@@ -2,10 +2,15 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://sushiclub.wroclaw.pl/sitemap.xml
+Sitemap: https://sushiclub.store/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
+
+# Allow main sections
+Allow: /menu/
+Allow: /images/
+Allow: /fonts/
 
 # Disallow admin areas (if any)
 Disallow: /admin/
