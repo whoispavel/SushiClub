@@ -396,16 +396,21 @@ document.addEventListener('DOMContentLoaded', function () {
 // --- Автоматичне приховування іконок NEW через місяць ---
 document.addEventListener('DOMContentLoaded', function() {
     const newBadges = document.querySelectorAll('.new-badge');
-    const currentDate = new Date();
-    const oneMonthAgo = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, currentDate.getDate());
+    
+    // TODO: Розкоментувати цей код через місяць після додавання іконок
+    // const currentDate = new Date();
+    // const oneMonthAgo = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, currentDate.getDate());
     
     // Перевіряємо, чи минув місяць з моменту додавання іконок
     // Якщо так - приховуємо їх
-    if (currentDate > oneMonthAgo) {
-        newBadges.forEach(badge => {
-            badge.style.display = 'none';
-        });
-    }
+    // if (currentDate > oneMonthAgo) {
+    //     newBadges.forEach(badge => {
+    //         badge.style.display = 'none';
+    //     });
+    // }
+    
+    // Поки що залишаємо іконки видимими
+    console.log('NEW badges found:', newBadges.length);
 });
 
 console.log('=== END OF JS ===');
