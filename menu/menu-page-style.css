@@ -1,0 +1,531 @@
+/* Спеціальні стилі для сторінки Zestaw 1 */
+
+/* CSS Custom Properties */
+:root {
+  --primary-color: #264832;
+  --background-color: #ffffff;
+  --text-color: #264832;
+  --text-light: #666666;
+  --border-color: #e5e5e5;
+  --hover-color: #1a3525;
+  --shadow-light: 0 2px 10px rgba(38, 72, 50, 0.1);
+  --shadow-medium: 0 4px 20px rgba(38, 72, 50, 0.15);
+  --transition: all 0.3s ease;
+  --font-heading: 'SushiClub_2025', 'Playfair Display', serif;
+  --font-body: 'Roboto Condensed', 'Bodoni Moda', sans-serif;
+}
+
+/* Підключення шрифту */
+@font-face {
+  font-family: 'SushiClub_2025';
+  src: url('../fonts/SushiClub_2025.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Базові стилі */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.menu-page {
+  height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 0;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header з логотипом */
+.menu-header-top {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1.5rem;
+  margin: 0.5rem 0 0.5rem 0;
+  border-radius: 20px;
+  box-shadow: var(--shadow-light);
+  animation: slideInDown 0.6s ease-out;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.logo-link {
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.logo-link:hover {
+  transform: scale(1.05);
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Основний контент */
+.menu-content {
+  background: var(--background-color);
+  border-radius: 0;
+  padding: 2rem;
+  box-shadow: none;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  width: 100%;
+  min-height: 0;
+}
+
+.menu-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), #4a7c59, #6b8e7a, var(--primary-color));
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+/* Header секція */
+.menu-header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  animation: slideInUp 1s ease-out;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5rem;
+}
+
+.menu-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.16rem, 6vw, 3.6rem);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(38, 72, 50, 0.1);
+}
+
+.menu-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Зображення */
+.menu-image {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 0.5rem auto;
+  display: block;
+  box-shadow: none;
+  transition: var(--transition);
+}
+
+.menu-image:hover {
+  transform: scale(1.02);
+  box-shadow: none;
+}
+
+/* Опис */
+.menu-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin: 0.3rem 0;
+  animation: fadeIn 1.4s ease-out;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Інгредієнти */
+.menu-ingredients {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 0.8rem;
+  border-radius: 15px;
+  margin: 0.3rem 0;
+  animation: slideInLeft 1.6s ease-out;
+  box-shadow: var(--shadow-light);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ingredients-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredients-list li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  text-align: left;
+  transition: var(--transition);
+}
+
+.ingredients-list li:last-child {
+  border-bottom: none;
+}
+
+.ingredients-list li::before {
+  content: '🍣';
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  font-size: 1rem;
+}
+
+.ingredients-list li:hover {
+  background: rgba(38, 72, 50, 0.05);
+  border-radius: 8px;
+  padding-left: 2rem;
+}
+
+/* Ціна */
+.menu-price {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0.3rem 0;
+  animation: bounceIn 1.8s ease-out;
+  text-shadow: 2px 2px 4px rgba(38, 72, 50, 0.1);
+  letter-spacing: 1px;
+}
+
+/* Кнопки */
+.buttons-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0.3rem;
+}
+
+.back-button, .call-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--hover-color) 100%);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow-medium);
+  animation: slideInUp 2s ease-out;
+  text-align: center;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+  height: 50px;
+  white-space: nowrap;
+}
+
+.back-button::before, .call-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.back-button:hover, .call-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(38, 72, 50, 0.3);
+  background: linear-gradient(135deg, var(--hover-color) 0%, var(--primary-color) 100%);
+}
+
+.back-button:hover::before, .call-button:hover::before {
+  left: 100%;
+}
+
+.back-button i, .call-button i {
+  font-size: 1.3rem;
+}
+
+/* Анімація для кнопки телефону */
+.call-button {
+  animation: slideInUp 2s ease-out, pulse 2s ease-in-out infinite 2s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Анімації */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 8px;
+  }
+  
+  .menu-content {
+    padding: 1rem;
+  }
+  
+  .menu-title {
+    font-size: clamp(1.56rem, 4.8vw, 2.4rem);
+    letter-spacing: 0.5px;
+  }
+  
+  .menu-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .menu-image {
+    height: 40vh;
+    max-width: 100%;
+  }
+  
+  .menu-price {
+    font-size: 1.8rem;
+  }
+  
+  .back-button, .call-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.8rem;
+    min-width: 180px;
+    height: 45px;
+  }
+  
+  .buttons-container {
+    gap: 0.8rem;
+  }
+  
+  .menu-ingredients {
+    padding: 0.6rem;
+    margin: 0.2rem 0;
+  }
+  
+  .ingredients-title {
+    font-size: 1.1rem;
+  }
+  
+  .ingredients-list li {
+    font-size: 0.8rem;
+    padding-left: 1.5rem;
+  }
+  
+  .ingredients-list li::before {
+    font-size: 0.9rem;
+    top: 0.2rem;
+  }
+  
+  .menu-header-top {
+    padding: 0.3rem 0.8rem;
+    margin: 0.2rem 0 0.3rem 0;
+  }
+  
+  .header-logo {
+    height: 35px;
+  }
+  
+  .menu-description {
+    font-size: 0.8rem;
+    margin: 0.2rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-content {
+    padding: 0.5rem;
+  }
+  
+  .menu-title {
+    font-size: clamp(1.32rem, 4.2vw, 1.92rem);
+    letter-spacing: 0.3px;
+  }
+  
+  .menu-image {
+    height: 40vh;
+  }
+  
+  .menu-price {
+    font-size: 1.5rem;
+  }
+  
+  .back-button, .call-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.7rem;
+    min-width: 160px;
+    height: 40px;
+  }
+  
+  .buttons-container {
+    gap: 0.6rem;
+    flex-direction: column;
+  }
+  
+  .menu-ingredients {
+    padding: 0.5rem;
+    margin: 0.15rem 0;
+  }
+  
+  .ingredients-title {
+    font-size: 1rem;
+  }
+  
+  .menu-description {
+    font-size: 0.7rem;
+    margin: 0.15rem 0;
+  }
+  
+  .menu-subtitle {
+    font-size: 0.8rem;
+  }
+} 
